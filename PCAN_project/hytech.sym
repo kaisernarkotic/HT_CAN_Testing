@@ -2,734 +2,729 @@ FormatVersion=6.0 // Do not edit this line!
 Title="SYM Database"
 
 {ENUMS}
-Enum=ecu_stateE(0="STARTUP", 1="TRACTIVE_SYSTEM_NOT_ACTIVE", 2="TRACTIVE_SYSTEM_ACTIVE", 3="ENABLING_INVERTER", 4="WAITING_READY_TO_DRIVE_SOUND", 5="READY_TO_DRIVE")
+Enum=ecu_stateE(0="STARTUP", 1="TRACTIVE_SYSTEM_NOT_ACTIVE", 2="TRACTIVE_SYSTEM_ACTIVE", 3="ENABLING_INVERTER",
+  4="WAITING_READY_TO_DRIVE_SOUND", 5="READY_TO_DRIVE")
 Enum=dial_stateE(0="MODE_ONE", 1="MODE_TWO", 2="ACCELERATION_LAUNCH_CONTROL", 3="SKIDPAD", 4="AUTOCROSS", 5="ENDURANCE")
-Enum=ams_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=imd_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=mode_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=motor_controller_error_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=start_status_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=inertia_status_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=mechanical_brake_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=gen_purp_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=bots_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=cockpit_brb_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=crit_charge_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=glv_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
-Enum=launch_control_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
+Enum=dashboard_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
 
 {SIGNALS}
-Sig="system_ready" unsigned 1
-Sig="error" unsigned 1
-Sig="warning" unsigned 1
-Sig="quit_dc_on" unsigned 1
-Sig="dc_on" unsigned 1
-Sig="quit_inverter_on" unsigned 1
-Sig="inverter_on" unsigned 1
-Sig="derating_on" unsigned 1
-Sig="speed_rpm" signed 16
-Sig="torque_current" signed 16
-Sig="magnetizing_current" signed 16
-Sig="motor_temp" signed 16 /f:0.1
-Sig="inverter_temp" signed 16 /f:0.1
-Sig="diagnostic_number" unsigned 16
-Sig="igbt_temp" signed 16 /f:0.1
-Sig="dc_bus_voltage" unsigned 16
-Sig="motor_power" unsigned 32
-Sig="feedback_torque" signed 16
-Sig="inverter_enable" unsigned 1
-Sig="hv_enable" unsigned 1
-Sig="driver_enable" unsigned 1
-Sig="remove_error" unsigned 1
-Sig="speed_setpoint_rpm" signed 16
-Sig="positive_torque_limit" signed 16
-Sig="negative_torque_limit" signed 16
-Sig="torque_command" signed 16
-Sig="imd_ok_high" unsigned 1
-Sig="shutdown_b_above_threshold" unsigned 1
-Sig="bms_ok_high" unsigned 1
-Sig="shutdown_c_above_threshold" unsigned 1
-Sig="bspd_ok_high" unsigned 1
-Sig="shutdown_d_above_threshold" unsigned 1
-Sig="shoftware_ok_high" unsigned 1
-Sig="shutdown_e_above_threshold" unsigned 1
-Sig="mechanical_brake_active" unsigned 1
-Sig="no_accel_implausability" unsigned 1
-Sig="no_brake_implausability" unsigned 1
-Sig="brake_pedal_active" unsigned 1
-Sig="bspd_current_high" unsigned 1
-Sig="bspd_brake_high" unsigned 1
-Sig="no_accel_or_brake_implausability" unsigned 1
-Sig="ecu_state" unsigned 3 /e:ecu_stateE
-Sig="inverter_error" unsigned 1
-Sig="energy_meter_present" unsigned 1
-Sig="activate_buzzer" unsigned 1
-Sig="software_ok" unsigned 1
-Sig="launch_control_active" unsigned 1
-Sig="pack_charge_critical" unsigned 2
-Sig="max_torque" unsigned 8
-Sig="torque_mode" unsigned 8
-Sig="distance_traveled_m" unsigned 16 /f:0.01
-Sig="accel_pedal_1" unsigned 16
-Sig="accel_pedal_2" unsigned 16
-Sig="brake_pedal_1" unsigned 16
-Sig="brake_pedal_2" unsigned 16
-Sig="group_id" unsigned 4
-Sig="cell_1_balancing_status" unsigned 1
-Sig="cell_2_balancing_status" unsigned 1
-Sig="cell_3_balancing_status" unsigned 1
-Sig="cell_4_balancing_status" unsigned 1
-Sig="cell_5_balancing_status" unsigned 1
-Sig="cell_6_balancing_status" unsigned 1
-Sig="cell_7_balancing_status" unsigned 1
-Sig="cell_8_balancing_status" unsigned 1
-Sig="cell_9_balancing_status" unsigned 1
-Sig="cell_10_balancing_status" unsigned 1
-Sig="cell_11_balancing_status" unsigned 1
-Sig="cell_12_balancing_status" unsigned 1
-Sig="cell_13_balancing_status" unsigned 1
-Sig="cell_14_balancing_status" unsigned 1
-Sig="cell_15_balancing_status" unsigned 1
-Sig="cell_16_balancing_status" unsigned 1
-Sig="cell_17_balancing_status" unsigned 1
-Sig="cell_18_balancing_status" unsigned 1
-Sig="cell_19_balancing_status" unsigned 1
-Sig="cell_20_balancing_status" unsigned 1
-Sig="cell_21_balancing_status" unsigned 1
-Sig="cell_22_balancing_status" unsigned 1
-Sig="cell_23_balancing_status" unsigned 1
-Sig="cell_24_balancing_status" unsigned 1
-Sig="cell_25_balancing_status" unsigned 1
-Sig="cell_26_balancing_status" unsigned 1
-Sig="cell_27_balancing_status" unsigned 1
-Sig="cell_28_balancing_status" unsigned 1
-Sig="cell_29_balancing_status" unsigned 1
-Sig="cell_30_balancing_status" unsigned 1
-Sig="cell_31_balancing_status" unsigned 1
-Sig="cell_32_balancing_status" unsigned 1
-Sig="cell_33_balancing_status" unsigned 1
-Sig="cell_34_balancing_status" unsigned 1
-Sig="cell_35_balancing_status" unsigned 1
-Sig="cell_36_balancing_status" unsigned 1
-Sig="cell_37_balancing_status" unsigned 1
-Sig="cell_38_balancing_status" unsigned 1
-Sig="cell_39_balancing_status" unsigned 1
-Sig="cell_40_balancing_status" unsigned 1
-Sig="cell_41_balancing_status" unsigned 1
-Sig="cell_42_balancing_status" unsigned 1
-Sig="cell_43_balancing_status" unsigned 1
-Sig="cell_44_balancing_status" unsigned 1
-Sig="cell_45_balancing_status" unsigned 1
-Sig="cell_46_balancing_status" unsigned 1
-Sig="cell_47_balancing_status" unsigned 1
-Sig="cell_48_balancing_status" unsigned 1
-Sig="cell_49_balancing_status" unsigned 1
-Sig="cell_50_balancing_status" unsigned 1
-Sig="cell_51_balancing_status" unsigned 1
-Sig="cell_52_balancing_status" unsigned 1
-Sig="cell_53_balancing_status" unsigned 1
-Sig="cell_54_balancing_status" unsigned 1
-Sig="cell_55_balancing_status" unsigned 1
-Sig="cell_56_balancing_status" unsigned 1
-Sig="cell_57_balancing_status" unsigned 1
-Sig="cell_58_balancing_status" unsigned 1
-Sig="cell_59_balancing_status" unsigned 1
-Sig="cell_60_balancing_status" unsigned 1
-Sig="pot_1" unsigned 16
-Sig="pot_2" unsigned 16
-Sig="pot_3" unsigned 16
-Sig="pot_4" unsigned 16
-Sig="pot_5" unsigned 16
-Sig="pot_6" unsigned 16
-Sig="steering_1" signed 16
-Sig="steering_2" unsigned 16
-Sig="hall_effect_current" signed 16
-Sig="glv_battery_voltage" unsigned 16
-Sig="average_temp" signed 16 /f:0.01
-Sig="low_temp" signed 16 /f:0.01
-Sig="high_temp" signed 16 /f:0.01
-Sig="ic_id" unsigned 8
-Sig="temp_0" signed 16 /f:0.01
-Sig="temp_1" signed 16 /f:0.01
-Sig="average_voltage" unsigned 16 /f:0.0001
-Sig="low_voltage" unsigned 16 /f:0.0001
-Sig="high_voltage" unsigned 16 /f:0.0001
-Sig="total_voltage" unsigned 16 /f:0.01
-Sig="voltage_0" unsigned 16 /f:0.0001
-Sig="voltage_1" unsigned 16 /f:0.0001
-Sig="voltage_2" unsigned 16 /f:0.0001
-Sig="thermistor_id_0" signed 16 /f:0.01
-Sig="thermistor_id_1" signed 16 /f:0.01
-Sig="thermistor_id_2" signed 16 /f:0.01
-Sig="state" unsigned 8
-Sig="overvoltage_error" unsigned 1
-Sig="undervoltage_error" unsigned 1
-Sig="total_voltage_high_error" unsigned 1
-Sig="discharge_overcurrent_error" unsigned 1
-Sig="charge_overcurrent_error" unsigned 1
-Sig="discharge_overtemp_error" unsigned 1
-Sig="charge_overtemp_error" unsigned 1
-Sig="undertemp_error" unsigned 1
-Sig="overtemp_error" unsigned 1
-Sig="current" signed 16 /f:0.01
-Sig="shutdown_g_above_threshold_error" unsigned 1
-Sig="shutdown_h_above_threshold_error" unsigned 1
-Sig="charger_enabled" unsigned 1
-Sig="total_charge" unsigned 32 /f:0.0001
-Sig="total_discharge" unsigned 32 /u:"Coulombs" /f:0.0001
-Sig="start_button" unsigned 1
-Sig="buzzer_active" unsigned 1
-Sig="ssok_above_threshold" unsigned 1
-Sig="shutdown_h_above_threshold" unsigned 1
-Sig="mark_button" unsigned 1
-Sig="mode_button" unsigned 1
-Sig="motor_controller_cycle_button" unsigned 1
-Sig="launch_ctrl_button_" unsigned 1
-Sig="torque_mode_button" unsigned 1
-Sig="led_dimmer_button" unsigned 1
-Sig="dial_state" unsigned 8 /e:dial_stateE
-Sig="ams_led" unsigned 2 /e:ams_ledE
-Sig="imd_led" unsigned 2 /e:imd_ledE
-Sig="mode_led" unsigned 2 /e:mode_ledE
-Sig="motor_controller_error_led" unsigned 2 /e:motor_controller_error_ledE
-Sig="start_status_led" unsigned 2 /e:start_status_ledE
-Sig="inertia_status_led" unsigned 2 /e:inertia_status_ledE
-Sig="mechanical_brake_led" unsigned 2 /e:mechanical_brake_ledE
-Sig="gen_purp_led" unsigned 2 /e:gen_purp_ledE
-Sig="bots_led" unsigned 2 /e:bots_ledE
-Sig="cockpit_brb_led" unsigned 2 /e:cockpit_brb_ledE
-Sig="crit_charge_led" unsigned 2 /e:crit_charge_ledE
-Sig="glv_led" unsigned 2 /e:glv_ledE
-Sig="launch_control_led" unsigned 2 /e:launch_control_ledE
-Sig="max_charging_voltage_high" unsigned 8
-Sig="max_charging_voltage_low" unsigned 8
-Sig="max_charging_current_high" unsigned 8
-Sig="max_charging_current_low" unsigned 8
-Sig="control" unsigned 8
-Sig="output_dc_voltage_high" unsigned 8
-Sig="output_dc_voltage_low" unsigned 8
-Sig="output_current_high" unsigned 8
-Sig="output_current_low" unsigned 8
-Sig="flags" unsigned 8
-Sig="input_ac_voltage_high" unsigned 8
-Sig="input_ac_voltage_low" unsigned 8
-Sig="voltage_gain" unsigned 4
-Sig="current_gain" unsigned 4
-Sig="overpower_error" unsigned 1
-Sig="logging" unsigned 1
-Sig="voltage" unsigned 32 /f:1.52587890625e-05
+Sig=system_ready unsigned 1
+Sig=error unsigned 1
+Sig=warning unsigned 1
+Sig=quit_dc_on unsigned 1
+Sig=dc_on unsigned 1
+Sig=quit_inverter_on unsigned 1
+Sig=inverter_on unsigned 1
+Sig=derating_on unsigned 1
+Sig=speed_rpm signed 16
+Sig=torque_current signed 16
+Sig=magnetizing_current signed 16
+Sig=motor_temp signed 16 /f:0.1
+Sig=inverter_temp signed 16 /f:0.1
+Sig=diagnostic_number unsigned 16
+Sig=igbt_temp signed 16 /f:0.1
+Sig=dc_bus_voltage unsigned 16
+Sig=motor_power unsigned 32
+Sig=feedback_torque signed 16
+Sig=inverter_enable unsigned 1
+Sig=hv_enable unsigned 1
+Sig=driver_enable unsigned 1
+Sig=remove_error unsigned 1
+Sig=speed_setpoint_rpm signed 16
+Sig=positive_torque_limit signed 16
+Sig=negative_torque_limit signed 16
+Sig=torque_command signed 16
+Sig=imd_ok_high unsigned 1
+Sig=shutdown_b_above_threshold unsigned 1
+Sig=bms_ok_high unsigned 1
+Sig=shutdown_c_above_threshold unsigned 1
+Sig=bspd_ok_high unsigned 1
+Sig=shutdown_d_above_threshold unsigned 1
+Sig=shoftware_ok_high unsigned 1
+Sig=shutdown_e_above_threshold unsigned 1
+Sig=mechanical_brake_active unsigned 1
+Sig=no_accel_implausability unsigned 1
+Sig=no_brake_implausability unsigned 1
+Sig=brake_pedal_active unsigned 1
+Sig=bspd_current_high unsigned 1
+Sig=bspd_brake_high unsigned 1
+Sig=no_accel_or_brake_implausability unsigned 1
+Sig=ecu_state unsigned 3 /e:ecu_stateE
+Sig=inverter_error unsigned 1
+Sig=energy_meter_present unsigned 1
+Sig=activate_buzzer unsigned 1
+Sig=software_ok unsigned 1
+Sig=launch_control_active unsigned 1
+Sig=pack_charge_critical unsigned 2
+Sig=max_torque unsigned 8
+Sig=torque_mode unsigned 8
+Sig=distance_traveled_m unsigned 16 /f:0.01
+Sig=accel_pedal_1 unsigned 16
+Sig=accel_pedal_2 unsigned 16
+Sig=brake_pedal_1 unsigned 16
+Sig=brake_pedal_2 unsigned 16
+Sig=group_id unsigned 4
+Sig=cell_1_balancing_status unsigned 1
+Sig=cell_2_balancing_status unsigned 1
+Sig=cell_3_balancing_status unsigned 1
+Sig=cell_4_balancing_status unsigned 1
+Sig=cell_5_balancing_status unsigned 1
+Sig=cell_6_balancing_status unsigned 1
+Sig=cell_7_balancing_status unsigned 1
+Sig=cell_8_balancing_status unsigned 1
+Sig=cell_9_balancing_status unsigned 1
+Sig=cell_10_balancing_status unsigned 1
+Sig=cell_11_balancing_status unsigned 1
+Sig=cell_12_balancing_status unsigned 1
+Sig=cell_13_balancing_status unsigned 1
+Sig=cell_14_balancing_status unsigned 1
+Sig=cell_15_balancing_status unsigned 1
+Sig=cell_16_balancing_status unsigned 1
+Sig=cell_17_balancing_status unsigned 1
+Sig=cell_18_balancing_status unsigned 1
+Sig=cell_19_balancing_status unsigned 1
+Sig=cell_20_balancing_status unsigned 1
+Sig=cell_21_balancing_status unsigned 1
+Sig=cell_22_balancing_status unsigned 1
+Sig=cell_23_balancing_status unsigned 1
+Sig=cell_24_balancing_status unsigned 1
+Sig=cell_25_balancing_status unsigned 1
+Sig=cell_26_balancing_status unsigned 1
+Sig=cell_27_balancing_status unsigned 1
+Sig=cell_28_balancing_status unsigned 1
+Sig=cell_29_balancing_status unsigned 1
+Sig=cell_30_balancing_status unsigned 1
+Sig=cell_31_balancing_status unsigned 1
+Sig=cell_32_balancing_status unsigned 1
+Sig=cell_33_balancing_status unsigned 1
+Sig=cell_34_balancing_status unsigned 1
+Sig=cell_35_balancing_status unsigned 1
+Sig=cell_36_balancing_status unsigned 1
+Sig=cell_37_balancing_status unsigned 1
+Sig=cell_38_balancing_status unsigned 1
+Sig=cell_39_balancing_status unsigned 1
+Sig=cell_40_balancing_status unsigned 1
+Sig=cell_41_balancing_status unsigned 1
+Sig=cell_42_balancing_status unsigned 1
+Sig=cell_43_balancing_status unsigned 1
+Sig=cell_44_balancing_status unsigned 1
+Sig=cell_45_balancing_status unsigned 1
+Sig=cell_46_balancing_status unsigned 1
+Sig=cell_47_balancing_status unsigned 1
+Sig=cell_48_balancing_status unsigned 1
+Sig=cell_49_balancing_status unsigned 1
+Sig=cell_50_balancing_status unsigned 1
+Sig=cell_51_balancing_status unsigned 1
+Sig=cell_52_balancing_status unsigned 1
+Sig=cell_53_balancing_status unsigned 1
+Sig=cell_54_balancing_status unsigned 1
+Sig=cell_55_balancing_status unsigned 1
+Sig=cell_56_balancing_status unsigned 1
+Sig=cell_57_balancing_status unsigned 1
+Sig=cell_58_balancing_status unsigned 1
+Sig=cell_59_balancing_status unsigned 1
+Sig=cell_60_balancing_status unsigned 1
+Sig=pot_1 unsigned 16
+Sig=pot_2 unsigned 16
+Sig=pot_3 unsigned 16
+Sig=pot_4 unsigned 16
+Sig=pot_5 unsigned 16
+Sig=pot_6 unsigned 16
+Sig=steering_1 signed 16
+Sig=steering_2 unsigned 16
+Sig=hall_effect_current signed 16
+Sig=glv_battery_voltage unsigned 16
+Sig=average_temp signed 16 /f:0.01
+Sig=low_temp signed 16 /f:0.01
+Sig=high_temp signed 16 /f:0.01
+Sig=ic_id unsigned 8
+Sig=temp_0 signed 16 /f:0.01
+Sig=temp_1 signed 16 /f:0.01
+Sig=average_voltage unsigned 16 /f:0.0001
+Sig=low_voltage unsigned 16 /f:0.0001
+Sig=high_voltage unsigned 16 /f:0.0001
+Sig=total_voltage unsigned 16 /f:0.01
+Sig=voltage_0 unsigned 16 /f:0.0001
+Sig=voltage_1 unsigned 16 /f:0.0001
+Sig=voltage_2 unsigned 16 /f:0.0001
+Sig=thermistor_id_0 signed 16 /f:0.01
+Sig=thermistor_id_1 signed 16 /f:0.01
+Sig=thermistor_id_2 signed 16 /f:0.01
+Sig=state unsigned 8
+Sig=overvoltage_error unsigned 1
+Sig=undervoltage_error unsigned 1
+Sig=total_voltage_high_error unsigned 1
+Sig=discharge_overcurrent_error unsigned 1
+Sig=charge_overcurrent_error unsigned 1
+Sig=discharge_overtemp_error unsigned 1
+Sig=charge_overtemp_error unsigned 1
+Sig=undertemp_error unsigned 1
+Sig=overtemp_error unsigned 1
+Sig=current signed 16 /f:0.01
+Sig=shutdown_g_above_threshold_error unsigned 1
+Sig=shutdown_h_above_threshold_error unsigned 1
+Sig=charger_enabled unsigned 1
+Sig=total_charge unsigned 32 /f:0.0001
+Sig=total_discharge unsigned 32 /u:Coulombs /f:0.0001
+Sig=start_button unsigned 1
+Sig=buzzer_active unsigned 1
+Sig=ssok_above_threshold unsigned 1
+Sig=shutdown_h_above_threshold unsigned 1
+Sig=mark_button unsigned 1
+Sig=mode_button unsigned 1
+Sig=motor_controller_cycle_button unsigned 1
+Sig=launch_ctrl_button unsigned 1
+Sig=torque_mode_button unsigned 1
+Sig=led_dimmer_button unsigned 1
+Sig=dial_state unsigned 8 /e:dial_stateE
+Sig=ams_led unsigned 2
+Sig=imd_led unsigned 2
+Sig=mode_led unsigned 2
+Sig=motor_controller_error_led unsigned 2
+Sig=start_status_led unsigned 2
+Sig=inertia_status_led unsigned 2
+Sig=mechanical_brake_led unsigned 2
+Sig=gen_purp_led unsigned 2
+Sig=bots_led unsigned 2
+Sig=cockpit_brb_led unsigned 2
+Sig=crit_charge_led unsigned 2
+Sig=glv_led unsigned 2
+Sig=launch_control_led unsigned 2
+Sig=max_charging_voltage_high unsigned 8
+Sig=max_charging_voltage_low unsigned 8
+Sig=max_charging_current_high unsigned 8
+Sig=max_charging_current_low unsigned 8
+Sig=control unsigned 8
+Sig=output_dc_voltage_high unsigned 8
+Sig=output_dc_voltage_low unsigned 8
+Sig=output_current_high unsigned 8
+Sig=output_current_low unsigned 8
+Sig=flags unsigned 8
+Sig=input_ac_voltage_high unsigned 8
+Sig=input_ac_voltage_low unsigned 8
+Sig=voltage_gain unsigned 4
+Sig=current_gain unsigned 4
+Sig=overpower_error unsigned 1
+Sig=logging unsigned 1
+Sig=voltage unsigned 32 /f:1.52587890625E-005
 
 {SENDRECEIVE}
-["ID_BMS_BALANCING_STATUS"]
+
+[BMS_BALANCING_STATUS]
 ID=0DEh
 Len=8
-Sig="group_id" 0
-Sig="cell_1_balancing_status" 4
-Sig="cell_2_balancing_status" 5
-Sig="cell_3_balancing_status" 6
-Sig="cell_4_balancing_status" 7
-Sig="cell_5_balancing_status" 8
-Sig="cell_6_balancing_status" 9
-Sig="cell_7_balancing_status" 10
-Sig="cell_8_balancing_status" 11
-Sig="cell_9_balancing_status" 12
-Sig="cell_10_balancing_status" 13
-Sig="cell_11_balancing_status" 14
-Sig="cell_12_balancing_status" 15
-Sig="cell_13_balancing_status" 16
-Sig="cell_14_balancing_status" 17
-Sig="cell_15_balancing_status" 18
-Sig="cell_16_balancing_status" 19
-Sig="cell_17_balancing_status" 20
-Sig="cell_18_balancing_status" 21
-Sig="cell_19_balancing_status" 22
-Sig="cell_20_balancing_status" 23
-Sig="cell_21_balancing_status" 24
-Sig="cell_22_balancing_status" 25
-Sig="cell_23_balancing_status" 26
-Sig="cell_24_balancing_status" 27
-Sig="cell_25_balancing_status" 28
-Sig="cell_26_balancing_status" 29
-Sig="cell_27_balancing_status" 30
-Sig="cell_28_balancing_status" 31
-Sig="cell_29_balancing_status" 32
-Sig="cell_30_balancing_status" 33
-Sig="cell_31_balancing_status" 34
-Sig="cell_32_balancing_status" 35
-Sig="cell_33_balancing_status" 36
-Sig="cell_34_balancing_status" 37
-Sig="cell_35_balancing_status" 38
-Sig="cell_36_balancing_status" 39
-Sig="cell_37_balancing_status" 40
-Sig="cell_38_balancing_status" 41
-Sig="cell_39_balancing_status" 42
-Sig="cell_40_balancing_status" 43
-Sig="cell_41_balancing_status" 44
-Sig="cell_42_balancing_status" 45
-Sig="cell_43_balancing_status" 46
-Sig="cell_44_balancing_status" 47
-Sig="cell_45_balancing_status" 48
-Sig="cell_46_balancing_status" 49
-Sig="cell_47_balancing_status" 50
-Sig="cell_48_balancing_status" 51
-Sig="cell_49_balancing_status" 52
-Sig="cell_50_balancing_status" 53
-Sig="cell_51_balancing_status" 54
-Sig="cell_52_balancing_status" 55
-Sig="cell_53_balancing_status" 56
-Sig="cell_54_balancing_status" 57
-Sig="cell_55_balancing_status" 58
-Sig="cell_56_balancing_status" 59
-Sig="cell_57_balancing_status" 60
-Sig="cell_58_balancing_status" 61
-Sig="cell_59_balancing_status" 62
-Sig="cell_60_balancing_status" 63
+Sig=group_id 0
+Sig=cell_1_balancing_status 4
+Sig=cell_2_balancing_status 5
+Sig=cell_3_balancing_status 6
+Sig=cell_4_balancing_status 7
+Sig=cell_5_balancing_status 8
+Sig=cell_6_balancing_status 9
+Sig=cell_7_balancing_status 10
+Sig=cell_8_balancing_status 11
+Sig=cell_9_balancing_status 12
+Sig=cell_10_balancing_status 13
+Sig=cell_11_balancing_status 14
+Sig=cell_12_balancing_status 15
+Sig=cell_13_balancing_status 16
+Sig=cell_14_balancing_status 17
+Sig=cell_15_balancing_status 18
+Sig=cell_16_balancing_status 19
+Sig=cell_17_balancing_status 20
+Sig=cell_18_balancing_status 21
+Sig=cell_19_balancing_status 22
+Sig=cell_20_balancing_status 23
+Sig=cell_21_balancing_status 24
+Sig=cell_22_balancing_status 25
+Sig=cell_23_balancing_status 26
+Sig=cell_24_balancing_status 27
+Sig=cell_25_balancing_status 28
+Sig=cell_26_balancing_status 29
+Sig=cell_27_balancing_status 30
+Sig=cell_28_balancing_status 31
+Sig=cell_29_balancing_status 32
+Sig=cell_30_balancing_status 33
+Sig=cell_31_balancing_status 34
+Sig=cell_32_balancing_status 35
+Sig=cell_33_balancing_status 36
+Sig=cell_34_balancing_status 37
+Sig=cell_35_balancing_status 38
+Sig=cell_36_balancing_status 39
+Sig=cell_37_balancing_status 40
+Sig=cell_38_balancing_status 41
+Sig=cell_39_balancing_status 42
+Sig=cell_40_balancing_status 43
+Sig=cell_41_balancing_status 44
+Sig=cell_42_balancing_status 45
+Sig=cell_43_balancing_status 46
+Sig=cell_44_balancing_status 47
+Sig=cell_45_balancing_status 48
+Sig=cell_46_balancing_status 49
+Sig=cell_47_balancing_status 50
+Sig=cell_48_balancing_status 51
+Sig=cell_49_balancing_status 52
+Sig=cell_50_balancing_status 53
+Sig=cell_51_balancing_status 54
+Sig=cell_52_balancing_status 55
+Sig=cell_53_balancing_status 56
+Sig=cell_54_balancing_status 57
+Sig=cell_55_balancing_status 58
+Sig=cell_56_balancing_status 59
+Sig=cell_57_balancing_status 60
+Sig=cell_58_balancing_status 61
+Sig=cell_59_balancing_status 62
+Sig=cell_60_balancing_status 63
 
-["ID_BMS_COULOMB_COUNTS"]
+[BMS_COULOMB_COUNTS]
 ID=0E2h
 Len=8
-Sig="total_charge" 0
-Sig="total_discharge" 32
+Sig=total_charge 0
+Sig=total_discharge 32
 
-["ID_BMS_DETAILED_TEMPERATURES"]
+[BMS_DETAILED_TEMPS]
 ID=0DAh
 Len=7
-Sig="ic_id" 0
-Sig="group_id" 4
-Sig="thermistor_id_0" 8
-Sig="thermistor_id_1" 24
-Sig="thermistor_id_2" 40
+Sig=ic_id 0
+Sig=group_id 4
+Sig=thermistor_id_0 8
+Sig=thermistor_id_1 24
+Sig=thermistor_id_2 40
 
-["ID_BMS_DETAILED_VOLTAGES"]
+[BMS_DETAILED_VOLTAGES]
 ID=0D8h
 Len=7
-Sig="group_id" 0
-Sig="ic_id" 4
-Sig="voltage_0" 8
-Sig="voltage_1" 24
-Sig="voltage_2" 40
+Sig=group_id 0
+Sig=ic_id 4
+Sig=voltage_0 8
+Sig=voltage_1 24
+Sig=voltage_2 40
 
-["ID_BMS_ONBOARD_DETAILED_TEMPERATURES"]
+[BMS_ONBOARD_DETAILED_TEMPS]
 ID=0D6h
 Len=5
-Sig="ic_id" 0
-Sig="temp_0" 8
-Sig="temp_1" 24
+Sig=ic_id 0
+Sig=temp_0 8
+Sig=temp_1 24
 
-["ID_BMS_ONBOARD_TEMPERATURES"]
+[BMS_ONBOARD_TEMPS]
 ID=0D5h
 Len=6
-Sig="average_temp" 0
-Sig="low_temp" 16
-Sig="high_temp" 32
+Sig=average_temp 0
+Sig=low_temp 16
+Sig=high_temp 32
 
-["ID_BMS_STATUS"]
+[BMS_STATUS]
 ID=0DBh
 Len=6
-Sig="state" 0
-Sig="overvoltage_error" 8
-Sig="undervoltage_error" 9
-Sig="total_voltage_high_error" 10
-Sig="discharge_overcurrent_error" 11
-Sig="charge_overcurrent_error" 12
-Sig="discharge_overtemp_error" 13
-Sig="charge_overtemp_error" 14
-Sig="undertemp_error" 15
-Sig="overtemp_error" 16
-Sig="current" 24
-Sig="shutdown_g_above_threshold_error" 40
-Sig="shutdown_h_above_threshold_error" 41
+Sig=state 0
+Sig=overvoltage_error 8
+Sig=undervoltage_error 9
+Sig=total_voltage_high_error 10
+Sig=discharge_overcurrent_error 11
+Sig=charge_overcurrent_error 12
+Sig=discharge_overtemp_error 13
+Sig=charge_overtemp_error 14
+Sig=undertemp_error 15
+Sig=overtemp_error 16
+Sig=current 24
+Sig=shutdown_g_above_threshold_error 40
+Sig=shutdown_h_above_threshold_error 41
 
-["ID_BMS_TEMPERATURES"]
+[BMS_TEMPS]
 ID=0D9h
 Len=6
-Sig="average_temp" 0
-Sig="low_temp" 16
-Sig="high_temp" 32
+Sig=average_temp 0
+Sig=low_temp 16
+Sig=high_temp 32
 
-["ID_BMS_VOLTAGES"]
+[BMS_VOLTAGES]
 ID=0D7h
 Len=8
-Sig="average_voltage" 0
-Sig="low_voltage" 16
-Sig="high_voltage" 32
-Sig="total_voltage" 48
+Sig=average_voltage 0
+Sig=low_voltage 16
+Sig=high_voltage 32
+Sig=total_voltage 48
 
-["ID_CCU_STATUS"]
+[CCU_STATUS]
 ID=0DDh
 Len=1
-Sig="charger_enabled" 0
+Sig=charger_enabled 0
 
-["ID_CHARGER_CONTROL"]
+[CHARGER_CONTROL]
 ID=1806E5F4h
 Type=Extended
 Len=5
-Sig="max_charging_voltage_high" 0
-Sig="max_charging_voltage_low" 8
-Sig="max_charging_current_high" 16
-Sig="max_charging_current_low" 24
-Sig="control" 32
+Sig=max_charging_voltage_high 0
+Sig=max_charging_voltage_low 8
+Sig=max_charging_current_high 16
+Sig=max_charging_current_low 24
+Sig=control 32
 
-["ID_CHARGER_DATA"]
+[CHARGER_DATA]
 ID=18FF50E5h
 Type=Extended
 Len=7
-Sig="output_dc_voltage_high" 0
-Sig="output_dc_voltage_low" 8
-Sig="output_current_high" 16
-Sig="output_current_low" 24
-Sig="flags" 32
-Sig="input_ac_voltage_high" 40
-Sig="input_ac_voltage_low" 48
+Sig=output_dc_voltage_high 0
+Sig=output_dc_voltage_low 8
+Sig=output_current_high 16
+Sig=output_current_low 24
+Sig=flags 32
+Sig=input_ac_voltage_high 40
+Sig=input_ac_voltage_low 48
 
-["ID_DASHBOARD_STATUS"]
-ID=0EBh
-Len=7
-Sig="start_button" 0
-Sig="buzzer_active" 1
-Sig="ssok_above_threshold" 2
-Sig="shutdown_h_above_threshold" 3
-Sig="mark_button" 8
-Sig="mode_button" 9
-Sig="motor_controller_cycle_button" 10
-Sig="launch_ctrl_button_" 11
-Sig="torque_mode_button" 12
-Sig="led_dimmer_button" 13
-Sig="dial_state" 16
-Sig="ams_led" 24
-Sig="imd_led" 26
-Sig="mode_led" 28
-Sig="motor_controller_error_led" 30
-Sig="start_status_led" 32
-Sig="inertia_status_led" 34
-Sig="mechanical_brake_led" 36
-Sig="gen_purp_led" 38
-Sig="bots_led" 40
-Sig="cockpit_brb_led" 42
-Sig="crit_charge_led" 44
-Sig="glv_led" 46
-Sig="launch_control_led" 48
-
-["ID_EM_MEASUREMENT"]
+[EM_MEASUREMENT]
 ID=400h
 Len=8
-Sig="voltage" 0
-Sig="current" 32
+Sig=voltage 0
+Sig=current 32
 
-["ID_EM_STATUS"]
+[EM_STATUS]
 ID=100h
 Len=8
-Sig="voltage_gain" 0
-Sig="current_gain" 4
-Sig="overvoltage_error" 8
-Sig="overpower_error" 9
-Sig="logging" 10
+Sig=voltage_gain 0
+Sig=current_gain 4
+Sig=overvoltage_error 8
+Sig=overpower_error 9
+Sig=logging 10
 
-["ID_MC1_ENERGY"]
+[MC1_ENERGY]
 ID=0A8h
 Len=8
-Sig="dc_bus_voltage" 0
-Sig="motor_power" 16
-Sig="feedback_torque" 48
+Sig=dc_bus_voltage 0
+Sig=motor_power 16
+Sig=feedback_torque 48
 
-["ID_MC1_SETPOINTS_COMMAND"]
+[MC1_SETPOINTS_COMMAND]
 ID=0B0h
 Len=8
-Sig="inverter_enable" 8
-Sig="hv_enable" 9
-Sig="driver_enable" 10
-Sig="remove_error" 11
-Sig="speed_setpoint_rpm" 16
-Sig="positive_torque_limit" 32
-Sig="negative_torque_limit" 48
+Sig=inverter_enable 8
+Sig=hv_enable 9
+Sig=driver_enable 10
+Sig=remove_error 11
+Sig=speed_setpoint_rpm 16
+Sig=positive_torque_limit 32
+Sig=negative_torque_limit 48
 
-["ID_MC1_STATUS"]
+[MC1_STATUS]
 ID=0A0h
 Len=8
-Sig="system_ready" 8
-Sig="error" 9
-Sig="warning" 10
-Sig="quit_dc_on" 11
-Sig="dc_on" 12
-Sig="quit_inverter_on" 13
-Sig="inverter_on" 14
-Sig="derating_on" 15
-Sig="speed_rpm" 16
-Sig="torque_current" 32
-Sig="magnetizing_current" 48
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=speed_rpm 16
+Sig=torque_current 32
+Sig=magnetizing_current 48
 
-["ID_MC1_TEMPS"]
+[MC1_TEMPS]
 ID=0A4h
 Len=8
-Sig="motor_temp" 0
-Sig="inverter_temp" 16
-Sig="diagnostic_number" 32
-Sig="igbt_temp" 48
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=diagnostic_number 32
+Sig=igbt_temp 48
 
-["ID_MC1_TORQUE_COMMAND"]
+[MC1_TORQUE_COMMAND]
 ID=0B4h
 Len=2
-Sig="torque_command" 0
+Sig=torque_command 0
 
-["ID_MC2_ENERGY"]
+[MC2_ENERGY]
 ID=0A9h
 Len=8
-Sig="dc_bus_voltage" 0
-Sig="motor_power" 16
-Sig="feedback_torque" 48
+Sig=dc_bus_voltage 0
+Sig=motor_power 16
+Sig=feedback_torque 48
 
-["ID_MC2_SETPOINTS_COMMAND"]
+[MC2_SETPOINTS_COMMAND]
 ID=0B1h
 Len=8
-Sig="inverter_enable" 8
-Sig="hv_enable" 9
-Sig="driver_enable" 10
-Sig="remove_error" 11
-Sig="speed_setpoint_rpm" 16
-Sig="positive_torque_limit" 32
-Sig="negative_torque_limit" 48
+Sig=inverter_enable 8
+Sig=hv_enable 9
+Sig=driver_enable 10
+Sig=remove_error 11
+Sig=speed_setpoint_rpm 16
+Sig=positive_torque_limit 32
+Sig=negative_torque_limit 48
 
-["ID_MC2_STATUS"]
+[MC2_STATUS]
 ID=0A1h
 Len=8
-Sig="system_ready" 8
-Sig="error" 9
-Sig="warning" 10
-Sig="quit_dc_on" 11
-Sig="dc_on" 12
-Sig="quit_inverter_on" 13
-Sig="inverter_on" 14
-Sig="derating_on" 15
-Sig="speed_rpm" 16
-Sig="torque_current" 32
-Sig="magnetizing_current" 48
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=speed_rpm 16
+Sig=torque_current 32
+Sig=magnetizing_current 48
 
-["ID_MC2_TEMPS"]
+[MC2_TEMPS]
 ID=0A5h
 Len=8
-Sig="motor_temp" 0
-Sig="inverter_temp" 16
-Sig="diagnostic_number" 32
-Sig="igbt_temp" 48
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=diagnostic_number 32
+Sig=igbt_temp 48
 
-["ID_MC2_TORQUE_COMMAND"]
+[MC2_TORQUE_COMMAND]
 ID=0B5h
 Len=2
-Sig="torque_command" 0
+Sig=torque_command 0
 
-["ID_MC3_ENERGY"]
+[MC3_ENERGY]
 ID=0AAh
 Len=8
-Sig="dc_bus_voltage" 0
-Sig="motor_power" 16
-Sig="feedback_torque" 48
+Sig=dc_bus_voltage 0
+Sig=motor_power 16
+Sig=feedback_torque 48
 
-["ID_MC3_SETPOINTS_COMMAND"]
+[MC3_SETPOINTS_COMMAND]
 ID=0B2h
 Len=8
-Sig="inverter_enable" 8
-Sig="hv_enable" 9
-Sig="driver_enable" 10
-Sig="remove_error" 11
-Sig="speed_setpoint_rpm" 16
-Sig="positive_torque_limit" 32
-Sig="negative_torque_limit" 48
+Sig=inverter_enable 8
+Sig=hv_enable 9
+Sig=driver_enable 10
+Sig=remove_error 11
+Sig=speed_setpoint_rpm 16
+Sig=positive_torque_limit 32
+Sig=negative_torque_limit 48
 
-["ID_MC3_STATUS"]
+[MC3_STATUS]
 ID=0A2h
 Len=8
-Sig="system_ready" 8
-Sig="error" 9
-Sig="warning" 10
-Sig="quit_dc_on" 11
-Sig="dc_on" 12
-Sig="quit_inverter_on" 13
-Sig="inverter_on" 14
-Sig="derating_on" 15
-Sig="speed_rpm" 16
-Sig="torque_current" 32
-Sig="magnetizing_current" 48
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=speed_rpm 16
+Sig=torque_current 32
+Sig=magnetizing_current 48
 
-["ID_MC3_TEMPS"]
+[MC3_TEMPS]
 ID=0A6h
 Len=8
-Sig="motor_temp" 0
-Sig="inverter_temp" 16
-Sig="diagnostic_number" 32
-Sig="igbt_temp" 48
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=diagnostic_number 32
+Sig=igbt_temp 48
 
-["ID_MC3_TORQUE_COMMAND"]
+[MC3_TORQUE_COMMAND]
 ID=0B6h
 Len=2
-Sig="torque_command" 0
+Sig=torque_command 0
 
-["ID_MC4_ENERGY"]
+[MC4_ENERGY]
 ID=0ABh
 Len=8
-Sig="dc_bus_voltage" 0
-Sig="motor_power" 16
-Sig="feedback_torque" 48
+Sig=dc_bus_voltage 0
+Sig=motor_power 16
+Sig=feedback_torque 48
 
-["ID_MC4_SETPOINTS_COMMAND"]
+[MC4_SETPOINTS_COMMAND]
 ID=0B3h
 Len=8
-Sig="inverter_enable" 8
-Sig="hv_enable" 9
-Sig="driver_enable" 10
-Sig="remove_error" 11
-Sig="speed_setpoint_rpm" 16
-Sig="positive_torque_limit" 32
-Sig="negative_torque_limit" 48
+Sig=inverter_enable 8
+Sig=hv_enable 9
+Sig=driver_enable 10
+Sig=remove_error 11
+Sig=speed_setpoint_rpm 16
+Sig=positive_torque_limit 32
+Sig=negative_torque_limit 48
 
-["ID_MC4_STATUS"]
+[MC4_STATUS]
 ID=0A3h
 Len=8
-Sig="system_ready" 8
-Sig="error" 9
-Sig="warning" 10
-Sig="quit_dc_on" 11
-Sig="dc_on" 12
-Sig="quit_inverter_on" 13
-Sig="inverter_on" 14
-Sig="derating_on" 15
-Sig="speed_rpm" 16
-Sig="torque_current" 32
-Sig="magnetizing_current" 48
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=speed_rpm 16
+Sig=torque_current 32
+Sig=magnetizing_current 48
 
-["ID_MC4_TEMPS"]
+[MC4_TEMPS]
 ID=0A7h
 Len=8
-Sig="motor_temp" 0
-Sig="inverter_temp" 16
-Sig="diagnostic_number" 32
-Sig="igbt_temp" 48
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=diagnostic_number 32
+Sig=igbt_temp 48
 
-["ID_MC4_TORQUE_COMMAND"]
+[MC4_TORQUE_COMMAND]
 ID=0B7h
 Len=2
-Sig="torque_command" 0
+Sig=torque_command 0
 
-["ID_MCU_ANALOG_READINGS"]
+[MCU_ANALOG_READINGS]
 ID=0CCh
 Len=8
-Sig="steering_1" 0
-Sig="steering_2" 16
-Sig="hall_effect_current" 32
-Sig="glv_battery_voltage" 48
+Sig=steering_1 0
+Sig=steering_2 16
+Sig=hall_effect_current 32
+Sig=glv_battery_voltage 48
 
-["ID_MCU_FRONT_POTS"]
+[MCU_FRONT_POTS]
 ID=0C6h
 Len=6
-Sig="pot_1" 0
-Sig="pot_2" 16
-Sig="pot_3" 32
+Sig=pot_1 0
+Sig=pot_2 16
+Sig=pot_3 32
 
-["ID_MCU_LOAD_CELLS"]
+[MCU_LOAD_CELLS]
 ID=0C5h
 Len=8
-Sig="group_id" 0
-Sig="cell_1_balancing_status" 4
-Sig="cell_2_balancing_status" 5
-Sig="cell_3_balancing_status" 6
-Sig="cell_4_balancing_status" 7
-Sig="cell_5_balancing_status" 8
-Sig="cell_6_balancing_status" 9
-Sig="cell_7_balancing_status" 10
-Sig="cell_8_balancing_status" 11
-Sig="cell_9_balancing_status" 12
-Sig="cell_10_balancing_status" 13
-Sig="cell_11_balancing_status" 14
-Sig="cell_12_balancing_status" 15
-Sig="cell_13_balancing_status" 16
-Sig="cell_14_balancing_status" 17
-Sig="cell_15_balancing_status" 18
-Sig="cell_16_balancing_status" 19
-Sig="cell_17_balancing_status" 20
-Sig="cell_18_balancing_status" 21
-Sig="cell_19_balancing_status" 22
-Sig="cell_20_balancing_status" 23
-Sig="cell_21_balancing_status" 24
-Sig="cell_22_balancing_status" 25
-Sig="cell_23_balancing_status" 26
-Sig="cell_24_balancing_status" 27
-Sig="cell_25_balancing_status" 28
-Sig="cell_26_balancing_status" 29
-Sig="cell_27_balancing_status" 30
-Sig="cell_28_balancing_status" 31
-Sig="cell_29_balancing_status" 32
-Sig="cell_30_balancing_status" 33
-Sig="cell_31_balancing_status" 34
-Sig="cell_32_balancing_status" 35
-Sig="cell_33_balancing_status" 36
-Sig="cell_34_balancing_status" 37
-Sig="cell_35_balancing_status" 38
-Sig="cell_36_balancing_status" 39
-Sig="cell_37_balancing_status" 40
-Sig="cell_38_balancing_status" 41
-Sig="cell_39_balancing_status" 42
-Sig="cell_40_balancing_status" 43
-Sig="cell_41_balancing_status" 44
-Sig="cell_42_balancing_status" 45
-Sig="cell_43_balancing_status" 46
-Sig="cell_44_balancing_status" 47
-Sig="cell_45_balancing_status" 48
-Sig="cell_46_balancing_status" 49
-Sig="cell_47_balancing_status" 50
-Sig="cell_48_balancing_status" 51
-Sig="cell_49_balancing_status" 52
-Sig="cell_50_balancing_status" 53
-Sig="cell_51_balancing_status" 54
-Sig="cell_52_balancing_status" 55
-Sig="cell_53_balancing_status" 56
-Sig="cell_54_balancing_status" 57
-Sig="cell_55_balancing_status" 58
-Sig="cell_56_balancing_status" 59
-Sig="cell_57_balancing_status" 60
-Sig="cell_58_balancing_status" 61
-Sig="cell_59_balancing_status" 62
-Sig="cell_60_balancing_status" 63
+Sig=group_id 0
+Sig=cell_1_balancing_status 4
+Sig=cell_2_balancing_status 5
+Sig=cell_3_balancing_status 6
+Sig=cell_4_balancing_status 7
+Sig=cell_5_balancing_status 8
+Sig=cell_6_balancing_status 9
+Sig=cell_7_balancing_status 10
+Sig=cell_8_balancing_status 11
+Sig=cell_9_balancing_status 12
+Sig=cell_10_balancing_status 13
+Sig=cell_11_balancing_status 14
+Sig=cell_12_balancing_status 15
+Sig=cell_13_balancing_status 16
+Sig=cell_14_balancing_status 17
+Sig=cell_15_balancing_status 18
+Sig=cell_16_balancing_status 19
+Sig=cell_17_balancing_status 20
+Sig=cell_18_balancing_status 21
+Sig=cell_19_balancing_status 22
+Sig=cell_20_balancing_status 23
+Sig=cell_21_balancing_status 24
+Sig=cell_22_balancing_status 25
+Sig=cell_23_balancing_status 26
+Sig=cell_24_balancing_status 27
+Sig=cell_25_balancing_status 28
+Sig=cell_26_balancing_status 29
+Sig=cell_27_balancing_status 30
+Sig=cell_28_balancing_status 31
+Sig=cell_29_balancing_status 32
+Sig=cell_30_balancing_status 33
+Sig=cell_31_balancing_status 34
+Sig=cell_32_balancing_status 35
+Sig=cell_33_balancing_status 36
+Sig=cell_34_balancing_status 37
+Sig=cell_35_balancing_status 38
+Sig=cell_36_balancing_status 39
+Sig=cell_37_balancing_status 40
+Sig=cell_38_balancing_status 41
+Sig=cell_39_balancing_status 42
+Sig=cell_40_balancing_status 43
+Sig=cell_41_balancing_status 44
+Sig=cell_42_balancing_status 45
+Sig=cell_43_balancing_status 46
+Sig=cell_44_balancing_status 47
+Sig=cell_45_balancing_status 48
+Sig=cell_46_balancing_status 49
+Sig=cell_47_balancing_status 50
+Sig=cell_48_balancing_status 51
+Sig=cell_49_balancing_status 52
+Sig=cell_50_balancing_status 53
+Sig=cell_51_balancing_status 54
+Sig=cell_52_balancing_status 55
+Sig=cell_53_balancing_status 56
+Sig=cell_54_balancing_status 57
+Sig=cell_55_balancing_status 58
+Sig=cell_56_balancing_status 59
+Sig=cell_57_balancing_status 60
+Sig=cell_58_balancing_status 61
+Sig=cell_59_balancing_status 62
+Sig=cell_60_balancing_status 63
 
-["ID_MCU_PEDAL_READINGS"]
+[MCU_PEDAL_READINGS]
 ID=0C4h
 Len=8
-Sig="accel_pedal_1" 0
-Sig="accel_pedal_2" 16
-Sig="brake_pedal_1" 32
-Sig="brake_pedal_2" 48
+Sig=accel_pedal_1 0
+Sig=accel_pedal_2 16
+Sig=brake_pedal_1 32
+Sig=brake_pedal_2 48
 
-["ID_MCU_REAR_POTS"]
+[MCU_REAR_POTS]
 ID=0C7h
 Len=6
-Sig="pot_4" 0
-Sig="pot_5" 16
-Sig="pot_6" 32
+Sig=pot_4 0
+Sig=pot_5 16
+Sig=pot_6 32
 
-["ID_MCU_STATUS"]
+[MCU_STATUS]
 ID=0C3h
 Len=8
-Sig="imd_ok_high" 0
-Sig="shutdown_b_above_threshold" 1
-Sig="bms_ok_high" 2
-Sig="shutdown_c_above_threshold" 3
-Sig="bspd_ok_high" 4
-Sig="shutdown_d_above_threshold" 5
-Sig="shoftware_ok_high" 6
-Sig="shutdown_e_above_threshold" 7
-Sig="mechanical_brake_active" 8
-Sig="no_accel_implausability" 9
-Sig="no_brake_implausability" 10
-Sig="brake_pedal_active" 11
-Sig="bspd_current_high" 12
-Sig="bspd_brake_high" 13
-Sig="no_accel_or_brake_implausability" 14
-Sig="ecu_state" 16
-Sig="inverter_error" 19
-Sig="energy_meter_present" 20
-Sig="activate_buzzer" 21
-Sig="software_ok" 22
-Sig="launch_control_active" 23
-Sig="pack_charge_critical" 24
-Sig="max_torque" 32
-Sig="torque_mode" 40
-Sig="distance_traveled_m" 48
+Sig=imd_ok_high 0
+Sig=shutdown_b_above_threshold 1
+Sig=bms_ok_high 2
+Sig=shutdown_c_above_threshold 3
+Sig=bspd_ok_high 4
+Sig=shutdown_d_above_threshold 5
+Sig=shoftware_ok_high 6
+Sig=shutdown_e_above_threshold 7
+Sig=mechanical_brake_active 8
+Sig=no_accel_implausability 9
+Sig=no_brake_implausability 10
+Sig=brake_pedal_active 11
+Sig=bspd_current_high 12
+Sig=bspd_brake_high 13
+Sig=no_accel_or_brake_implausability 14
+Sig=ecu_state 16
+Sig=inverter_error 19
+Sig=energy_meter_present 20
+Sig=activate_buzzer 21
+Sig=software_ok 22
+Sig=launch_control_active 23
+Sig=pack_charge_critical 24
+Sig=max_torque 32
+Sig=torque_mode 40
+Sig=distance_traveled_m 48
 
+[DASHBOARD_STATE]
+ID=0ECh
+Len=7
+Sig=start_button 0
+Sig=buzzer_active 1
+Sig=ssok_above_threshold 2
+Sig=shutdown_h_above_threshold 3
+Sig=mark_button 8
+Sig=mode_button 9
+Sig=motor_controller_cycle_button 10
+Sig=launch_ctrl_button 11
+Sig=torque_mode_button 12
+Sig=led_dimmer_button 13
+Sig=dial_state 16
+
+[DASHBOARD_MCU_STATE]
+ID=0EBh
+Len=7
+Sig=buzzer_active 1
+Sig=dial_state 16
+Sig=ams_led 24
+Sig=imd_led 26
+Sig=mode_led 28
+Sig=motor_controller_error_led 30
+Sig=start_status_led 32
+Sig=inertia_status_led 34
+Sig=mechanical_brake_led 36
+Sig=gen_purp_led 38
+Sig=bots_led 40
+Sig=cockpit_brb_led 42
+Sig=crit_charge_led 44
+Sig=glv_led 46
+Sig=launch_control_led 48
