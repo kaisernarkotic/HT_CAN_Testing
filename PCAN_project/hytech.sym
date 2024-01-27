@@ -739,7 +739,9 @@ Sig=prev_lap_time 24
 Sig=lap_clock_state 48
 
 [TCU_DRIVER_MSG]
-ID=094h
-Len=4
+ID=094h // TCU_DRIVER_MSG contains a signal that corresponds to a preset list of messages on the dashboard. It also includes two variables to customize the contents of the message with numerical values. It also includes the target lap time which is determined by the
+Len=8
 Sig=driver_message 0
-Sig=target_lap_time 8
+Sig=target_lap_time 40
+Var=driver_msg_var_1 unsigned 8,16 /max:1
+Var=driver_msg_var_2 unsigned 24,16 /max:1
