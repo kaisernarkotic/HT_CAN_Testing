@@ -205,7 +205,6 @@ Sig=voltage_gain unsigned 4
 Sig=current_gain unsigned 4
 Sig=overpower_error unsigned 1
 Sig=logging unsigned 1
-Sig=voltage unsigned 32 /f:1.52587890625E-005
 Sig=best_lap_time unsigned 24 /u:ms
 Sig=prev_lap_time unsigned 24 /u:ms /ln:"previous_lap_time"
 Sig=lap_clock_state unsigned 8
@@ -287,21 +286,21 @@ Sig=total_discharge 32
 
 [BMS_DETAILED_TEMPS]
 ID=0DAh
-Len=7
-Sig=ic_id 0
-Sig=group_id 4
-Sig=thermistor_id_0 8
-Sig=thermistor_id_1 24
-Sig=thermistor_id_2 40
+Len=8
+Sig=ic_id 8
+Sig=group_id 0
+Sig=thermistor_id_0 16
+Sig=thermistor_id_1 32
+Sig=thermistor_id_2 48
 
 [BMS_DETAILED_VOLTAGES]
 ID=0D8h
-Len=7
+Len=8
 Sig=group_id 0
-Sig=ic_id 4
-Sig=voltage_0 8
-Sig=voltage_1 24
-Sig=voltage_2 40
+Sig=ic_id 8
+Sig=voltage_0 16
+Sig=voltage_1 32
+Sig=voltage_2 48
 
 [BMS_ONBOARD_DETAILED_TEMPS]
 ID=0D6h
@@ -379,7 +378,6 @@ Sig=input_ac_voltage_low 48
 [EM_MEASUREMENT]
 ID=400h
 Len=8
-Sig=voltage 0
 Sig=current 32
 
 [EM_STATUS]
@@ -741,7 +739,7 @@ Sig=lap_clock_state 48
 [TCU_DRIVER_MSG]
 ID=094h // TCU_DRIVER_MSG contains a signal that corresponds to a preset list of messages on the dashboard. It also includes two variables to customize the contents of the message with numerical values. It also includes the target lap time which is determined by the
 Len=8
-Sig=driver_message 0
-Sig=target_lap_time 40
 Var=driver_msg_var_1 unsigned 8,16 /max:1
 Var=driver_msg_var_2 unsigned 24,16 /max:1
+Sig=driver_message 0
+Sig=target_lap_time 40
