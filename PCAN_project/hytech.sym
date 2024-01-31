@@ -210,6 +210,8 @@ Sig=prev_lap_time unsigned 24 /u:ms /ln:"previous_lap_time"
 Sig=lap_clock_state unsigned 8
 Sig=target_lap_time unsigned 24 /u:ms // target lap time is the time determined by the pit crew that the driver should aim for. mostly useful for guiding the driver in endurance races.
 Sig=driver_message unsigned 8 // corresponds to a pre-set list of driver messages on the dashboard that the TCU can request to be displayed in event of comms failure
+Sig=left_shifter_button unsigned 1
+Sig=right_shifter_button unsigned 1
 
 {SENDRECEIVE}
 
