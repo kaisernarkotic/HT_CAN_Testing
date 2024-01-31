@@ -703,9 +703,9 @@ Sig=drive_buzzer 15
 ID=0ECh
 Len=3
 Sig=start_button 0
-Sig=drive_buzzer 10
-Sig=ssok_above_threshold 9
-Sig=shutdown_h_above_threshold 8
+Sig=drive_buzzer 11
+Sig=ssok_above_threshold 10
+Sig=shutdown_h_above_threshold 9
 Sig=mark_button 1
 Sig=mode_button 2
 Sig=motor_controller_cycle_button 3
@@ -713,6 +713,8 @@ Sig=launch_ctrl_button 4
 Sig=torque_mode_button 5
 Sig=led_dimmer_button 6
 Sig=dial_state 16
+Sig=left_shifter_button 7
+Sig=right_shifter_button 8
 
 [DASHBOARD_MCU_STATE]
 ID=0EBh
