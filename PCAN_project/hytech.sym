@@ -212,6 +212,10 @@ Sig=target_lap_time unsigned 24 /u:ms // target lap time is the time determined 
 Sig=driver_message unsigned 8 // corresponds to a pre-set list of driver messages on the dashboard that the TCU can request to be displayed in event of comms failure
 Sig=left_shifter_button unsigned 1
 Sig=right_shifter_button unsigned 1
+Sig=FL_load_cell unsigned 16 /u:lbs
+Sig=FR_load_cell unsigned 16 /u:lbs
+Sig=RL_load_cell unsigned 16 /u:lbs
+Sig=RR_load_cell unsigned 16 /u:lbs
 
 {SENDRECEIVE}
 
@@ -584,7 +588,7 @@ Sig=hall_effect_current 32
 Sig=glv_battery_voltage 48
 
 [MCU_FRONT_POTS]
-ID=0C6h
+ID=0C7h
 Len=6
 Sig=pot_1 0
 Sig=pot_2 16
@@ -592,68 +596,9 @@ Sig=pot_3 32
 
 [MCU_LOAD_CELLS]
 ID=0C5h
-Len=8
-Sig=group_id 0
-Sig=cell_1_balancing_status 4
-Sig=cell_2_balancing_status 5
-Sig=cell_3_balancing_status 6
-Sig=cell_4_balancing_status 7
-Sig=cell_5_balancing_status 8
-Sig=cell_6_balancing_status 9
-Sig=cell_7_balancing_status 10
-Sig=cell_8_balancing_status 11
-Sig=cell_9_balancing_status 12
-Sig=cell_10_balancing_status 13
-Sig=cell_11_balancing_status 14
-Sig=cell_12_balancing_status 15
-Sig=cell_13_balancing_status 16
-Sig=cell_14_balancing_status 17
-Sig=cell_15_balancing_status 18
-Sig=cell_16_balancing_status 19
-Sig=cell_17_balancing_status 20
-Sig=cell_18_balancing_status 21
-Sig=cell_19_balancing_status 22
-Sig=cell_20_balancing_status 23
-Sig=cell_21_balancing_status 24
-Sig=cell_22_balancing_status 25
-Sig=cell_23_balancing_status 26
-Sig=cell_24_balancing_status 27
-Sig=cell_25_balancing_status 28
-Sig=cell_26_balancing_status 29
-Sig=cell_27_balancing_status 30
-Sig=cell_28_balancing_status 31
-Sig=cell_29_balancing_status 32
-Sig=cell_30_balancing_status 33
-Sig=cell_31_balancing_status 34
-Sig=cell_32_balancing_status 35
-Sig=cell_33_balancing_status 36
-Sig=cell_34_balancing_status 37
-Sig=cell_35_balancing_status 38
-Sig=cell_36_balancing_status 39
-Sig=cell_37_balancing_status 40
-Sig=cell_38_balancing_status 41
-Sig=cell_39_balancing_status 42
-Sig=cell_40_balancing_status 43
-Sig=cell_41_balancing_status 44
-Sig=cell_42_balancing_status 45
-Sig=cell_43_balancing_status 46
-Sig=cell_44_balancing_status 47
-Sig=cell_45_balancing_status 48
-Sig=cell_46_balancing_status 49
-Sig=cell_47_balancing_status 50
-Sig=cell_48_balancing_status 51
-Sig=cell_49_balancing_status 52
-Sig=cell_50_balancing_status 53
-Sig=cell_51_balancing_status 54
-Sig=cell_52_balancing_status 55
-Sig=cell_53_balancing_status 56
-Sig=cell_54_balancing_status 57
-Sig=cell_55_balancing_status 58
-Sig=cell_56_balancing_status 59
-Sig=cell_57_balancing_status 60
-Sig=cell_58_balancing_status 61
-Sig=cell_59_balancing_status 62
-Sig=cell_60_balancing_status 63
+Len=4
+Sig=FL_load_cell 0
+Sig=FR_load_cell 16
 
 [MCU_PEDAL_READINGS]
 ID=0C4h
@@ -664,7 +609,7 @@ Sig=brake_pedal_1 32
 Sig=brake_pedal_2 48
 
 [MCU_REAR_POTS]
-ID=0C7h
+ID=0C8h
 Len=6
 Sig=pot_4 0
 Sig=pot_5 16
@@ -747,3 +692,9 @@ Var=driver_msg_var_1 unsigned 8,16 /max:1
 Var=driver_msg_var_2 unsigned 24,16 /max:1
 Sig=driver_message 0
 Sig=target_lap_time 40
+
+[SAB_LOAD_CELLS]
+ID=0C6h
+Len=4
+Sig=RL_load_cell 0
+Sig=RR_load_cell 16
