@@ -47,7 +47,7 @@ jobs:
           cd /app
           ./build/coderdbc -rw -dbc /dbc/hytech.dbc -out /out -drvname hytech
           mkdir -p ${{ github.workspace }}/out/
-          zip -r ${{ github.workspace }}/out/can_lib.zip /out
+          tar -cvf ${{ github.workspace }}/out/can_lib.tar /out
 
       - name: Create Release
         id: create_release
@@ -66,7 +66,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ${{ github.workspace }}/out/can_lib.zip
-          asset_name: can_lib.zip
+          asset_path: ${{ github.workspace }}/out/can_lib.tar
+          asset_name: can_lib
           asset_content_type: application/zip
 
