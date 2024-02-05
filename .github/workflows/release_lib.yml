@@ -14,39 +14,40 @@ jobs:
 
       - name: Run Docker container and generate code
         run: |
-          mkdir -p /tmp/output
-          mkdir -p /out
-          docker run --rm -v "${{ github.workspace }}/PCAN_project:/data" \
-                          -v "/out:/out" \
+          mkdir -p ${{ runner.temp }}/out
+          docker run --rm --user 1000:1000 \
+                          -w "/app" \
+                          -v "${{ github.workspace }}/PCAN_project:/data" \
+                          -v "${{ runner.temp }}:/out" \
                           ghcr.io/rcmast3r/ccoderdbc:main sh -c "./build/coderdbc -rw -dbc /data/hytech.sym -out /out -drvname hytech"
       - name: List generated files
         run: |
           echo "Generated files in /out:"
-          ls -l /out
-      - name: Upload generated code as artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: generated-code
-          path: /out
+          ls -l ${{ runner.temp }}/out
+      # - name: Upload generated code as artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     name: generated-code
+      #     path: ${{ runner.temp }}/out
 
-      - name: Create Release
-        id: create_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
-          draft: false
-          prerelease: false
+      # # - name: Create Release
+      # #   id: create_release
+      # #   uses: actions/create-release@v1
+      # #   env:
+      # #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # #   with:
+      # #     tag_name: ${{ github.run_number }}
+      # #     release_name: Release ${{ github.run_number }}
+      # #     draft: false
+      # #     prerelease: false
 
-      - name: Upload release asset
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: /out
-          asset_name: can_lib.zip
-          asset_content_type: application/zip
+      # # - name: Upload release asset
+      # #   uses: actions/upload-release-asset@v1
+      # #   env:
+      # #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # #   with:
+      # #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      # #     asset_path: /out
+      # #     asset_name: can_lib.zip
+      # #     asset_content_type: application/zip
 
