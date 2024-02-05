@@ -6,24 +6,52 @@ on:
       - main
 
 jobs:
-  generate-and-release:
+  generate-dbc:  
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      # - name: Set up Python
+      #   uses: actions/setup-python@v3
+      #   with:
+      #     python-version: '3.9'  # Specify the Python version
 
-      - name: Run Docker container and generate code
+      # - name: Install cantools
+      #   run: python -m pip install cantools  # Install cantools library
+
+      - name: Convert SYM to DBC
         run: |
-          mkdir -p ${{ runner.temp }}/out
-          docker run --rm --user 1000:1000 \
-                          -w "/app" \
-                          -v "${{ github.workspace }}/PCAN_project:/data" \
-                          -v "${{ runner.temp }}:/out" \
-                          ghcr.io/rcmast3r/ccoderdbc:main sh -c "./build/coderdbc -rw -dbc /data/hytech.sym -out /out -drvname hytech"
-      - name: List generated files
-        run: |
-          echo "Generated files in /out:"
-          ls -l ${{ runner.temp }}/out
+          mkdir -p ${{ runner.temp }}/dbc
+          ls ${{ github.workspace }}
+          ls ${{ github.workspace }}
+          
+
+  # generate-and-release:
+  #   needs: generate-dbc
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: ghcr.io/rcmast3r/ccoderdbc:main
+  #   steps:
+  #     - name: Checkout code
+  #       uses: actions/checkout@v3
+  #     # - name: Debug Docker permissions
+  #     #   run: |
+  #     #       mkdir -p ${{ runner.temp }}/out/
+  #     #       chown -R 1000:1000 ${{ runner.temp }}/out
+  #     #       docker run --rm --user 1000:1000 \
+  #     #           -w "/app" \
+  #     #           -v "${{ runner.temp }}/out:/out" \
+  #     #           ghcr.io/rcmast3r/ccoderdbc:main ls -la /out && mkdir -p /out && chown -R 1000:1000 /out && ls -la /out 
+
+  #     - name: generate code
+  #       run: |
+  #         mkdir -p /out
+  #         cd /app
+  #         ./build/coderdbc -rw -dbc ${{ runner.temp }}/dbc/hytech.dbc -out /out -drvname hytech
+
+  #         ls -la /out
+      # - name: List generated files
+      #   run: |
+      #     echo "Generated files in /out:"
+      #     ls ${{ runner.temp }}/out
       # - name: Upload generated code as artifact
       #   uses: actions/upload-artifact@v3
       #   with:
