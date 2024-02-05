@@ -40,13 +40,13 @@ jobs:
         uses: actions/download-artifact@v2
         with:
           name: dbcfile
-
+          path: /dbc
       - name: generate code
         run: |
           mkdir -p /out
           cd /app
-
-          ./build/coderdbc -rw -dbc hytech.dbc -out /out -drvname hytech
+          cat hytech.dbc
+          ./build/coderdbc -rw -dbc /dbc/hytech.dbc -out /out -drvname hytech
 
 
       # # - name: Create Release
