@@ -45,7 +45,6 @@ jobs:
         run: |
           mkdir -p /out
           cd /app
-          cat hytech.dbc
           ./build/coderdbc -rw -dbc /dbc/hytech.dbc -out /out -drvname hytech
 
 
