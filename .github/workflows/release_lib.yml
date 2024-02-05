@@ -45,7 +45,7 @@ jobs:
         run: |
           mkdir -p /out
           cd /app
-          ls hytech.dbc
+
           ./build/coderdbc -rw -dbc hytech.dbc -out /out -drvname hytech
 
 
