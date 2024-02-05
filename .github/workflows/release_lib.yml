@@ -43,11 +43,11 @@ jobs:
           path: /dbc
       - name: generate code
         run: |
-          mkdir -p /out
+          mkdir -p /hytech_can_lib
           cd /app
-          ./build/coderdbc -rw -dbc /dbc/hytech.dbc -out /out -drvname hytech
+          ./build/coderdbc -rw -dbc /dbc/hytech.dbc -out /hytech_can_lib -drvname hytech
           mkdir -p /output
-          tar -cvf /output/can_lib.tar /out
+          tar -cvf /output/can_lib.tar /hytech_can_lib
 
       - name: Create Release
         id: create_release
@@ -67,6 +67,6 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /output/can_lib.tar
-          asset_name: can_lib
+          asset_name: can_lib.tar
           asset_content_type: application/zip
 
