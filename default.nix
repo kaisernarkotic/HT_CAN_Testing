@@ -1,7 +1,7 @@
 { pkgs, python311Packages }:
 
 pkgs.stdenv.mkDerivation rec {
-  name = "ht_dbc";
+  name = "ht_can_pkg";
   
   src = ./PCAN_project;
   
