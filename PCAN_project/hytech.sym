@@ -136,7 +136,7 @@ Sig=glv_battery_voltage unsigned 16
 Sig=average_temp signed 16 /f:0.01
 Sig=low_temp signed 16 /f:0.01
 Sig=high_temp signed 16 /f:0.01
-Sig=ic_id unsigned 8
+Sig=ic_id unsigned 4
 Sig=temp_0 signed 16 /f:0.01
 Sig=temp_1 signed 16 /f:0.01
 Sig=average_voltage unsigned 16 /f:0.0001
@@ -216,6 +216,8 @@ Sig=FL_load_cell unsigned 16 /u:lbs
 Sig=FR_load_cell unsigned 16 /u:lbs
 Sig=RL_load_cell unsigned 16 /u:lbs
 Sig=RR_load_cell unsigned 16 /u:lbs
+Sig=em_voltage unsigned 32 -m
+Sig=em_current unsigned 32 -m
 
 {SENDRECEIVE}
 
@@ -292,21 +294,21 @@ Sig=total_discharge 32
 
 [BMS_DETAILED_TEMPS]
 ID=0DAh
-Len=8
-Sig=ic_id 8
+Len=7
 Sig=group_id 0
-Sig=thermistor_id_0 16
-Sig=thermistor_id_1 32
-Sig=thermistor_id_2 48
+Sig=ic_id 4
+Sig=thermistor_id_0 8
+Sig=thermistor_id_1 24
+Sig=thermistor_id_2 40
 
 [BMS_DETAILED_VOLTAGES]
 ID=0D8h
-Len=8
+Len=7
 Sig=group_id 0
-Sig=ic_id 8
-Sig=voltage_0 16
-Sig=voltage_1 32
-Sig=voltage_2 48
+Sig=ic_id 4
+Sig=voltage_0 8
+Sig=voltage_1 24
+Sig=voltage_2 40
 
 [BMS_ONBOARD_DETAILED_TEMPS]
 ID=0D6h
@@ -384,11 +386,12 @@ Sig=input_ac_voltage_low 48
 [EM_MEASUREMENT]
 ID=400h
 Len=8
-Sig=current 32
+Sig=em_voltage 0
+Sig=em_current 32
 
 [EM_STATUS]
 ID=100h
-Len=8
+Len=2
 Sig=voltage_gain 0
 Sig=current_gain 4
 Sig=overvoltage_error 8
