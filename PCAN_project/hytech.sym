@@ -218,103 +218,102 @@ Sig=RL_load_cell unsigned 16 /u:lbs
 Sig=RR_load_cell unsigned 16 /u:lbs
 Sig=em_voltage unsigned 32 -m
 Sig=em_current unsigned 32 -m
-Sig="RR_TTPMS_TC" unsigned 16 -m /max:65535 /min:0
-Sig="RR_TTPMS_RSSI" signed 16 -m /u:"dBm" /max:32767 /min:-32768
-Sig="RR_TTPMS_T" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_NODE_ID" unsigned 16 -m /max:65535 /min:0
-Sig="RR_TTPMS_T13" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T14" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T15" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T16" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T9" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T10" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T11" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T12" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T5" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T6" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T7" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T8" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T1" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T2" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T3" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_T4" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RR_TTPMS_SN" unsigned 16 -m /max:65535 /min:0
-Sig="RR_TTPMS_BAT_V" unsigned 16 -m /u:"mV" /max:65535 /min:0
-Sig="RR_TTPMS_P" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-Sig="RR_TTPMS_P_GAUGE" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-Sig="LR_TTPMS_TC" unsigned 16 -m /max:65535 /min:0
-Sig="LR_TTPMS_RSSI" signed 16 -m /u:"dBm" /max:32767 /min:-32768
-Sig="LR_TTPMS_T" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_NODE_ID" unsigned 16 -m /max:65535 /min:0
-Sig="LR_TTPMS_T13" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T14" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T15" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T16" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T9" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T10" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T11" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T12" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T5" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T6" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T7" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T8" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T1" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T2" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T3" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_T4" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LR_TTPMS_SN" unsigned 16 -m /max:65535 /min:0
-Sig="LR_TTPMS_BAT_V" unsigned 16 -m /u:"mV" /max:65535 /min:0
-Sig="LR_TTPMS_P" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-Sig="LR_TTPMS_P_GAUGE" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-Sig="RF_TTPMS_TC" unsigned 16 -m /max:65535 /min:0
-Sig="RF_TTPMS_RSSI" signed 16 -m /u:"dBm" /max:32767 /min:-32768
-Sig="RF_TTPMS_T" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_NODE_ID" unsigned 16 -m /max:65535 /min:0
-Sig="RF_TTPMS_T13" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T14" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T15" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T16" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T9" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T10" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T11" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T12" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T5" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T6" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T7" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T8" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T1" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T2" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T3" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_T4" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="RF_TTPMS_SN" unsigned 16 -m /max:65535 /min:0
-Sig="RF_TTPMS_BAT_V" unsigned 16 -m /u:"mV" /max:65535 /min:0
-Sig="RF_TTPMS_P" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-Sig="RF_TTPMS_P_GAUGE" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-Sig="LF_TTPMS_TC" unsigned 16 -m /max:65535 /min:0
-Sig="LF_TTPMS_RSSI" signed 16 -m /u:"dBm" /max:32767 /min:-32768
-Sig="LF_TTPMS_T" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_NODE_ID" unsigned 16 -m /max:65535 /min:0
-Sig="LF_TTPMS_T13" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T14" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T15" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T16" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T9" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T10" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T11" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T12" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T5" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T6" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T7" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T8" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T1" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T2" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T3" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_T4" unsigned 16 -m /u:"°C" /f:0.1 /o:-100 /max:6453.5 /min:-100
-Sig="LF_TTPMS_SN" unsigned 16 -m /max:65535 /min:0
-Sig="LF_TTPMS_BAT_V" unsigned 16 -m /u:"mV" /max:65535 /min:0
-Sig="LF_TTPMS_P" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-Sig="LF_TTPMS_P_GAUGE" unsigned 16 -m /u:"mbar" /max:65535 /min:0
-
+Sig=RR_TTPMS_TC unsigned 16 -m
+Sig=RR_TTPMS_RSSI signed 16 -m /u:dBm
+Sig=RR_TTPMS_T unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_NODE_ID unsigned 16 -m
+Sig=RR_TTPMS_T13 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T14 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T15 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T16 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T9 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T10 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T11 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T12 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T5 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T6 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T7 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T8 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T1 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T2 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T3 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_T4 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RR_TTPMS_SN unsigned 16 -m
+Sig=RR_TTPMS_BAT_V unsigned 16 -m /u:mV
+Sig=RR_TTPMS_P unsigned 16 -m /u:mbar
+Sig=RR_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
+Sig=LR_TTPMS_TC unsigned 16 -m
+Sig=LR_TTPMS_RSSI signed 16 -m /u:dBm
+Sig=LR_TTPMS_T unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_NODE_ID unsigned 16 -m
+Sig=LR_TTPMS_T13 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T14 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T15 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T16 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T9 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T10 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T11 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T12 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T5 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T6 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T7 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T8 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T1 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T2 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T3 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_T4 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LR_TTPMS_SN unsigned 16 -m
+Sig=LR_TTPMS_BAT_V unsigned 16 -m /u:mV
+Sig=LR_TTPMS_P unsigned 16 -m /u:mbar
+Sig=LR_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
+Sig=RF_TTPMS_TC unsigned 16 -m
+Sig=RF_TTPMS_RSSI signed 16 -m /u:dBm
+Sig=RF_TTPMS_T unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_NODE_ID unsigned 16 -m
+Sig=RF_TTPMS_T13 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T14 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T15 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T16 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T9 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T10 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T11 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T12 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T5 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T6 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T7 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T8 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T1 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T2 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T3 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_T4 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=RF_TTPMS_SN unsigned 16 -m
+Sig=RF_TTPMS_BAT_V unsigned 16 -m /u:mV
+Sig=RF_TTPMS_P unsigned 16 -m /u:mbar
+Sig=RF_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
+Sig=LF_TTPMS_TC unsigned 16 -m
+Sig=LF_TTPMS_RSSI signed 16 -m /u:dBm
+Sig=LF_TTPMS_T unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_NODE_ID unsigned 16 -m
+Sig=LF_TTPMS_T13 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T14 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T15 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T16 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T9 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T10 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T11 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T12 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T5 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T6 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T7 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T8 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T1 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T2 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T3 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_T4 unsigned 16 -m /u:°C /f:0.1 /o:-100
+Sig=LF_TTPMS_SN unsigned 16 -m
+Sig=LF_TTPMS_BAT_V unsigned 16 -m /u:mV
+Sig=LF_TTPMS_P unsigned 16 -m /u:mbar
+Sig=LF_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
 
 {SENDRECEIVE}
 
@@ -496,14 +495,14 @@ Sig=overpower_error 9
 Sig=logging 10
 
 [MC1_ENERGY]
-ID=0A8h
+ID=0B8h
 Len=8
 Sig=dc_bus_voltage 0
 Sig=motor_power 16
 Sig=feedback_torque 48
 
 [MC1_SETPOINTS_COMMAND]
-ID=0B0h
+ID=0A0h
 Len=8
 Sig=inverter_enable 8
 Sig=hv_enable 9
@@ -514,7 +513,7 @@ Sig=positive_torque_limit 32
 Sig=negative_torque_limit 48
 
 [MC1_STATUS]
-ID=0A0h
+ID=0B0h
 Len=8
 Sig=system_ready 8
 Sig=error 9
@@ -529,7 +528,7 @@ Sig=torque_current 32
 Sig=magnetizing_current 48
 
 [MC1_TEMPS]
-ID=0A4h
+ID=0B4h
 Len=8
 Sig=motor_temp 0
 Sig=inverter_temp 16
@@ -537,19 +536,19 @@ Sig=diagnostic_number 32
 Sig=igbt_temp 48
 
 [MC1_TORQUE_COMMAND]
-ID=0B4h
+ID=0A4h
 Len=2
 Sig=torque_command 0
 
 [MC2_ENERGY]
-ID=0A9h
+ID=0B9h
 Len=8
 Sig=dc_bus_voltage 0
 Sig=motor_power 16
 Sig=feedback_torque 48
 
 [MC2_SETPOINTS_COMMAND]
-ID=0B1h
+ID=0A1h
 Len=8
 Sig=inverter_enable 8
 Sig=hv_enable 9
@@ -560,7 +559,7 @@ Sig=positive_torque_limit 32
 Sig=negative_torque_limit 48
 
 [MC2_STATUS]
-ID=0A1h
+ID=0B1h
 Len=8
 Sig=system_ready 8
 Sig=error 9
@@ -575,7 +574,7 @@ Sig=torque_current 32
 Sig=magnetizing_current 48
 
 [MC2_TEMPS]
-ID=0A5h
+ID=0B5h
 Len=8
 Sig=motor_temp 0
 Sig=inverter_temp 16
@@ -583,19 +582,19 @@ Sig=diagnostic_number 32
 Sig=igbt_temp 48
 
 [MC2_TORQUE_COMMAND]
-ID=0B5h
+ID=0A5h
 Len=2
 Sig=torque_command 0
 
 [MC3_ENERGY]
-ID=0AAh
+ID=0BAh
 Len=8
 Sig=dc_bus_voltage 0
 Sig=motor_power 16
 Sig=feedback_torque 48
 
 [MC3_SETPOINTS_COMMAND]
-ID=0B2h
+ID=0A2h
 Len=8
 Sig=inverter_enable 8
 Sig=hv_enable 9
@@ -606,7 +605,7 @@ Sig=positive_torque_limit 32
 Sig=negative_torque_limit 48
 
 [MC3_STATUS]
-ID=0A2h
+ID=0B2h
 Len=8
 Sig=system_ready 8
 Sig=error 9
@@ -621,7 +620,7 @@ Sig=torque_current 32
 Sig=magnetizing_current 48
 
 [MC3_TEMPS]
-ID=0A6h
+ID=0B6h
 Len=8
 Sig=motor_temp 0
 Sig=inverter_temp 16
@@ -629,19 +628,19 @@ Sig=diagnostic_number 32
 Sig=igbt_temp 48
 
 [MC3_TORQUE_COMMAND]
-ID=0B6h
+ID=0A6h
 Len=2
 Sig=torque_command 0
 
 [MC4_ENERGY]
-ID=0ABh
+ID=0BBh
 Len=8
 Sig=dc_bus_voltage 0
 Sig=motor_power 16
 Sig=feedback_torque 48
 
 [MC4_SETPOINTS_COMMAND]
-ID=0B3h
+ID=0A3h
 Len=8
 Sig=inverter_enable 8
 Sig=hv_enable 9
@@ -652,7 +651,7 @@ Sig=positive_torque_limit 32
 Sig=negative_torque_limit 48
 
 [MC4_STATUS]
-ID=0A3h
+ID=0B3h
 Len=8
 Sig=system_ready 8
 Sig=error 9
@@ -665,9 +664,8 @@ Sig=derating_on 15
 Sig=speed_rpm 16
 Sig=torque_current 32
 Sig=magnetizing_current 48
-
 [MC4_TEMPS]
-ID=0A7h
+ID=0B7h
 Len=8
 Sig=motor_temp 0
 Sig=inverter_temp 16
@@ -678,7 +676,6 @@ Sig=igbt_temp 48
 ID=0B7h
 Len=2
 Sig=torque_command 0
-
 [MCU_ANALOG_READINGS]
 ID=0CCh
 Len=8
@@ -799,194 +796,194 @@ Len=4
 Sig=RL_load_cell 0
 Sig=RR_load_cell 16
 
-["LF_TTPMS_1"]
+[LF_TTPMS_1]
 ID=406h
 Len=8
-Sig="LF_TTPMS_SN" 0
-Sig="LF_TTPMS_BAT_V" 16
-Sig="LF_TTPMS_P" 32
-Sig="LF_TTPMS_P_GAUGE" 48
+Sig=LF_TTPMS_SN 0
+Sig=LF_TTPMS_BAT_V 16
+Sig=LF_TTPMS_P 32
+Sig=LF_TTPMS_P_GAUGE 48
 
-["LF_TTPMS_2"]
+[LF_TTPMS_2]
 ID=407h
 Len=8
-Sig="LF_TTPMS_T1" 0
-Sig="LF_TTPMS_T2" 16
-Sig="LF_TTPMS_T3" 32
-Sig="LF_TTPMS_T4" 48
+Sig=LF_TTPMS_T1 0
+Sig=LF_TTPMS_T2 16
+Sig=LF_TTPMS_T3 32
+Sig=LF_TTPMS_T4 48
 
-["LF_TTPMS_3"]
+[LF_TTPMS_3]
 ID=408h
 Len=8
-Sig="LF_TTPMS_T5" 0
-Sig="LF_TTPMS_T6" 16
-Sig="LF_TTPMS_T7" 32
-Sig="LF_TTPMS_T8" 48
+Sig=LF_TTPMS_T5 0
+Sig=LF_TTPMS_T6 16
+Sig=LF_TTPMS_T7 32
+Sig=LF_TTPMS_T8 48
 
-["LF_TTPMS_4"]
+[LF_TTPMS_4]
 ID=409h
 Len=8
-Sig="LF_TTPMS_T9" 0
-Sig="LF_TTPMS_T10" 16
-Sig="LF_TTPMS_T11" 32
-Sig="LF_TTPMS_T12" 48
+Sig=LF_TTPMS_T9 0
+Sig=LF_TTPMS_T10 16
+Sig=LF_TTPMS_T11 32
+Sig=LF_TTPMS_T12 48
 
-["LF_TTPMS_5"]
+[LF_TTPMS_5]
 ID=40Ah
 Len=8
-Sig="LF_TTPMS_T13" 0
-Sig="LF_TTPMS_T14" 16
-Sig="LF_TTPMS_T15" 32
-Sig="LF_TTPMS_T16" 48
+Sig=LF_TTPMS_T13 0
+Sig=LF_TTPMS_T14 16
+Sig=LF_TTPMS_T15 32
+Sig=LF_TTPMS_T16 48
 
-["LF_TTPMS_6"]
+[LF_TTPMS_6]
 ID=40Bh
 Len=8
-Sig="LF_TTPMS_TC" 0
-Sig="LF_TTPMS_RSSI" 16
-Sig="LF_TTPMS_T" 32
-Sig="LF_TTPMS_NODE_ID" 48
+Sig=LF_TTPMS_TC 0
+Sig=LF_TTPMS_RSSI 16
+Sig=LF_TTPMS_T 32
+Sig=LF_TTPMS_NODE_ID 48
 
-["LR_TTPMS_1"]
+[LR_TTPMS_1]
 ID=412h
 Len=8
-Sig="LR_TTPMS_SN" 0
-Sig="LR_TTPMS_BAT_V" 16
-Sig="LR_TTPMS_P" 32
-Sig="LR_TTPMS_P_GAUGE" 48
+Sig=LR_TTPMS_SN 0
+Sig=LR_TTPMS_BAT_V 16
+Sig=LR_TTPMS_P 32
+Sig=LR_TTPMS_P_GAUGE 48
 
-["LR_TTPMS_2"]
+[LR_TTPMS_2]
 ID=413h
 Len=8
-Sig="LR_TTPMS_T1" 0
-Sig="LR_TTPMS_T2" 16
-Sig="LR_TTPMS_T3" 32
-Sig="LR_TTPMS_T4" 48
+Sig=LR_TTPMS_T1 0
+Sig=LR_TTPMS_T2 16
+Sig=LR_TTPMS_T3 32
+Sig=LR_TTPMS_T4 48
 
-["LR_TTPMS_3"]
+[LR_TTPMS_3]
 ID=414h
 Len=8
-Sig="LR_TTPMS_T5" 0
-Sig="LR_TTPMS_T6" 16
-Sig="LR_TTPMS_T7" 32
-Sig="LR_TTPMS_T8" 48
+Sig=LR_TTPMS_T5 0
+Sig=LR_TTPMS_T6 16
+Sig=LR_TTPMS_T7 32
+Sig=LR_TTPMS_T8 48
 
-["LR_TTPMS_4"]
+[LR_TTPMS_4]
 ID=415h
 Len=8
-Sig="LR_TTPMS_T9" 0
-Sig="LR_TTPMS_T10" 16
-Sig="LR_TTPMS_T11" 32
-Sig="LR_TTPMS_T12" 48
+Sig=LR_TTPMS_T9 0
+Sig=LR_TTPMS_T10 16
+Sig=LR_TTPMS_T11 32
+Sig=LR_TTPMS_T12 48
 
-["LR_TTPMS_5"]
+[LR_TTPMS_5]
 ID=416h
 Len=8
-Sig="LR_TTPMS_T13" 0
-Sig="LR_TTPMS_T14" 16
-Sig="LR_TTPMS_T15" 32
-Sig="LR_TTPMS_T16" 48
+Sig=LR_TTPMS_T13 0
+Sig=LR_TTPMS_T14 16
+Sig=LR_TTPMS_T15 32
+Sig=LR_TTPMS_T16 48
 
-["LR_TTPMS_6"]
+[LR_TTPMS_6]
 ID=417h
 Len=8
-Sig="LR_TTPMS_TC" 0
-Sig="LR_TTPMS_RSSI" 16
-Sig="LR_TTPMS_T" 32
-Sig="LR_TTPMS_NODE_ID" 48
+Sig=LR_TTPMS_TC 0
+Sig=LR_TTPMS_RSSI 16
+Sig=LR_TTPMS_T 32
+Sig=LR_TTPMS_NODE_ID 48
 
-["RF_TTPMS_1"]
+[RF_TTPMS_1]
 ID=40Ch
 Len=8
-Sig="RF_TTPMS_SN" 0
-Sig="RF_TTPMS_BAT_V" 16
-Sig="RF_TTPMS_P" 32
-Sig="RF_TTPMS_P_GAUGE" 48
+Sig=RF_TTPMS_SN 0
+Sig=RF_TTPMS_BAT_V 16
+Sig=RF_TTPMS_P 32
+Sig=RF_TTPMS_P_GAUGE 48
 
-["RF_TTPMS_2"]
+[RF_TTPMS_2]
 ID=40Dh
 Len=8
-Sig="RF_TTPMS_T1" 0
-Sig="RF_TTPMS_T2" 16
-Sig="RF_TTPMS_T3" 32
-Sig="RF_TTPMS_T4" 48
+Sig=RF_TTPMS_T1 0
+Sig=RF_TTPMS_T2 16
+Sig=RF_TTPMS_T3 32
+Sig=RF_TTPMS_T4 48
 
-["RF_TTPMS_3"]
+[RF_TTPMS_3]
 ID=40Eh
 Len=8
-Sig="RF_TTPMS_T5" 0
-Sig="RF_TTPMS_T6" 16
-Sig="RF_TTPMS_T7" 32
-Sig="RF_TTPMS_T8" 48
+Sig=RF_TTPMS_T5 0
+Sig=RF_TTPMS_T6 16
+Sig=RF_TTPMS_T7 32
+Sig=RF_TTPMS_T8 48
 
-["RF_TTPMS_4"]
+[RF_TTPMS_4]
 ID=40Fh
 Len=8
-Sig="RF_TTPMS_T9" 0
-Sig="RF_TTPMS_T10" 16
-Sig="RF_TTPMS_T11" 32
-Sig="RF_TTPMS_T12" 48
+Sig=RF_TTPMS_T9 0
+Sig=RF_TTPMS_T10 16
+Sig=RF_TTPMS_T11 32
+Sig=RF_TTPMS_T12 48
 
-["RF_TTPMS_5"]
+[RF_TTPMS_5]
 ID=410h
 Len=8
-Sig="RF_TTPMS_T13" 0
-Sig="RF_TTPMS_T14" 16
-Sig="RF_TTPMS_T15" 32
-Sig="RF_TTPMS_T16" 48
+Sig=RF_TTPMS_T13 0
+Sig=RF_TTPMS_T14 16
+Sig=RF_TTPMS_T15 32
+Sig=RF_TTPMS_T16 48
 
-["RF_TTPMS_6"]
+[RF_TTPMS_6]
 ID=411h
 Len=8
-Sig="RF_TTPMS_TC" 0
-Sig="RF_TTPMS_RSSI" 16
-Sig="RF_TTPMS_T" 32
-Sig="RF_TTPMS_NODE_ID" 48
+Sig=RF_TTPMS_TC 0
+Sig=RF_TTPMS_RSSI 16
+Sig=RF_TTPMS_T 32
+Sig=RF_TTPMS_NODE_ID 48
 
-["RR_TTPMS_1"]
+[RR_TTPMS_1]
 ID=418h
 Len=8
-Sig="RR_TTPMS_SN" 0
-Sig="RR_TTPMS_BAT_V" 16
-Sig="RR_TTPMS_P" 32
-Sig="RR_TTPMS_P_GAUGE" 48
+Sig=RR_TTPMS_SN 0
+Sig=RR_TTPMS_BAT_V 16
+Sig=RR_TTPMS_P 32
+Sig=RR_TTPMS_P_GAUGE 48
 
-["RR_TTPMS_2"]
+[RR_TTPMS_2]
 ID=419h
 Len=8
-Sig="RR_TTPMS_T1" 0
-Sig="RR_TTPMS_T2" 16
-Sig="RR_TTPMS_T3" 32
-Sig="RR_TTPMS_T4" 48
+Sig=RR_TTPMS_T1 0
+Sig=RR_TTPMS_T2 16
+Sig=RR_TTPMS_T3 32
+Sig=RR_TTPMS_T4 48
 
-["RR_TTPMS_3"]
+[RR_TTPMS_3]
 ID=41Ah
 Len=8
-Sig="RR_TTPMS_T5" 0
-Sig="RR_TTPMS_T6" 16
-Sig="RR_TTPMS_T7" 32
-Sig="RR_TTPMS_T8" 48
+Sig=RR_TTPMS_T5 0
+Sig=RR_TTPMS_T6 16
+Sig=RR_TTPMS_T7 32
+Sig=RR_TTPMS_T8 48
 
-["RR_TTPMS_4"]
+[RR_TTPMS_4]
 ID=41Bh
 Len=8
-Sig="RR_TTPMS_T9" 0
-Sig="RR_TTPMS_T10" 16
-Sig="RR_TTPMS_T11" 32
-Sig="RR_TTPMS_T12" 48
+Sig=RR_TTPMS_T9 0
+Sig=RR_TTPMS_T10 16
+Sig=RR_TTPMS_T11 32
+Sig=RR_TTPMS_T12 48
 
-["RR_TTPMS_5"]
+[RR_TTPMS_5]
 ID=41Ch
 Len=8
-Sig="RR_TTPMS_T13" 0
-Sig="RR_TTPMS_T14" 16
-Sig="RR_TTPMS_T15" 32
-Sig="RR_TTPMS_T16" 48
+Sig=RR_TTPMS_T13 0
+Sig=RR_TTPMS_T14 16
+Sig=RR_TTPMS_T15 32
+Sig=RR_TTPMS_T16 48
 
-["RR_TTPMS_6"]
+[RR_TTPMS_6]
 ID=41Dh
 Len=8
-Sig="RR_TTPMS_TC" 0
-Sig="RR_TTPMS_RSSI" 16
-Sig="RR_TTPMS_T" 32
-Sig="RR_TTPMS_NODE_ID" 48
+Sig=RR_TTPMS_TC 0
+Sig=RR_TTPMS_RSSI 16
+Sig=RR_TTPMS_T 32
+Sig=RR_TTPMS_NODE_ID 48
