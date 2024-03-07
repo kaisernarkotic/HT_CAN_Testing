@@ -664,6 +664,7 @@ Sig=derating_on 15
 Sig=speed_rpm 16
 Sig=torque_current 32
 Sig=magnetizing_current 48
+
 [MC4_TEMPS]
 ID=0B7h
 Len=8
@@ -673,7 +674,7 @@ Sig=diagnostic_number 32
 Sig=igbt_temp 48
 
 [MC4_TORQUE_COMMAND]
-ID=0B7h
+ID=0A7h
 Len=2
 Sig=torque_command 0
 [MCU_ANALOG_READINGS]
