@@ -123,8 +123,8 @@ Sig=cell_57_balancing_status unsigned 1
 Sig=cell_58_balancing_status unsigned 1
 Sig=cell_59_balancing_status unsigned 1
 Sig=cell_60_balancing_status unsigned 1
-Sig=pot_1 unsigned 16
-Sig=pot_2 unsigned 16
+Sig=FL_suspension_pot unsigned 16 /u:lbs
+Sig=FR_suspension_pot unsigned 16 /u:lbs
 Sig=pot_3 unsigned 16
 Sig=pot_4 unsigned 16
 Sig=pot_5 unsigned 16
@@ -316,6 +316,49 @@ Sig=LF_TTPMS_P unsigned 16 -m /u:mbar
 Sig=LF_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
 Sig=shunt_current float /u:Amp
 Sig=shunt_voltage float /u:V
+Sig=hall_curr_signal unsigned 16
+Sig=hall_curr_ref unsigned 16
+Sig=fl_motor_rpm signed 16
+Sig=lf_motor_rpm signed 16
+Sig=fr_motor_rpm signed 16
+Sig=rl_motor_rpm signed 16
+Sig=rr_motor_rpm signed 16
+Sig=mc1_diagnostic_number unsigned 16
+Sig=mc2_diagnostic_number unsigned 16
+Sig=mc3_diagnostic_number unsigned 16
+Sig=mc4_diagnostic_number unsigned 16
+Sig=mc1_dc_on unsigned 1
+Sig=mc1_derating_on unsigned 1
+Sig=mc1_error unsigned 1
+Sig=mc1_inverter_on unsigned 1
+Sig=mc1_quit_dc unsigned 1
+Sig=mc1_quit_inverter_on unsigned 1
+Sig=mc1_system_ready unsigned 1
+Sig=mc1_warning unsigned 1
+Sig=mc2_dc_on unsigned 1
+Sig=mc2_derating_on unsigned 1
+Sig=mc2_error unsigned 1
+Sig=mc2_inverter_on unsigned 1
+Sig=mc2_quit_dc unsigned 1
+Sig=mc2_quit_inverter_on unsigned 1
+Sig=mc2_system_ready unsigned 1
+Sig=mc2_warning unsigned 1
+Sig=mc3_dc_on unsigned 1
+Sig=mc3_derating_on unsigned 1
+Sig=mc3_error unsigned 1
+Sig=mc3_inverter_on unsigned 1
+Sig=mc3_quit_dc unsigned 1
+Sig=mc3_quit_inverter_on unsigned 1
+Sig=mc3_system_ready unsigned 1
+Sig=mc3_warning unsigned 1
+Sig=mc4_dc_on unsigned 1
+Sig=mc4_derating_on unsigned 1
+Sig=mc4_error unsigned 1
+Sig=mc4_inverter_on unsigned 1
+Sig=mc4_quit_dc unsigned 1
+Sig=mc4_quit_inverter_on unsigned 1
+Sig=mc4_system_ready unsigned 1
+Sig=mc4_warning unsigned 1
 
 {SENDRECEIVE}
 
@@ -689,10 +732,10 @@ Sig=hall_effect_current 32
 Sig=glv_battery_voltage 48
 
 [MCU_FRONT_POTS]
-ID=0C7h
+ID=0C6h
 Len=6
-Sig=pot_1 0
-Sig=pot_2 16
+Sig=FL_suspension_pot 0
+Sig=FR_suspension_pot 16
 Sig=pot_3 32
 
 [MCU_LOAD_CELLS]
@@ -710,7 +753,7 @@ Sig=brake_pedal_1 32
 Sig=brake_pedal_2 48
 
 [MCU_REAR_POTS]
-ID=0C8h
+ID=0C7h
 Len=6
 Sig=pot_4 0
 Sig=pot_5 16
@@ -793,12 +836,6 @@ Var=driver_msg_var_1 unsigned 8,16 /max:1
 Var=driver_msg_var_2 unsigned 24,16 /max:1
 Sig=driver_message 0
 Sig=target_lap_time 40
-
-[SAB_LOAD_CELLS]
-ID=0C6h
-Len=4
-Sig=RL_load_cell 0
-Sig=RR_load_cell 16
 
 [LF_TTPMS_1]
 ID=406h
@@ -997,3 +1034,60 @@ ID=401h
 Len=8
 Sig=shunt_voltage 0
 Sig=shunt_current 32
+[PENTHOUSE_ACCUM_MSG]
+ID=0DFh
+Len=8
+Sig=hall_curr_ref 0
+Sig=hall_curr_signal 16
+
+[DRIVETRAIN_RPMS_TELEM]
+ID=200h
+Len=8
+Sig=fr_motor_rpm 0
+Sig=fl_motor_rpm 16
+Sig=rr_motor_rpm 32
+Sig=rl_motor_rpm 48
+
+[DRIVETRAIN_ERR_STATUS_TELEM]
+ID=201h
+Len=8
+Sig=mc1_diagnostic_number 0
+Sig=mc2_diagnostic_number 16
+Sig=mc3_diagnostic_number 32
+Sig=mc4_diagnostic_number 48
+
+[DRIVETRAIN_STATUS_TELEM]
+ID=202h
+Len=8
+Sig=mc1_dc_on 0
+Sig=mc1_derating_on 1
+Sig=mc1_error 2
+Sig=mc1_inverter_on 3
+Sig=mc1_quit_dc 4
+Sig=mc1_quit_inverter_on 5
+Sig=mc1_system_ready 6
+Sig=mc1_warning 7
+Sig=mc2_dc_on 8
+Sig=mc2_derating_on 9
+Sig=mc2_error 10
+Sig=mc2_inverter_on 11
+Sig=mc2_quit_dc 12
+Sig=mc2_quit_inverter_on 13
+Sig=mc2_system_ready 14
+Sig=mc2_warning 15
+Sig=mc3_dc_on 16
+Sig=mc3_derating_on 17
+Sig=mc3_error 18
+Sig=mc3_inverter_on 19
+Sig=mc3_quit_dc 20
+Sig=mc3_quit_inverter_on 21
+Sig=mc3_system_ready 22
+Sig=mc3_warning 23
+Sig=mc4_dc_on 24
+Sig=mc4_derating_on 25
+Sig=mc4_error 26
+Sig=mc4_inverter_on 27
+Sig=mc4_quit_dc 28
+Sig=mc4_quit_inverter_on 29
+Sig=mc4_system_ready 30
+Sig=mc4_warning 31
