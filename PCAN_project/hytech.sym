@@ -314,6 +314,8 @@ Sig=LF_TTPMS_SN unsigned 16 -m
 Sig=LF_TTPMS_BAT_V unsigned 16 -m /u:mV
 Sig=LF_TTPMS_P unsigned 16 -m /u:mbar
 Sig=LF_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
+Sig=shunt_current float /u:Amp
+Sig=shunt_voltage float /u:V
 
 {SENDRECEIVE}
 
@@ -677,6 +679,7 @@ Sig=igbt_temp 48
 ID=0A7h
 Len=2
 Sig=torque_command 0
+
 [MCU_ANALOG_READINGS]
 ID=0CCh
 Len=8
@@ -988,3 +991,9 @@ Sig=RR_TTPMS_TC 0
 Sig=RR_TTPMS_RSSI 16
 Sig=RR_TTPMS_T 32
 Sig=RR_TTPMS_NODE_ID 48
+
+[ACU_SHUNT_MEASUREMENTS]
+ID=401h
+Len=8
+Sig=shunt_voltage 0
+Sig=shunt_current 32
