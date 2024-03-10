@@ -359,6 +359,10 @@ Sig=mc4_quit_dc unsigned 1
 Sig=mc4_quit_inverter_on unsigned 1
 Sig=mc4_system_ready unsigned 1
 Sig=mc4_warning unsigned 1
+Sig=accel_implausible bit
+Sig=brake_implausible bit
+Sig=accel_percent unsigned 8 /min:0 /max:100
+Sig=brake_percent unsigned 8 /min:0 /max:100
 
 {SENDRECEIVE}
 
@@ -1034,6 +1038,7 @@ ID=401h
 Len=8
 Sig=shunt_voltage 0
 Sig=shunt_current 32
+
 [PENTHOUSE_ACCUM_MSG]
 ID=0DFh
 Len=8
@@ -1091,3 +1096,7 @@ Sig=mc4_quit_dc 28
 Sig=mc4_quit_inverter_on 29
 Sig=mc4_system_ready 30
 Sig=mc4_warning 31
+Sig=accel_implausible 32
+Sig=brake_implausible 33
+Sig=brake_percent 41
+Sig=accel_percent 49
