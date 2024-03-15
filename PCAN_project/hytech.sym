@@ -363,6 +363,10 @@ Sig=accel_implausible bit
 Sig=brake_implausible bit
 Sig=accel_percent unsigned 8 /min:0 /max:100
 Sig=brake_percent unsigned 8 /min:0 /max:100
+Sig=sab_pot_3 unsigned 16
+Sig=sab_pot_4 unsigned 16
+Sig=sab_load_cell_rl unsigned 16
+Sig=sab_load_cell_rr unsigned 16
 
 {SENDRECEIVE}
 
@@ -1100,3 +1104,11 @@ Sig=accel_implausible 32
 Sig=brake_implausible 33
 Sig=brake_percent 41
 Sig=accel_percent 49
+
+[SAB_CORNER_BOARDS]
+ID=0E4h
+Len=8
+Sig=sab_pot_3 0
+Sig=sab_pot_4 16
+Sig=sab_load_cell_rl 32
+Sig=sab_load_cell_rr 48
