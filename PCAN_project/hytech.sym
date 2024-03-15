@@ -361,8 +361,18 @@ Sig=mc4_system_ready unsigned 1
 Sig=mc4_warning unsigned 1
 Sig=accel_implausible bit
 Sig=brake_implausible bit
-Sig=accel_percent unsigned 8 /min:0 /max:100
-Sig=brake_percent unsigned 8 /min:0 /max:100
+Sig=accel_percent unsigned 8 /max:100
+Sig=brake_percent unsigned 8 /max:100
+Sig=thermistor_fl unsigned 16
+Sig=thermistor_fr unsigned 16
+Sig=thermistor_rl unsigned 16
+Sig=thermistor_rr unsigned 16
+Sig=thermistor_forward unsigned 16
+Sig=thermistor_left unsigned 16
+Sig=thermistor_right unsigned 16
+Sig=pot3 unsigned 16
+Sig=pot4 unsigned 16
+Sig=shutdown_status unsigned 16
 
 {SENDRECEIVE}
 
@@ -1100,3 +1110,31 @@ Sig=accel_implausible 32
 Sig=brake_implausible 33
 Sig=brake_percent 41
 Sig=accel_percent 49
+
+[SAB_THERMISTORS_1]
+ID=0E5h
+Len=8
+Sig=thermistor_fl 0
+Sig=thermistor_fr 16
+Sig=thermistor_rl 32
+Sig=thermistor_rr 48
+
+[SAB_THERMISTORS_2]
+ID=0E6h
+Len=8
+Sig=thermistor_forward 0
+Sig=thermistor_left 16
+Sig=thermistor_right 32
+
+[SAB_CB]
+ID=0E4h
+Len=8
+Sig=RR_load_cell 48
+Sig=pot3 0
+Sig=pot4 16
+Sig=RL_load_cell 32
+
+[TCU_STATUS]
+ID=0E8h
+Len=8
+Sig=shutdown_status 0
