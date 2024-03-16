@@ -123,12 +123,8 @@ Sig=cell_57_balancing_status unsigned 1
 Sig=cell_58_balancing_status unsigned 1
 Sig=cell_59_balancing_status unsigned 1
 Sig=cell_60_balancing_status unsigned 1
-Sig=FL_suspension_pot unsigned 16 /u:lbs
-Sig=FR_suspension_pot unsigned 16 /u:lbs
-Sig=pot_3 unsigned 16
-Sig=pot_4 unsigned 16
-Sig=pot_5 unsigned 16
-Sig=pot_6 unsigned 16
+Sig=potentiometer_fl unsigned 16 /u:lbs /ln:"Front Left Potentiometer"
+Sig=potentiometer_fr unsigned 16 /u:lbs /ln:"Front Right Potentiometer"
 Sig=steering_1 signed 16
 Sig=steering_2 unsigned 16
 Sig=hall_effect_current signed 16
@@ -212,10 +208,10 @@ Sig=target_lap_time unsigned 24 /u:ms // target lap time is the time determined 
 Sig=driver_message unsigned 8 // corresponds to a pre-set list of driver messages on the dashboard that the TCU can request to be displayed in event of comms failure
 Sig=left_shifter_button unsigned 1
 Sig=right_shifter_button unsigned 1
-Sig=FL_load_cell unsigned 16 /u:lbs
-Sig=FR_load_cell unsigned 16 /u:lbs
-Sig=RL_load_cell unsigned 16 /u:lbs
-Sig=RR_load_cell unsigned 16 /u:lbs
+Sig=load_cell_fl unsigned 16 /u:lbs /ln:"Front Left Load Cell"
+Sig=load_cell_fr unsigned 16 /u:lbs /ln:"Front Right Load Cell"
+Sig=load_cell_rl unsigned 16 /u:lbs /ln:"Rear Left Load Cell"
+Sig=load_cell_rr unsigned 16 /u:lbs /ln:"Rear Right Load Cell"
 Sig=em_voltage unsigned 32 -m
 Sig=em_current unsigned 32 -m
 Sig=RR_TTPMS_TC unsigned 16 -m
@@ -363,10 +359,6 @@ Sig=accel_implausible bit
 Sig=brake_implausible bit
 Sig=accel_percent unsigned 8 /max:100
 Sig=brake_percent unsigned 8 /max:100
-Sig=sab_pot_3 unsigned 16
-Sig=sab_pot_4 unsigned 16
-Sig=sab_load_cell_rl unsigned 16
-Sig=sab_load_cell_rr unsigned 16
 Sig=thermistor_fl unsigned 16
 Sig=thermistor_fr unsigned 16
 Sig=thermistor_rl unsigned 16
@@ -374,13 +366,13 @@ Sig=thermistor_rr unsigned 16
 Sig=thermistor_forward unsigned 16
 Sig=thermistor_left unsigned 16
 Sig=thermistor_right unsigned 16
-Sig=pot3 unsigned 16
-Sig=pot4 unsigned 16
 Sig=shutdown_status unsigned 16
 Sig=fr_motor_torque signed 16 /u:nm
 Sig=fl_motor_torque signed 16 /u:nm
 Sig=rr_motor_torque signed 16 /u:nm
 Sig=rl_motor_torque signed 16 /u:nm
+Sig=potentiometer_rl unsigned 16 /u:lbs /ln:"Rear Left Potentiometer"
+Sig=potentiometer_rr unsigned 16 /u:lbs /ln:"Rear Right Potentiometer"
 
 {SENDRECEIVE}
 
@@ -755,16 +747,15 @@ Sig=glv_battery_voltage 48
 
 [MCU_FRONT_POTS]
 ID=0C6h
-Len=6
-Sig=FL_suspension_pot 0
-Sig=FR_suspension_pot 16
-Sig=pot_3 32
+Len=4
+Sig=potentiometer_fl 0
+Sig=potentiometer_fr 16
 
 [MCU_LOAD_CELLS]
 ID=0C5h
 Len=4
-Sig=FL_load_cell 0
-Sig=FR_load_cell 16
+Sig=load_cell_fl 0
+Sig=load_cell_fr 16
 
 [MCU_PEDAL_READINGS]
 ID=0C4h
@@ -776,10 +767,9 @@ Sig=brake_pedal_2 48
 
 [MCU_REAR_POTS]
 ID=0C7h
-Len=6
-Sig=pot_4 0
-Sig=pot_5 16
-Sig=pot_6 32
+Len=4
+Sig=potentiometer_rl 0
+Sig=potentiometer_rr 16
 
 [MCU_STATUS]
 ID=0C3h
@@ -1134,13 +1124,13 @@ Sig=thermistor_forward 0
 Sig=thermistor_left 16
 Sig=thermistor_right 32
 
-[SAB_CB]
+[SAB_SUSPENSION]
 ID=0E4h
 Len=8
-Sig=RR_load_cell 48
-Sig=pot3 0
-Sig=pot4 16
-Sig=RL_load_cell 32
+Sig=load_cell_rr 48
+Sig=load_cell_rl 32
+Sig=potentiometer_rl 0
+Sig=potentiometer_rr 16
 
 [TCU_STATUS]
 ID=0E8h
@@ -1154,3 +1144,11 @@ Sig=fl_motor_torque 0
 Sig=fr_motor_torque 16
 Sig=rl_motor_torque 32
 Sig=rr_motor_torque 48
+
+[MCU_SUSPENSION]
+ID=0C8h
+Len=8
+Sig=potentiometer_fl 0
+Sig=potentiometer_fr 16
+Sig=load_cell_fl 32
+Sig=load_cell_fr 48
