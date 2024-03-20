@@ -16,7 +16,7 @@
         ht_can_pkg = final.callPackage ./default.nix { };
       };
       my_overlays = [
-        ht_can_dbc_overlay
+        ht_can_dbc_overlay.override { devShells = prev.devShells; }
       ];
       system = builtins.currentSystem;
       x86_pkgs = import nixpkgs {
