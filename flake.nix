@@ -78,7 +78,8 @@
         name = "nix-devshell";
         packages = with arch64-darwin_pkgs; [
           # Development Tools
-          python311Packages.cantools
+          #https://discourse.nixos.org/t/overriding-docheck-doesnt-work-with-python-package/14674
+          (python311Packages.cantools.overridePythonAttrs (_: { doCheck = false; }))
           # ht_can_pkg 
         ];
 
@@ -89,7 +90,7 @@
         name = "nix-devshell";
         packages = with x86-darwin_pkgs; [
           # Development Tools
-          python311Packages.cantools
+          (python311Packages.cantools.overridePythonAttrs (_: { doCheck = false; }))
           # ht_can_pkg 
         ];
 
