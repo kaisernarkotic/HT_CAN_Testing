@@ -6,6 +6,7 @@ Enum=ecu_stateE(0="STARTUP", 1="TRACTIVE_SYSTEM_NOT_ACTIVE", 2="TRACTIVE_SYSTEM_
   4="WAITING_READY_TO_DRIVE_SOUND", 5="READY_TO_DRIVE")
 Enum=dial_stateE(0="MODE_0", 1="MODE_1", 2="MODE_2", 3="MODE_3", 4="MODE_4", 5="MODE_5")
 Enum=dashboard_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
+Enum=tcu_recordingE(0="NOT_RECORDING", 1="REQUESTING_RECORD", 2="RECORDING", 3="SAVING_RECORDING")
 
 {SIGNALS}
 Sig=system_ready unsigned 1
@@ -373,6 +374,7 @@ Sig=rr_motor_torque signed 16 /u:nm
 Sig=rl_motor_torque signed 16 /u:nm
 Sig=potentiometer_rl unsigned 16 /u:lbs /ln:"Rear Left Potentiometer"
 Sig=potentiometer_rr unsigned 16 /u:lbs /ln:"Rear Right Potentiometer"
+Sig=tcu_recording_state unsigned 2 // The current state of TCU data recording (off, requested,on,saving)
 
 {SENDRECEIVE}
 
@@ -816,6 +818,7 @@ Sig=led_dimmer_button 6
 Sig=dial_state 16
 Sig=left_shifter_button 7
 Sig=right_shifter_button 8
+Sig=tcu_recording_state 12
 
 [DASHBOARD_MCU_STATE]
 ID=0EBh
@@ -1136,6 +1139,7 @@ Sig=potentiometer_rr 16
 ID=0E8h
 Len=8
 Sig=shutdown_status 0
+Sig=tcu_recording_state 16
 
 [DRIVETRAIN_TORQUE_TELEM]
 ID=203h
