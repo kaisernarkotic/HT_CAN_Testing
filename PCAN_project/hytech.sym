@@ -541,13 +541,13 @@ Sig=input_ac_voltage_high 40
 Sig=input_ac_voltage_low 48
 
 [EM_MEASUREMENT]
-ID=400h
+ID=100h
 Len=8
 Sig=em_voltage 0
 Sig=em_current 32
 
 [EM_STATUS]
-ID=100h
+ID=400h
 Len=2
 Sig=voltage_gain 0
 Sig=current_gain 4
