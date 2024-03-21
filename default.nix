@@ -5,7 +5,7 @@ pkgs.stdenv.mkDerivation rec {
   
   src = ./PCAN_project;
   
-  buildInputs = [ python311Packages.cantools ]; # Python as a build dependency
+  buildInputs = [ (python311Packages.cantools.overridePythonAttrs (_: { doCheck = false; })) ]; # Python as a build dependency
   
   # Define the build phase to execute the scripts
   buildPhase = ''
