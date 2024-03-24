@@ -6,6 +6,7 @@ Enum=ecu_stateE(0="STARTUP", 1="TRACTIVE_SYSTEM_NOT_ACTIVE", 2="TRACTIVE_SYSTEM_
   4="WAITING_READY_TO_DRIVE_SOUND", 5="READY_TO_DRIVE")
 Enum=dial_stateE(0="MODE_0", 1="MODE_1", 2="MODE_2", 3="MODE_3", 4="MODE_4", 5="MODE_5")
 Enum=dashboard_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
+Enum=vn_gps_fixE(0="NO_FIX", 1="TIME_ONLY", 2="FIX_2D", 3="FIX_3D")
 Enum=tcu_recordingE(0="NOT_RECORDING", 1="REQUESTING_RECORD", 2="RECORDING", 3="SAVING_RECORDING")
 
 {SIGNALS}
@@ -365,6 +366,23 @@ Sig=thermistor_forward unsigned 16
 Sig=thermistor_left unsigned 16
 Sig=thermistor_right unsigned 16
 Sig=shutdown_status unsigned 16
+Sig=vn_yaw signed 16 /f:0.001
+Sig=vn_pitch signed 16 /f:0.001
+Sig=vn_roll signed 16 /f:0.001
+Sig=vn_lin_ins_accel_x signed 16 /f:0.001
+Sig=vn_lin_ins_accel_y signed 16 /f:0.001
+Sig=vn_lin_ins_accel_z signed 16 /f:0.001
+Sig=vn_lin_uncomp_accel_x signed 16 /f:0.001
+Sig=vn_lin_uncomp_accel_y signed 16 /f:0.001
+Sig=vn_lin_uncomp_accel_z signed 16 /f:0.001
+Sig=vn_body_vel_x signed 16 /f:0.01
+Sig=vn_body_vel_y signed 16 /f:0.01
+Sig=vn_body_vel_z signed 16 /f:0.01
+Sig=vn_gps_lat float /f:1E-006
+Sig=vn_gps_lon float /f:1E-006
+Sig=vn_gps_alt signed 16 /f:0.001
+Sig=vn_gps_time signed 64
+Sig=vn_gps_status unsigned 3 /e:vn_gps_fixE
 Sig=fr_motor_torque signed 16 /u:nm
 Sig=fl_motor_torque signed 16 /u:nm
 Sig=rr_motor_torque signed 16 /u:nm
@@ -1138,6 +1156,51 @@ ID=0E8h
 Len=8
 Sig=shutdown_status 0
 Sig=tcu_recording_state 16
+
+[VN_VEL]
+ID=0D0h
+Len=8
+Sig=vn_body_vel_x 0
+Sig=vn_body_vel_y 16
+Sig=vn_body_vel_z 32
+
+[VN_LINEAR_ACCEL]
+ID=0D1h
+Len=8
+Sig=vn_lin_ins_accel_x 0
+Sig=vn_lin_ins_accel_y 16
+Sig=vn_lin_ins_accel_z 32
+
+[VN_LINEAR_ACCEL_UNCOMP]
+ID=0D2h
+Len=8
+Sig=vn_lin_uncomp_accel_x 0
+Sig=vn_lin_uncomp_accel_y 16
+Sig=vn_lin_uncomp_accel_z 32
+
+[VN_YPR]
+ID=0D3h
+Len=8
+Sig=vn_yaw 0
+Sig=vn_pitch 16
+Sig=vn_roll 32
+
+[VN_LAT_LON]
+ID=0D4h
+Len=8
+Sig=vn_gps_lat 0
+Sig=vn_gps_lon 32
+
+[VN_GPS_TIME]
+ID=0E0h
+Len=8
+Sig=vn_gps_time 0
+
+[VN_STATUS]
+ID=0E1h
+Len=8
+Sig=vn_gps_status 0
+
 
 [DRIVETRAIN_TORQUE_TELEM]
 ID=203h
