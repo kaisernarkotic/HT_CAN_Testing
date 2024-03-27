@@ -381,8 +381,8 @@ Sig=vn_body_vel_z signed 16 /f:0.01
 Sig=vn_gps_lat float /f:1E-006
 Sig=vn_gps_lon float /f:1E-006
 Sig=vn_gps_alt signed 16 /f:0.001
-Sig=vn_gps_time signed 64
-Sig=vn_gps_status unsigned 3 /e:vn_gps_fixE
+Sig=vn_gps_time unsigned 64
+Sig=vn_gps_status unsigned 16 /e:vn_gps_fixE
 Sig=fr_motor_torque signed 16 /u:nm
 Sig=fl_motor_torque signed 16 /u:nm
 Sig=rr_motor_torque signed 16 /u:nm
@@ -392,6 +392,9 @@ Sig=potentiometer_rr unsigned 16 /u:lbs /ln:"Rear Right Potentiometer"
 Sig=tcu_recording_state unsigned 2 // The current state of TCU data recording (off, requested,on,saving)
 Sig=brake_percent_float unsigned 8 /u:percent /f:0.39215686275 /ln:"acceleration pedal percent travel" // The percentage of accel pedal travel represented by an unsigned float
 Sig=mechanical_brake_percent_float unsigned 8 /u:percent /f:0.39215686275 // The percentage at which mechanical brake activates represented by an unsigned float
+Sig=angular_rate_x signed 16 /u:rad/s /f:0.01
+Sig=angular_rate_y signed 16 /u:rad/s /f:0.01
+Sig=angular_rate_z signed 16 /u:rad/s /f:0.01
 
 {SENDRECEIVE}
 
@@ -1201,7 +1204,6 @@ ID=0E1h
 Len=8
 Sig=vn_gps_status 0
 
-
 [DRIVETRAIN_TORQUE_TELEM]
 ID=203h
 Len=8
@@ -1217,3 +1219,10 @@ Sig=potentiometer_fl 0
 Sig=potentiometer_fr 16
 Sig=load_cell_fl 32
 Sig=load_cell_fr 48
+
+[VN_ANGULAR_RATE]
+ID=0E3h
+Len=8
+Sig=angular_rate_x 0
+Sig=angular_rate_y 16
+Sig=angular_rate_z 32
