@@ -395,6 +395,9 @@ Sig=mechanical_brake_percent_float unsigned 8 /u:percent /f:0.39215686275 // The
 Sig=angular_rate_x signed 16 /u:rad/s /f:0.01
 Sig=angular_rate_y signed 16 /u:rad/s /f:0.01
 Sig=angular_rate_z signed 16 /u:rad/s /f:0.01
+Sig=vn_ecef_pos_x signed 32 /f:0.001
+Sig=vn_ecef_pos_y signed 32 /f:0.001
+Sig=vn_ecef_pos_z signed 32 /f:0.001
 
 {SENDRECEIVE}
 
@@ -1226,3 +1229,14 @@ Len=8
 Sig=angular_rate_x 0
 Sig=angular_rate_y 16
 Sig=angular_rate_z 32
+
+[VN_ECEF_POS_XY]
+ID=0E7h
+Len=8
+Sig=vn_ecef_pos_x 0
+Sig=vn_ecef_pos_y 32
+
+[VN_ECEF_POS_Z]
+ID=0E9h
+Len=8
+Sig=vn_ecef_pos_z 0
