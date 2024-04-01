@@ -398,6 +398,10 @@ Sig=angular_rate_z signed 16 /u:rad/s /f:0.001
 Sig=vn_ecef_pos_x signed 32 /f:0.005
 Sig=vn_ecef_pos_y signed 32 /f:0.005
 Sig=vn_ecef_pos_z signed 32 /f:0.005
+Sig=accel_1_raw unsigned 12
+Sig=accel_2_raw unsigned 12
+Sig=brake_1_raw unsigned 12
+Sig=brake_2_raw unsigned 12
 
 {SENDRECEIVE}
 
@@ -1240,3 +1244,11 @@ Sig=vn_ecef_pos_y 32
 ID=0E9h
 Len=8
 Sig=vn_ecef_pos_z 0
+
+[MCU_PEDAL_RAW]
+ID=0CDh
+Len=8
+Sig=accel_1_raw 0
+Sig=accel_2_raw 12
+Sig=brake_1_raw 24
+Sig=brake_2_raw 36
