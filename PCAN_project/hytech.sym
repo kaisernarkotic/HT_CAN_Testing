@@ -1072,7 +1072,7 @@ Sig=RR_TTPMS_NODE_ID 48
 
 [ACU_SHUNT_MEASUREMENTS]
 ID=401h
-Len=8
+Len=4
 Sig=shunt_voltage 0
 Sig=shunt_current 16
 
@@ -1148,7 +1148,7 @@ Sig=thermistor_rr 48
 
 [SAB_THERMISTORS_2]
 ID=0E6h
-Len=8
+Len=6
 Sig=thermistor_forward 0
 Sig=thermistor_left 16
 Sig=thermistor_right 32
@@ -1163,7 +1163,7 @@ Sig=potentiometer_rr 16
 
 [TCU_STATUS]
 ID=0E8h
-Len=8
+Len=3
 Sig=shutdown_status 0
 Sig=tcu_recording_state 16
 
