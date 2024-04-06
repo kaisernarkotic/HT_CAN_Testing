@@ -402,6 +402,8 @@ Sig=accel_1_raw unsigned 12
 Sig=accel_2_raw unsigned 12
 Sig=brake_1_raw unsigned 12
 Sig=brake_2_raw unsigned 12
+Sig=controller_input signed 20 /f:0.01
+Sig=controller_output signed 20 /f:0.01
 
 {SENDRECEIVE}
 
@@ -1252,3 +1254,9 @@ Sig=accel_1_raw 0
 Sig=accel_2_raw 12
 Sig=brake_1_raw 24
 Sig=brake_2_raw 36
+
+[CONTROLLER_PID_TV_DATA]
+ID=4EFh
+Len=8
+Sig=controller_input 0
+Sig=controller_output 20
