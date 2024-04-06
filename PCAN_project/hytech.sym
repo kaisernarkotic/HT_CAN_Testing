@@ -404,6 +404,10 @@ Sig=brake_1_raw unsigned 12
 Sig=brake_2_raw unsigned 12
 Sig=controller_input signed 20 /f:0.01
 Sig=controller_output signed 20 /f:0.01
+Sig=pid_tv_fl_delta signed 10 /f:0.1
+Sig=pid_tv_fr_delta signed 10 /f:0.1
+Sig=pid_tv_rl_delta signed 10 /f:0.1
+Sig=pid_tv_rr_delta signed 10 /f:0.1
 
 {SENDRECEIVE}
 
@@ -1260,3 +1264,11 @@ ID=4EFh
 Len=8
 Sig=controller_input 0
 Sig=controller_output 20
+
+[CONTROLLER_PID_TV_DELTA_DATA]
+ID=4F0h
+Len=8
+Sig=pid_tv_fl_delta 0
+Sig=pid_tv_fr_delta 10
+Sig=pid_tv_rl_delta 20
+Sig=pid_tv_rr_delta 30
