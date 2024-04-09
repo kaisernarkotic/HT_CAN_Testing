@@ -417,6 +417,21 @@ Sig=rear_regen_scale signed 8 /f:0.00787402 /ln:"rear_regen_torque_scale" // the
 Sig=launch_control_state unsigned 2 // The current state of the launch controller (LAUNCH_NOT_READY, LAUNCH_READY, LAUNCHING)
 Sig=initial_launch_target unsigned 16 /u:rpm // The initial launch speed target requested by the launch controller
 Sig=algo_active unsigned 1 /ln:"launch_algorithm_active" // State of whether the launch algorithm has taken over control from the initial launch target
+Sig=vehm_alpha_deg_fl signed 16 /u:deg /f:0.001
+Sig=vehm_alpha_deg_fr signed 16 /u:deg /f:0.001
+Sig=vehm_alpha_deg_rl signed 16 /u:deg /f:0.001
+Sig=vehm_alpha_deg_rr signed 16 /u:deg /f:0.001
+Sig=vehm_beta_deg signed 16 /u:deg /f:0.001
+Sig=vehm_long_corner_vel_fl signed 16 /u:m/s /f:0.01
+Sig=vehm_long_corner_vel_fr signed 16 /u:m/s /f:0.01
+Sig=vehm_long_corner_vel_rl signed 16 /u:m/s /f:0.01
+Sig=vehm_long_corner_vel_rr signed 16 /u:m/s /f:0.01
+Sig=vehm_kin_desired_yaw_rate_rad_s signed 16 /u:rad/s /f:0.0001
+Sig=vehm_sl_fl signed 16 /f:0.0001
+Sig=vehm_sl_fr signed 16 /f:0.0001
+Sig=vehm_sl_rl signed 16 /f:0.0001
+Sig=vehm_sl_rr signed 16 /f:0.0001
+Sig=vehm_wheel_steer_avg_deg signed 16 /u:deg /f:0.001
 
 {SENDRECEIVE}
 
@@ -1299,3 +1314,42 @@ Sig=launch_control_state 0
 Sig=initial_launch_target 8
 Sig=algo_active 2
 Sig=speed_setpoint_rpm 24
+
+[VEHM_ALPHA]
+ID=7FFh
+Len=8
+Sig=vehm_alpha_deg_fl 0
+Sig=vehm_alpha_deg_fr 16
+Sig=vehm_alpha_deg_rl 32
+Sig=vehm_alpha_deg_rr 48
+
+[VEHM_BETA]
+ID=7EFh
+Len=8
+Sig=vehm_beta_deg 0
+
+[VEHM_LONG_CORNER_VEL]
+ID=7CEh
+Len=8
+Sig=vehm_long_corner_vel_fl 0
+Sig=vehm_long_corner_vel_fr 16
+Sig=vehm_long_corner_vel_rl 32
+Sig=vehm_long_corner_vel_rr 48
+
+[VEHM_SL]
+ID=7CFh
+Len=8
+Sig=vehm_sl_fl 0
+Sig=vehm_sl_fr 16
+Sig=vehm_sl_rl 32
+Sig=vehm_sl_rr 48
+
+[VEHM_WHEEL_STEER_AVG_DEG]
+ID=7CAh
+Len=8
+Sig=vehm_wheel_steer_avg_deg 0
+
+[VEHM_KIN_DESIRED_YAW_RATE_RAD_S]
+ID=7CBh
+Len=8
+Sig=vehm_kin_desired_yaw_rate_rad_s 0
