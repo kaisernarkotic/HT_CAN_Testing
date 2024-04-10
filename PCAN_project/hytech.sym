@@ -432,6 +432,33 @@ Sig=vehm_sl_fr signed 16 /f:0.0001
 Sig=vehm_sl_rl signed 16 /f:0.0001
 Sig=vehm_sl_rr signed 16 /f:0.0001
 Sig=vehm_wheel_steer_avg_deg signed 16 /u:deg /f:0.001
+Sig=vehm_steering_wheel_angle_deg signed 16 /u:deg /f:0.001
+Sig=controller_initial_torque_req signed 16 /u:Nm /f:0.001
+Sig=controller_yaw_rate_error signed 16 /u:Nm /f:0.0001
+Sig=controller_yaw_torque_fl signed 16 /u:Nm /f:0.001
+Sig=controller_yaw_torque_fr signed 16 /u:Nm /f:0.001
+Sig=controller_yaw_torque_rl signed 16 /u:Nm /f:0.001
+Sig=controller_yaw_torque_rr signed 16 /u:Nm /f:0.001
+Sig=controller_normal_percent_fl signed 16 /f:0.0001
+Sig=controller_normal_percent_fr signed 16 /f:0.0001
+Sig=controller_normal_percent_rl signed 16 /f:0.0001
+Sig=controller_normal_percent_rr signed 16 /f:0.0001
+Sig=controller_normal_torque_fl signed 16 /u:Nm /f:0.001
+Sig=controller_normal_torque_fr signed 16 /u:Nm /f:0.001
+Sig=controller_normal_torque_rl signed 16 /u:Nm /f:0.001
+Sig=controller_normal_torque_rr signed 16 /u:Nm /f:0.001
+Sig=controller_power_lim_status unsigned 4
+Sig=controller_power_lim_error signed 16 /f:0.001
+Sig=controller_power_lim_torque_adj signed 16 /f:0.001
+Sig=controller_power_lim_cornerp_fl signed 16 /u:kW /f:0.01
+Sig=controller_power_lim_cornerp_fr signed 16 /u:kW /f:0.01
+Sig=controller_power_lim_cornerp_rl signed 16 /u:kW /f:0.01
+Sig=controller_power_lim_cornerp_rr signed 16 /u:kW /f:0.01
+Sig=controller_power_lim_torque_fl signed 16 /u:Nm /f:0.001
+Sig=controller_power_lim_torque_fr signed 16 /u:Nm /f:0.001
+Sig=controller_power_lim_torque_rl signed 16 /u:Nm /f:0.001
+Sig=controller_power_lim_torque_rr signed 16 /u:Nm /f:0.001
+Sig=controller_yaw_pid_output signed 16 /f:0.001
 
 {SENDRECEIVE}
 
@@ -1353,3 +1380,57 @@ Sig=vehm_wheel_steer_avg_deg 0
 ID=7CBh
 Len=8
 Sig=vehm_kin_desired_yaw_rate_rad_s 0
+
+[CONTROLLER_PID_YAW]
+ID=7CDh
+Len=8
+Sig=vehm_kin_desired_yaw_rate_rad_s 0
+Sig=controller_yaw_rate_error 16
+Sig=controller_yaw_pid_output 32
+
+[CONTROLLER_PID_YAW_TORQUE]
+ID=7DAh
+Len=8
+Sig=controller_yaw_torque_fl 0
+Sig=controller_yaw_torque_fr 16
+Sig=controller_yaw_torque_rl 32
+Sig=controller_yaw_torque_rr 48
+
+[CONTROLLER_NORMAL_DIST]
+ID=7DBh
+Len=8
+Sig=controller_normal_percent_fl 0
+Sig=controller_normal_percent_fr 16
+Sig=controller_normal_percent_rl 32
+Sig=controller_normal_percent_rr 48
+
+[CONTROLLER_NORMAL_TORQUE]
+ID=7DCh
+Len=8
+Sig=controller_normal_torque_fl 0
+Sig=controller_normal_torque_fr 16
+Sig=controller_normal_torque_rl 32
+Sig=controller_normal_torque_rr 48
+
+[CONTROLLER_POWER_LIM]
+ID=7DEh
+Len=8
+Sig=controller_power_lim_status 0
+Sig=controller_power_lim_error 4
+Sig=controller_power_lim_torque_adj 20
+
+[CONTROLLER_POWER_LIM_CORNER_POW]
+ID=7EAh
+Len=8
+Sig=controller_power_lim_cornerp_fl 0
+Sig=controller_power_lim_cornerp_fr 16
+Sig=controller_power_lim_cornerp_rl 32
+Sig=controller_power_lim_cornerp_rr 48
+
+[CONTROLLER_POWER_LIM_TORQUE]
+ID=7EBh
+Len=8
+Sig=controller_power_lim_torque_fl 0
+Sig=controller_power_lim_torque_fr 16
+Sig=controller_power_lim_torque_rl 32
+Sig=controller_power_lim_torque_rr 48
