@@ -79,4 +79,5 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: /dbc/hytech.dbc
           asset_name: hytech.dbc
+          asset_content_type: text/plain
 
