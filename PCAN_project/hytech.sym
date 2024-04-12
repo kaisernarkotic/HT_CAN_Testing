@@ -1448,3 +1448,8 @@ Sig=controller_use_pid_tv 1
 Sig=controller_use_normal_force 2
 Sig=controller_use_pid_power_limit 3
 Sig=controller_use_power_limit 4
+
+[CONTROLLER_INITIAL_TORQUE_REQ]
+ID=7FAh
+Len=8
+Sig=controller_initial_torque_req 0
