@@ -1134,9 +1134,9 @@ Sig=RR_TTPMS_NODE_ID 48
 
 [ACU_SHUNT_MEASUREMENTS]
 ID=401h
-Len=4
+Len=8
 Sig=shunt_voltage 0
-Sig=shunt_current 16
+Sig=shunt_current 32
 
 [PENTHOUSE_ACCUM_MSG]
 ID=0DFh
