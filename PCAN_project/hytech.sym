@@ -464,6 +464,26 @@ Sig=controller_use_launch unsigned 1
 Sig=controller_use_normal_force unsigned 1
 Sig=controller_use_power_limit unsigned 1
 Sig=controller_use_pid_power_limit unsigned 1
+Sig=controller_use_tcs unsigned 1
+Sig=controller_tcs_launch_sl unsigned 8 /f:0.01
+Sig=controller_tcs_threshold unsigned 8 /f:0.01
+Sig=controller_tcs_launch_dead_zone unsigned 12 /u:Nm /f:0.01
+Sig=controller_tcs_torque_fl signed 16 /u:Nm /f:0.001
+Sig=controller_tcs_torque_fr signed 16 /u:Nm /f:0.001
+Sig=controller_tcs_torque_rl signed 16 /u:Nm /f:0.001
+Sig=controller_tcs_torque_rr signed 16 /u:Nm /f:0.001
+Sig=controller_tcs_status_fl unsigned 2
+Sig=controller_tcs_status_fr unsigned 2
+Sig=controller_tcs_status_rl unsigned 2
+Sig=controller_tcs_status_rr unsigned 2
+Sig=controller_tcs_pid_input_fl signed 16 /u:Nm /f:0.0001
+Sig=controller_tcs_pid_input_fr signed 16 /u:Nm /f:0.0001
+Sig=controller_tcs_pid_input_rl signed 16 /u:Nm /f:0.0001
+Sig=controller_tcs_pid_input_rr signed 16 /u:Nm /f:0.0001
+Sig=controller_tcs_pid_output_fl signed 16 /u:Nm /f:0.001
+Sig=controller_tcs_pid_output_fr signed 16 /u:Nm /f:0.001
+Sig=controller_tcs_pid_output_rl signed 16 /u:Nm /f:0.001
+Sig=controller_tcs_pid_output_rr signed 16 /u:Nm /f:0.001
 
 {SENDRECEIVE}
 
