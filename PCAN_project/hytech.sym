@@ -1468,8 +1468,48 @@ Sig=controller_use_pid_tv 1
 Sig=controller_use_normal_force 2
 Sig=controller_use_pid_power_limit 3
 Sig=controller_use_power_limit 4
+Sig=controller_use_tcs 5
 
 [CONTROLLER_INITIAL_TORQUE_REQ]
 ID=7FAh
 Len=8
 Sig=controller_initial_torque_req 0
+
+[CONTROLLER_TCS_CONFIG]
+ID=7FBh
+Len=8
+Sig=controller_tcs_threshold 0
+Sig=controller_tcs_launch_sl 8
+Sig=controller_tcs_launch_dead_zone 16
+
+[CONTROLLER_TCS_TORQUE]
+ID=7FCh
+Len=8
+Sig=controller_tcs_torque_fl 0
+Sig=controller_tcs_torque_fr 16
+Sig=controller_tcs_torque_rl 32
+Sig=controller_tcs_torque_rr 48
+
+[CONTROLLER_TCS_STATUS]
+ID=7FDh
+Len=8
+Sig=controller_tcs_status_fl 0
+Sig=controller_tcs_status_fr 2
+Sig=controller_tcs_status_rl 4
+Sig=controller_tcs_status_rr 6
+
+[CONTROLLER_TCS_PID_INPUT]
+ID=7FEh
+Len=8
+Sig=controller_tcs_pid_input_fl 0
+Sig=controller_tcs_pid_input_fr 16
+Sig=controller_tcs_pid_input_rl 32
+Sig=controller_tcs_pid_input_rr 48
+
+[CONTROLLER_TCS_PID_OUTPUT]
+ID=7AAh
+Len=8
+Sig=controller_tcs_pid_output_fl 0
+Sig=controller_tcs_pid_output_fr 16
+Sig=controller_tcs_pid_output_rl 32
+Sig=controller_tcs_pid_output_rr 48
