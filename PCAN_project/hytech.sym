@@ -42,15 +42,15 @@ Sig=bms_ok_high unsigned 1
 Sig=shutdown_c_above_threshold unsigned 1
 Sig=bspd_ok_high unsigned 1
 Sig=shutdown_d_above_threshold unsigned 1
-Sig=shoftware_ok_high unsigned 1
+Sig=software_ok_high unsigned 1
 Sig=shutdown_e_above_threshold unsigned 1
 Sig=mechanical_brake_active unsigned 1
-Sig=no_accel_implausability unsigned 1
-Sig=no_brake_implausability unsigned 1
+Sig=no_accel_implausibility unsigned 1
+Sig=no_brake_implausibility unsigned 1
 Sig=brake_pedal_active unsigned 1
 Sig=bspd_current_high unsigned 1
 Sig=bspd_brake_high unsigned 1
-Sig=no_accel_or_brake_implausability unsigned 1
+Sig=no_accel_or_brake_implausibility unsigned 1
 Sig=ecu_state unsigned 3 /e:ecu_stateE
 Sig=inverter_error unsigned 1
 Sig=energy_meter_present unsigned 1
@@ -484,6 +484,7 @@ Sig=controller_tcs_pid_output_fl signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_pid_output_fr signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_pid_output_rl signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_pid_output_rr signed 16 /u:Nm /f:0.001
+Sig=drive_mode unsigned 4 /ln:"ECU_drive_mode" // The current drive mode on the ECU irrespective of dial mapping
 
 {SENDRECEIVE}
 
@@ -890,15 +891,15 @@ Sig=bms_ok_high 2
 Sig=shutdown_c_above_threshold 3
 Sig=bspd_ok_high 4
 Sig=shutdown_d_above_threshold 5
-Sig=shoftware_ok_high 6
+Sig=software_ok_high 6
 Sig=shutdown_e_above_threshold 7
 Sig=mechanical_brake_active 8
-Sig=no_accel_implausability 9
-Sig=no_brake_implausability 10
+Sig=no_accel_implausibility 9
+Sig=no_brake_implausibility 10
 Sig=brake_pedal_active 11
 Sig=bspd_current_high 12
 Sig=bspd_brake_high 13
-Sig=no_accel_or_brake_implausability 14
+Sig=no_accel_or_brake_implausibility 14
 Sig=ecu_state 16
 Sig=inverter_error 19
 Sig=energy_meter_present 20
@@ -909,6 +910,7 @@ Sig=max_torque 32
 Sig=torque_mode 40
 Sig=distance_traveled_m 48
 Sig=drive_buzzer 15
+Sig=drive_mode 28
 
 [DASHBOARD_STATE]
 ID=0ECh
@@ -930,7 +932,7 @@ Sig=tcu_recording_state 12
 
 [DASHBOARD_MCU_STATE]
 ID=0EBh
-Len=5
+Len=6
 Sig=drive_buzzer 20
 Sig=ams_led 18
 Sig=imd_led 16
@@ -944,6 +946,7 @@ Sig=cockpit_brb_led 8
 Sig=pack_charge_led 32
 Sig=glv_led 24
 Sig=launch_control_led 2
+Sig=dial_state 40
 
 [TCU_LAP_TIMES]
 ID=095h // The TCU_LAP_TIMES message contains the best and previous lap times to the dashboard as calculated by the TCU or manually input by the pit crew. It also relays the current state of the TCU's clock to the dashboard so that it can run an approximate stopwatc
