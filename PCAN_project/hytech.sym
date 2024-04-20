@@ -485,6 +485,7 @@ Sig=controller_tcs_pid_output_fr signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_pid_output_rl signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_pid_output_rr signed 16 /u:Nm /f:0.001
 Sig=drive_mode unsigned 4 /ln:"ECU_drive_mode" // The current drive mode on the ECU irrespective of dial mapping
+Sig=controller_use_tcs_lim_yaw_pid unsigned 1
 
 {SENDRECEIVE}
 
@@ -1472,6 +1473,7 @@ Sig=controller_use_normal_force 2
 Sig=controller_use_pid_power_limit 3
 Sig=controller_use_power_limit 4
 Sig=controller_use_tcs 5
+Sig=controller_use_tcs_lim_yaw_pid 6
 
 [CONTROLLER_INITIAL_TORQUE_REQ]
 ID=7FAh
