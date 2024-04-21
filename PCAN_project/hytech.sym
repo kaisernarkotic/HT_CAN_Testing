@@ -309,8 +309,7 @@ Sig=LF_TTPMS_SN unsigned 16 -m
 Sig=LF_TTPMS_BAT_V unsigned 16 -m /u:mV
 Sig=LF_TTPMS_P unsigned 16 -m /u:mbar
 Sig=LF_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
-Sig=shunt_current signed 32
-Sig=shunt_voltage signed 32 /f:0.001
+Sig= unsigned 16 -m /f:0.000805860805861
 Sig=hall_curr_signal unsigned 16
 Sig=hall_curr_ref unsigned 16
 Sig=fl_motor_rpm signed 16
@@ -1159,8 +1158,7 @@ Sig=RR_TTPMS_NODE_ID 48
 [ACU_SHUNT_MEASUREMENTS]
 ID=401h
 Len=8
-Sig=shunt_voltage 0
-Sig=shunt_current 32
+Sig= 0
 
 [PENTHOUSE_ACCUM_MSG]
 ID=0DFh
