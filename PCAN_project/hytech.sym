@@ -1477,6 +1477,8 @@ Sig=controller_use_pid_power_limit 3
 Sig=controller_use_power_limit 4
 Sig=controller_use_tcs 5
 Sig=controller_use_tcs_lim_yaw_pid 6
+Sig=controller_use_dec_yaw_pid_brake 7
+Sig=controller_use_discontin_brakes 8
 
 [CONTROLLER_TORQUE_SETUP]
 ID=7FAh
