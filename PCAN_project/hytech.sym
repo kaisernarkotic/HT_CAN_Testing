@@ -486,6 +486,11 @@ Sig=controller_tcs_pid_output_rl signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_pid_output_rr signed 16 /u:Nm /f:0.001
 Sig=drive_mode unsigned 4 /ln:"ECU_drive_mode" // The current drive mode on the ECU irrespective of dial mapping
 Sig=controller_use_tcs_lim_yaw_pid unsigned 1
+Sig=controller_constrained_torq_req signed 16 /u:Nm /f:0.001
+Sig=controller_torque_mode unsigned 12 /u:Nm /f:0.01
+Sig=controller_regen_limit signed 13 /u:Nm /f:0.01
+Sig=controller_use_dec_yaw_pid_brake unsigned 1
+Sig=controller_use_discontin_brakes unsigned 1
 
 {SENDRECEIVE}
 
@@ -1475,10 +1480,13 @@ Sig=controller_use_power_limit 4
 Sig=controller_use_tcs 5
 Sig=controller_use_tcs_lim_yaw_pid 6
 
-[CONTROLLER_INITIAL_TORQUE_REQ]
+[CONTROLLER_TORQUE_SETUP]
 ID=7FAh
 Len=8
 Sig=controller_initial_torque_req 0
+Sig=controller_constrained_torq_req 16
+Sig=controller_regen_limit 32
+Sig=controller_torque_mode 45
 
 [CONTROLLER_TCS_CONFIG]
 ID=7FBh
