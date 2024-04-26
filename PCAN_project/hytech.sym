@@ -310,6 +310,8 @@ Sig=LF_TTPMS_BAT_V unsigned 16 -m /u:mV
 Sig=LF_TTPMS_P unsigned 16 -m /u:mbar
 Sig=LF_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
 Sig=current_shunt_read unsigned 16 -m /f:0.000805860805861
+Sig=pack_filtered_read unsigned 16 -m /f:0.000805860805861
+Sig=ts_out_filtered_read unsigned 16 -m /f:0.000805860805861
 Sig=hall_curr_signal unsigned 16
 Sig=hall_curr_ref unsigned 16
 Sig=fl_motor_rpm signed 16
@@ -1180,6 +1182,8 @@ Sig=RR_TTPMS_NODE_ID 48
 ID=401h
 Len=8
 Sig=current_shunt_read 0
+Sig=pack_filtered_read 16
+Sig=ts_out_filtered_read 32
 
 [PENTHOUSE_ACCUM_MSG]
 ID=0DFh
