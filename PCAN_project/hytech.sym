@@ -1562,10 +1562,10 @@ Sig=controller_bias_torq_avg_rear 16
 [CONTROLLER_REGEN_5KPH_TORQUE]
 ID=7ADh
 Len=8
-Sig=controller_tcs_torque_fl 0
-Sig=controller_tcs_torque_fr 16
-Sig=controller_tcs_torque_rl 32
-Sig=controller_tcs_torque_rr 48
+Sig=controller_regen_5kph_torq_fl 0
+Sig=controller_regen_5kph_torq_fr 16
+Sig=controller_regen_5kph_torq_rl 32
+Sig=controller_regen_5kph_torq_rr 48
 
 [CONTROLLER_REGEN_5KPH_STATUS]
 ID=7AEh
