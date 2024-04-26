@@ -490,6 +490,22 @@ Sig=controller_torque_mode unsigned 12 /u:Nm /f:0.01
 Sig=controller_regen_limit signed 13 /u:Nm /f:0.01
 Sig=controller_use_dec_yaw_pid_brake unsigned 1
 Sig=controller_use_discontin_brakes unsigned 1
+Sig=vehm_wheel_lin_vel_fl signed 16 /u:m/s /f:0.01
+Sig=vehm_wheel_lin_vel_fr signed 16 /u:m/s /f:0.01
+Sig=vehm_wheel_lin_vel_rl signed 16 /u:m/s /f:0.01
+Sig=vehm_wheel_lin_vel_rr signed 16 /u:m/s /f:0.01
+Sig=controller_use_no_regen_5kph unsigned 1
+Sig=controller_use_torque_bias unsigned 1
+Sig=controller_bias_torq_avg_front signed 16 /u:Nm /f:0.001
+Sig=controller_bias_torq_avg_rear signed 16 /u:Nm /f:0.001
+Sig=controller_regen_5kph_torq_fl signed 16 /u:Nm /f:0.001
+Sig=controller_regen_5kph_torq_fr signed 16 /u:Nm /f:0.001
+Sig=controller_regen_5kph_torq_rl signed 16 /u:Nm /f:0.001
+Sig=controller_regen_5kph_torq_rr signed 16 /u:Nm /f:0.001
+Sig=controller_regen_5kph_status_fl unsigned 1
+Sig=controller_regen_5kph_status_fr unsigned 1
+Sig=controller_regen_5kph_status_rl unsigned 1
+Sig=controller_regen_5kph_status_rr unsigned 1
 
 {SENDRECEIVE}
 
@@ -1479,6 +1495,8 @@ Sig=controller_use_tcs 5
 Sig=controller_use_tcs_lim_yaw_pid 6
 Sig=controller_use_dec_yaw_pid_brake 7
 Sig=controller_use_discontin_brakes 8
+Sig=controller_use_no_regen_5kph 9
+Sig=controller_use_torque_bias 10
 
 [CONTROLLER_TORQUE_SETUP]
 ID=7FAh
@@ -1526,3 +1544,33 @@ Sig=controller_tcs_pid_output_fl 0
 Sig=controller_tcs_pid_output_fr 16
 Sig=controller_tcs_pid_output_rl 32
 Sig=controller_tcs_pid_output_rr 48
+
+[VEHM_WHEEL_LIN_VEL]
+ID=7ABh
+Len=8
+Sig=vehm_wheel_lin_vel_fl 0
+Sig=vehm_wheel_lin_vel_fr 16
+Sig=vehm_wheel_lin_vel_rl 32
+Sig=vehm_wheel_lin_vel_rr 48
+
+[CONTROLLER_TORQUE_BIAS]
+ID=7ACh
+Len=8
+Sig=controller_bias_torq_avg_front 0
+Sig=controller_bias_torq_avg_rear 16
+
+[CONTROLLER_REGEN_5KPH_TORQUE]
+ID=7ADh
+Len=8
+Sig=controller_tcs_torque_fl 0
+Sig=controller_tcs_torque_fr 16
+Sig=controller_tcs_torque_rl 32
+Sig=controller_tcs_torque_rr 48
+
+[CONTROLLER_REGEN_5KPH_STATUS]
+ID=7AEh
+Len=8
+Sig=controller_regen_5kph_status_fl 0
+Sig=controller_regen_5kph_status_fr 1
+Sig=controller_regen_5kph_status_rl 2
+Sig=controller_regen_5kph_status_rr 3
