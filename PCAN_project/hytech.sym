@@ -359,13 +359,13 @@ Sig=accel_implausible bit
 Sig=brake_implausible bit
 Sig=accel_percent unsigned 8 /max:100
 Sig=brake_percent unsigned 8 /max:100
-Sig=thermistor_fl unsigned 16
-Sig=thermistor_fr unsigned 16
-Sig=thermistor_rl unsigned 16
-Sig=thermistor_rr unsigned 16
-Sig=thermistor_forward unsigned 16
-Sig=thermistor_left unsigned 16
-Sig=thermistor_right unsigned 16
+Sig=thermistor_inv1 unsigned 16
+Sig=thermistor_inv2 unsigned 16
+Sig=thermistor_acc1 unsigned 16
+Sig=thermistor_acc2 unsigned 16
+Sig=thermistor_motor_rl unsigned 16
+Sig=thermistor_motor_rr unsigned 16
+Sig=thermistor_pump unsigned 16
 Sig=shutdown_status unsigned 16
 Sig=vn_yaw signed 16 /f:0.01
 Sig=vn_pitch signed 16 /f:0.01
@@ -1250,17 +1250,17 @@ Sig=accel_percent 48
 [SAB_THERMISTORS_1]
 ID=0E5h
 Len=8
-Sig=thermistor_fl 0
-Sig=thermistor_fr 16
-Sig=thermistor_rl 32
-Sig=thermistor_rr 48
+Sig=thermistor_inv1 0
+Sig=thermistor_inv2 16
+Sig=thermistor_acc1 32
+Sig=thermistor_acc2 48
 
 [SAB_THERMISTORS_2]
 ID=0E6h
 Len=6
-Sig=thermistor_forward 0
-Sig=thermistor_left 16
-Sig=thermistor_right 32
+Sig=thermistor_motor_rl 0
+Sig=thermistor_motor_rr 16
+Sig=thermistor_pump 32
 
 [SAB_SUSPENSION]
 ID=0E4h
