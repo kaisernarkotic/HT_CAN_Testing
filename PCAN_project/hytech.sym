@@ -488,7 +488,7 @@ Sig=controller_tcs_pid_output_rr signed 16 /u:Nm /f:0.001
 Sig=drive_mode unsigned 4 /ln:"ECU_drive_mode" // The current drive mode on the ECU irrespective of dial mapping
 Sig=controller_use_tcs_lim_yaw_pid unsigned 1
 Sig=controller_constrained_torq_req signed 16 /u:Nm /f:0.001
-Sig=controller_torque_mode unsigned 12 /u:Nm /f:0.01
+Sig=controller_torque_mode unsigned 11 /u:Nm /f:0.1
 Sig=controller_regen_limit signed 13 /u:Nm /f:0.01
 Sig=controller_use_dec_yaw_pid_brake unsigned 1
 Sig=controller_use_discontin_brakes unsigned 1
@@ -518,6 +518,7 @@ Sig=controller_yaw_pid_d unsigned 10 /f:0.001
 Sig=controller_yaw_pid_brakes_p unsigned 11 /f:0.001
 Sig=controller_yaw_pid_brakes_i unsigned 11 /f:0.001
 Sig=controller_yaw_pid_brakes_d unsigned 10 /f:0.001
+Sig=controller_max_nl_brake_sc_front unsigned 8 /f:0.01
 
 {SENDRECEIVE}
 
@@ -1519,6 +1520,7 @@ Sig=controller_initial_torque_req 0
 Sig=controller_constrained_torq_req 16
 Sig=controller_regen_limit 32
 Sig=controller_torque_mode 45
+Sig=controller_max_nl_brake_sc_front 56
 
 [CONTROLLER_TCS_CONFIG]
 ID=7FBh
