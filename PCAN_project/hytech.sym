@@ -508,6 +508,16 @@ Sig=controller_regen_5kph_status_fl unsigned 1
 Sig=controller_regen_5kph_status_fr unsigned 1
 Sig=controller_regen_5kph_status_rl unsigned 1
 Sig=controller_regen_5kph_status_rr unsigned 1
+Sig=controller_tcs_pid_p_fl unsigned 16 /f:0.001
+Sig=controller_tcs_pid_p_fr unsigned 16 /f:0.001
+Sig=controller_tcs_pid_p_rl unsigned 16 /f:0.001
+Sig=controller_tcs_pid_p_rr unsigned 16 /f:0.001
+Sig=controller_yaw_pid_p unsigned 11 /f:0.001
+Sig=controller_yaw_pid_i unsigned 11 /f:0.001
+Sig=controller_yaw_pid_d unsigned 10 /f:0.001
+Sig=controller_yaw_pid_brakes_p unsigned 11 /f:0.001
+Sig=controller_yaw_pid_brakes_i unsigned 11 /f:0.001
+Sig=controller_yaw_pid_brakes_d unsigned 10 /f:0.001
 
 {SENDRECEIVE}
 
@@ -1578,3 +1588,21 @@ Sig=controller_regen_5kph_status_fl 0
 Sig=controller_regen_5kph_status_fr 1
 Sig=controller_regen_5kph_status_rl 2
 Sig=controller_regen_5kph_status_rr 3
+
+[CONTROLLER_YAW_PID_CONFIG]
+ID=7BAh
+Len=8
+Sig=controller_yaw_pid_p 0
+Sig=controller_yaw_pid_i 11
+Sig=controller_yaw_pid_d 22
+Sig=controller_yaw_pid_brakes_p 32
+Sig=controller_yaw_pid_brakes_i 43
+Sig=controller_yaw_pid_brakes_d 54
+
+[CONTROLLER_TCS_PID_CONFIG]
+ID=7AFh
+Len=8
+Sig=controller_tcs_pid_p_fl 0
+Sig=controller_tcs_pid_p_fr 16
+Sig=controller_tcs_pid_p_rl 32
+Sig=controller_tcs_pid_p_rr 48
