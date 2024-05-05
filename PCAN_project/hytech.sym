@@ -519,6 +519,8 @@ Sig=controller_yaw_pid_brakes_p unsigned 11 /f:0.001
 Sig=controller_yaw_pid_brakes_i unsigned 11 /f:0.001
 Sig=controller_yaw_pid_brakes_d unsigned 10 /f:0.001
 Sig=controller_max_nl_brake_sc_front unsigned 8 /f:0.01
+Sig=controller_tcs_launch_vel_thresh unsigned 8 /f:0.01
+Sig=controller_tcs_vel_thresh unsigned 10 /f:0.01
 
 {SENDRECEIVE}
 
@@ -1528,6 +1530,8 @@ Len=8
 Sig=controller_tcs_threshold 0
 Sig=controller_tcs_launch_sl 8
 Sig=controller_tcs_launch_dead_zone 16
+Sig=controller_tcs_launch_vel_thresh 28
+Sig=controller_tcs_vel_thresh 36
 
 [CONTROLLER_TCS_TORQUE]
 ID=7FCh
