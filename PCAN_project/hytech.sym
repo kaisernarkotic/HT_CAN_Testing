@@ -1,5 +1,6 @@
 FormatVersion=6.0 // Do not edit this line!
 Title="SYM Database"
+BRS=False
 
 {ENUMS}
 Enum=ecu_stateE(0="STARTUP", 1="TRACTIVE_SYSTEM_NOT_ACTIVE", 2="TRACTIVE_SYSTEM_ACTIVE", 3="ENABLING_INVERTER",
@@ -521,6 +522,8 @@ Sig=controller_yaw_pid_brakes_d unsigned 10 /f:0.001
 Sig=controller_max_nl_brake_sc_front unsigned 8 /f:0.01
 Sig=controller_tcs_launch_vel_thresh unsigned 8 /f:0.01
 Sig=controller_tcs_vel_thresh unsigned 10 /f:0.01
+Sig=thermistor_motor_fl unsigned 16
+Sig=thermistor_motor_fr unsigned 16
 
 {SENDRECEIVE}
 
@@ -1612,3 +1615,9 @@ Sig=controller_tcs_pid_p_fl 0
 Sig=controller_tcs_pid_p_fr 16
 Sig=controller_tcs_pid_p_rl 32
 Sig=controller_tcs_pid_p_rr 48
+
+[FRONT_THERMISTORS]
+ID=0F5h
+Len=8
+Sig=thermistor_motor_fl 0
+Sig=thermistor_motor_fr 16
