@@ -513,17 +513,19 @@ Sig=controller_tcs_pid_p_fl unsigned 16 /f:0.001
 Sig=controller_tcs_pid_p_fr unsigned 16 /f:0.001
 Sig=controller_tcs_pid_p_rl unsigned 16 /f:0.001
 Sig=controller_tcs_pid_p_rr unsigned 16 /f:0.001
-Sig=controller_yaw_pid_p unsigned 11 /f:0.001
-Sig=controller_yaw_pid_i unsigned 11 /f:0.001
+Sig=controller_yaw_pid_p unsigned 13 /f:0.001
+Sig=controller_yaw_pid_i unsigned 10 /f:0.001
 Sig=controller_yaw_pid_d unsigned 10 /f:0.001
 Sig=controller_yaw_pid_brakes_p unsigned 11 /f:0.001
-Sig=controller_yaw_pid_brakes_i unsigned 11 /f:0.001
+Sig=controller_yaw_pid_brakes_i unsigned 10 /f:0.001
 Sig=controller_yaw_pid_brakes_d unsigned 10 /f:0.001
 Sig=controller_max_nl_brake_sc_front unsigned 8 /f:0.01
 Sig=controller_tcs_launch_vel_thresh unsigned 8 /f:0.01
 Sig=controller_tcs_vel_thresh unsigned 10 /f:0.01
 Sig=thermistor_motor_fl unsigned 16
 Sig=thermistor_motor_fr unsigned 16
+Sig=controller_tcs_saturation_front unsigned 12 /f:0.01
+Sig=controller_tcs_saturation_rear unsigned 12 /f:0.01
 
 {SENDRECEIVE}
 
@@ -1602,10 +1604,10 @@ Sig=controller_regen_5kph_status_rr 3
 ID=7BAh
 Len=8
 Sig=controller_yaw_pid_p 0
-Sig=controller_yaw_pid_i 11
-Sig=controller_yaw_pid_d 22
-Sig=controller_yaw_pid_brakes_p 32
-Sig=controller_yaw_pid_brakes_i 43
+Sig=controller_yaw_pid_i 13
+Sig=controller_yaw_pid_d 23
+Sig=controller_yaw_pid_brakes_p 33
+Sig=controller_yaw_pid_brakes_i 44
 Sig=controller_yaw_pid_brakes_d 54
 
 [CONTROLLER_TCS_PID_CONFIG]
@@ -1621,3 +1623,9 @@ ID=0F5h
 Len=8
 Sig=thermistor_motor_fl 0
 Sig=thermistor_motor_fr 16
+
+[CONTROLLER_TCS_SATURATION_CONFIG]
+ID=7BBh
+Len=8
+Sig=controller_tcs_saturation_front 0
+Sig=controller_tcs_saturation_rear 12
