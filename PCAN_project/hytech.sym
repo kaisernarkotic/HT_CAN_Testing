@@ -526,6 +526,11 @@ Sig=thermistor_motor_fl unsigned 16
 Sig=thermistor_motor_fr unsigned 16
 Sig=controller_tcs_saturation_front unsigned 12 /f:0.01
 Sig=controller_tcs_saturation_rear unsigned 12 /f:0.01
+Sig=controller_tcs_gen_LRdiff_lowerB unsigned 13 /f:0.01
+Sig=controller_tcs_gen_LRdiff_upperB unsigned 14 /f:0.01
+Sig=controller_tcs_w_steer_lower_b unsigned 12 /f:0.01
+Sig=controller_tcs_w_steer_upper_b unsigned 12 /f:0.01
+Sig=controller_tcs_launch_LRdiff unsigned 13 /f:0.01
 
 {SENDRECEIVE}
 
@@ -1629,3 +1634,12 @@ ID=7BBh
 Len=8
 Sig=controller_tcs_saturation_front 0
 Sig=controller_tcs_saturation_rear 12
+
+[CONTROLLER_TCS_DIFF_CONFIG]
+ID=7BDh
+Len=8
+Sig=controller_tcs_gen_LRdiff_lowerB 0
+Sig=controller_tcs_gen_LRdiff_upperB 13
+Sig=controller_tcs_w_steer_lower_b 27
+Sig=controller_tcs_w_steer_upper_b 39
+Sig=controller_tcs_launch_LRdiff 51
