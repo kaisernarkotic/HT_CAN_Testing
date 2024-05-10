@@ -313,6 +313,8 @@ Sig=LF_TTPMS_P_GAUGE unsigned 16 -m /u:mbar
 Sig=current_shunt_read unsigned 16 -m /f:0.000805860805861
 Sig=pack_filtered_read unsigned 16 -m /f:0.000805860805861
 Sig=ts_out_filtered_read unsigned 16 -m /f:0.000805860805861
+Sig=charge_coulombs unsigned 32 -m /u:Coulombs /f:0.0001
+Sig=charge_percentage unsigned 32 -m /u:percent /f:0.0001
 Sig=hall_curr_signal unsigned 16
 Sig=hall_curr_ref unsigned 16
 Sig=fl_motor_rpm signed 16
@@ -1207,6 +1209,12 @@ Len=8
 Sig=current_shunt_read 0
 Sig=pack_filtered_read 16
 Sig=ts_out_filtered_read 32
+
+[STATE_OF_CHARGE]
+ID=41Eh
+Len=8
+Sig=charge_percentage 0
+Sig=charge_coulombs 32
 
 [PENTHOUSE_ACCUM_MSG]
 ID=0DFh
