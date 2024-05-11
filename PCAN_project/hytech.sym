@@ -9,6 +9,7 @@ Enum=dial_stateE(0="MODE_0", 1="MODE_1", 2="MODE_2", 3="MODE_3", 4="MODE_4", 5="
 Enum=dashboard_ledE(0="OFF", 1="ON", 2="YELLOW", 3="RED")
 Enum=vn_gps_fixE(0="NO_FIX", 1="TIME_ONLY", 2="FIX_2D", 3="FIX_3D")
 Enum=tcu_recordingE(0="NOT_RECORDING", 1="REQUESTING_RECORD", 2="RECORDING", 3="SAVING_RECORDING")
+Enum=tc_mux_status(0="NO_ERROR", 1="ERROR_SPEED_DIFF_TOO_HIGH", 2="ERROR_TORQUE_DIFF_TOO_HIGH")
 
 {SIGNALS}
 Sig=system_ready unsigned 1
@@ -533,6 +534,7 @@ Sig=controller_tcs_gen_LRdiff_upperB unsigned 14 /f:0.01
 Sig=controller_tcs_w_steer_lower_b unsigned 12 /f:0.01
 Sig=controller_tcs_w_steer_upper_b unsigned 12 /f:0.01
 Sig=controller_tcs_launch_LRdiff unsigned 13 /f:0.01
+Sig=torque_controller_mux_status tc_mux_status 3
 
 {SENDRECEIVE}
 
@@ -1651,3 +1653,8 @@ Sig=controller_tcs_gen_LRdiff_upperB 13
 Sig=controller_tcs_w_steer_lower_b 27
 Sig=controller_tcs_w_steer_upper_b 39
 Sig=controller_tcs_launch_LRdiff 51
+
+[MCU_ERROR_STATES]
+ID=101h // this message will have states internal to the MCU code
+Len=8
+Sig=torque_controller_mux_status 0
