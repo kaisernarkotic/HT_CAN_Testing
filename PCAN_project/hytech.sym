@@ -539,6 +539,16 @@ Sig=steering_system_status unsigned 2 // 0 : nominal; 1 : marginal; 2 : degraded
 Sig=steering_encoder_status unsigned 2 // 0 : nominal; 1 : marginal; 2 : error
 Sig=steering_analog_status unsigned 1 // 0 : good; 1 : clamped
 Sig=steering_system_angle signed 16 /f:0.01 // Angle reported by steering system
+Sig=controller_use_rpm_tcs_gain_sche unsigned 1
+Sig=controller_use_nl_tcs_gain_sche unsigned 1
+Sig=controller_tcs_lower_rpm_front unsigned 15
+Sig=controller_tcs_lower_rpm_rear unsigned 15
+Sig=controller_tcs_upper_rpm_front unsigned 15
+Sig=controller_tcs_upper_rpm_rear unsigned 15
+Sig=controller_tcs_startper_nl_front unsigned 8 /f:0.01
+Sig=controller_tcs_startper_nl_rear unsigned 8 /f:0.01
+Sig=controller_tcs_endper_nl_front unsigned 8 /f:0.01
+Sig=controller_tcs_endper_nl_rear unsigned 8 /f:0.01
 
 {SENDRECEIVE}
 
@@ -1538,6 +1548,8 @@ Sig=controller_use_dec_yaw_pid_brake 7
 Sig=controller_use_discontin_brakes 8
 Sig=controller_use_no_regen_5kph 9
 Sig=controller_use_torque_bias 10
+Sig=controller_use_nl_tcs_gain_sche 11
+Sig=controller_use_rpm_tcs_gain_sche 12
 
 [CONTROLLER_TORQUE_SETUP]
 ID=7FAh
@@ -1670,3 +1682,19 @@ Sig=steering_system_angle 0
 Sig=steering_system_status 16
 Sig=steering_encoder_status 18
 Sig=steering_analog_status 20
+
+[TCS_RPM_SCHEDULE_CONFIG]
+ID=7BEh
+Len=8
+Sig=controller_tcs_lower_rpm_front 0
+Sig=controller_tcs_lower_rpm_rear 15
+Sig=controller_tcs_upper_rpm_front 30
+Sig=controller_tcs_upper_rpm_rear 45
+
+[TCS_NL_SCHEDULE_CONFIG]
+ID=7CCh
+Len=8
+Sig=controller_tcs_endper_nl_front 0
+Sig=controller_tcs_endper_nl_rear 8
+Sig=controller_tcs_startper_nl_front 16
+Sig=controller_tcs_startper_nl_rear 24
