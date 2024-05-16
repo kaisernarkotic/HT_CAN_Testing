@@ -535,6 +535,10 @@ Sig=controller_tcs_w_steer_lower_b unsigned 12 /f:0.01
 Sig=controller_tcs_w_steer_upper_b unsigned 12 /f:0.01
 Sig=controller_tcs_launch_LRdiff unsigned 13 /f:0.01
 Sig=torque_controller_mux_status tc_mux_status 3
+Sig=steering_system_status unsigned 2 // 0 : nominal; 1 : marginal; 2 : degraded; 3 : error
+Sig=steering_encoder_status unsigned 2 // 0 : nominal; 1 : marginal; 2 : error
+Sig=steering_analog_status unsigned 1 // 0 : good; 1 : clamped
+Sig=steering_system_angle signed 16 /f:0.01 // Angle reported by steering system
 
 {SENDRECEIVE}
 
@@ -1658,3 +1662,11 @@ Sig=controller_tcs_launch_LRdiff 51
 ID=101h // this message will have states internal to the MCU code
 Len=8
 Sig=torque_controller_mux_status 0
+
+[STEERING_SYSTEM_REPORT]
+ID=41Fh // Steering reading; system and sensor status
+Len=8
+Sig=steering_system_angle 0
+Sig=steering_system_status 16
+Sig=steering_encoder_status 18
+Sig=steering_analog_status 20
