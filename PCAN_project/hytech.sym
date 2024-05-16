@@ -1683,7 +1683,7 @@ Sig=steering_system_status 16
 Sig=steering_encoder_status 18
 Sig=steering_analog_status 20
 
-[TCS_RPM_SCHEDULE_CONFIG]
+[CONTROLLER_TCS_RPM_SCHE_CONFIG]
 ID=7BEh
 Len=8
 Sig=controller_tcs_lower_rpm_front 0
@@ -1691,7 +1691,7 @@ Sig=controller_tcs_lower_rpm_rear 15
 Sig=controller_tcs_upper_rpm_front 30
 Sig=controller_tcs_upper_rpm_rear 45
 
-[TCS_NL_SCHEDULE_CONFIG]
+[CONTROLLER_TCS_NL_SCHE_CONFIG]
 ID=7CCh
 Len=8
 Sig=controller_tcs_endper_nl_front 0
