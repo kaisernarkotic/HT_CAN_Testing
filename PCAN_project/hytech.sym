@@ -1,6 +1,5 @@
 FormatVersion=6.0 // Do not edit this line!
 Title="SYM Database"
-BRS=False
 
 {ENUMS}
 Enum=ecu_stateE(0="STARTUP", 1="TRACTIVE_SYSTEM_NOT_ACTIVE", 2="TRACTIVE_SYSTEM_ACTIVE", 3="ENABLING_INVERTER",
@@ -470,9 +469,7 @@ Sig=controller_use_normal_force unsigned 1
 Sig=controller_use_power_limit unsigned 1
 Sig=controller_use_pid_power_limit unsigned 1
 Sig=controller_use_tcs unsigned 1
-Sig=controller_tcs_launch_sl unsigned 8 /f:0.01
-Sig=controller_tcs_threshold unsigned 8 /f:0.01
-Sig=controller_tcs_launch_dead_zone unsigned 12 /u:Nm /f:0.01
+Sig=controller_tcs_launch_dead_zone unsigned 8 /u:Nm /f:0.1
 Sig=controller_tcs_torque_fl signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_torque_fr signed 16 /u:Nm /f:0.001
 Sig=controller_tcs_torque_rl signed 16 /u:Nm /f:0.001
@@ -523,8 +520,8 @@ Sig=controller_yaw_pid_brakes_p unsigned 11 /f:0.001
 Sig=controller_yaw_pid_brakes_i unsigned 10 /f:0.001
 Sig=controller_yaw_pid_brakes_d unsigned 10 /f:0.001
 Sig=controller_max_nl_brake_sc_front unsigned 8 /f:0.01
-Sig=controller_tcs_launch_vel_thresh unsigned 8 /f:0.01
-Sig=controller_tcs_vel_thresh unsigned 10 /f:0.01
+Sig=controller_tcs_launch_vel_thresh unsigned 6 /f:0.01
+Sig=controller_tcs_vel_thresh unsigned 8 /f:0.01
 Sig=thermistor_motor_fl unsigned 16
 Sig=thermistor_motor_fr unsigned 16
 Sig=controller_tcs_saturation_front unsigned 12 /f:0.01
@@ -549,6 +546,21 @@ Sig=controller_tcs_startper_nl_front unsigned 8 /f:0.01
 Sig=controller_tcs_startper_nl_rear unsigned 8 /f:0.01
 Sig=controller_tcs_endper_nl_front unsigned 8 /f:0.01
 Sig=controller_tcs_endper_nl_rear unsigned 8 /f:0.01
+Sig=controller_use_nl_tcs_slipschedu unsigned 1
+Sig=controller_tcs_lauSL_start_front unsigned 8 /f:0.01
+Sig=controller_tcs_lauSL_end_front unsigned 8 /f:0.01
+Sig=controller_tcs_lauSL_start_rear unsigned 8 /f:0.01
+Sig=controller_tcs_lauSL_end_rear unsigned 8 /f:0.01
+Sig=controller_tcs_SL_start_front unsigned 8 /f:0.01
+Sig=controller_tcs_SL_end_front unsigned 8 /f:0.01
+Sig=controller_tcs_SL_start_rear unsigned 8 /f:0.01
+Sig=controller_tcs_SL_end_rear unsigned 8 /f:0.01
+Sig=controller_tcs_sl_nlperc_star_fr unsigned 8 /f:0.01
+Sig=controller_tcs_sl_nlperc_end_fr unsigned 8 /f:0.01
+Sig=controller_tcs_sl_nlperc_star_rr unsigned 8 /f:0.01
+Sig=controller_tcs_sl_nlperc_end_rr unsigned 8 /f:0.01
+Sig=controller_tcs_slip_target_front unsigned 12 /f:0.001
+Sig=controller_tcs_slip_target_rear unsigned 12 /f:0.001
 
 {SENDRECEIVE}
 
@@ -1550,6 +1562,7 @@ Sig=controller_use_no_regen_5kph 9
 Sig=controller_use_torque_bias 10
 Sig=controller_use_nl_tcs_gain_sche 11
 Sig=controller_use_rpm_tcs_gain_sche 12
+Sig=controller_use_nl_tcs_slipschedu 13
 
 [CONTROLLER_TORQUE_SETUP]
 ID=7FAh
@@ -1563,11 +1576,13 @@ Sig=controller_max_nl_brake_sc_front 56
 [CONTROLLER_TCS_CONFIG]
 ID=7FBh
 Len=8
-Sig=controller_tcs_threshold 0
-Sig=controller_tcs_launch_sl 8
-Sig=controller_tcs_launch_dead_zone 16
-Sig=controller_tcs_launch_vel_thresh 28
-Sig=controller_tcs_vel_thresh 36
+Sig=controller_tcs_launch_dead_zone 0
+Sig=controller_tcs_launch_vel_thresh 8
+Sig=controller_tcs_vel_thresh 14
+Sig=controller_tcs_sl_nlperc_star_fr 22
+Sig=controller_tcs_sl_nlperc_end_fr 30
+Sig=controller_tcs_sl_nlperc_end_rr 38
+Sig=controller_tcs_sl_nlperc_star_rr 46
 
 [CONTROLLER_TCS_TORQUE]
 ID=7FCh
@@ -1698,3 +1713,21 @@ Sig=controller_tcs_endper_nl_front 0
 Sig=controller_tcs_endper_nl_rear 8
 Sig=controller_tcs_startper_nl_front 16
 Sig=controller_tcs_startper_nl_rear 24
+
+[CONTROLLER_TCS_CONFIG_CONT]
+ID=7BCh
+Len=8
+Sig=controller_tcs_lauSL_start_front 0
+Sig=controller_tcs_lauSL_end_front 8
+Sig=controller_tcs_lauSL_start_rear 16
+Sig=controller_tcs_lauSL_end_rear 24
+Sig=controller_tcs_SL_start_front 32
+Sig=controller_tcs_SL_end_front 40
+Sig=controller_tcs_SL_start_rear 48
+Sig=controller_tcs_SL_end_rear 56
+
+[CONTROLLER_TCS_SLIP_TARGETS]
+ID=7BFh
+Len=8
+Sig=controller_tcs_slip_target_front 0
+Sig=controller_tcs_slip_target_rear 12
