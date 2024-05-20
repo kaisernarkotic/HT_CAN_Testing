@@ -561,6 +561,16 @@ Sig=controller_tcs_sl_nlperc_star_rr unsigned 8 /f:0.01
 Sig=controller_tcs_sl_nlperc_end_rr unsigned 8 /f:0.01
 Sig=controller_tcs_slip_target_front unsigned 12 /f:0.001
 Sig=controller_tcs_slip_target_rear unsigned 12 /f:0.001
+Sig=steering_encoder_angle signed 16 /f:0.01 // Angle measured by upper steering encoder
+Sig=steering_analog_angle signed 16 /f:0.01 // Angle measured by bottom steering analog sensor
+Sig=speed_above_thresh unsigned 1 // Vehicle speed is above 5 m/s, TCMux does not allow driver to switch mode
+Sig=torque_delta_above_thresh unsigned 1 // Torque delta between old and new controllers is < 0.5Nm on every wheel
+Sig=tc_not_ready unsigned 1 // Selected TC not in ready state
+Sig=steering_system_has_err unsigned 1 // Steering system data in ERROR state
+Sig=dash_dial_mode unsigned 8 // Dashboard dial position
+Sig=mode_intended unsigned 8 // TC mode selected by driver
+Sig=mode_actual unsigned 8
+Sig=torque_limit unsigned 16 /f:0.001 // AMK inverter torque limit in use
 
 {SENDRECEIVE}
 
@@ -1694,9 +1704,11 @@ Sig=torque_controller_mux_status 0
 ID=41Fh // Steering reading; system and sensor status
 Len=8
 Sig=steering_system_angle 0
-Sig=steering_system_status 16
-Sig=steering_encoder_status 18
-Sig=steering_analog_status 20
+Sig=steering_encoder_angle 16
+Sig=steering_analog_angle 32
+Sig=steering_system_status 48
+Sig=steering_encoder_status 50
+Sig=steering_analog_status 52
 
 [CONTROLLER_TCS_RPM_SCHE_CONFIG]
 ID=7BEh
@@ -1731,3 +1743,16 @@ ID=7BFh
 Len=8
 Sig=controller_tcs_slip_target_front 0
 Sig=controller_tcs_slip_target_rear 12
+
+[TCMUX_STATUS_REPORT]
+ID=4F1h
+Len=8
+Sig=speed_above_thresh 0
+Sig=torque_delta_above_thresh 1
+Sig=tc_not_ready 2
+Sig=steering_system_has_err 3
+Sig=mode_intended 4
+Sig=mode_actual 12
+Sig=dash_dial_mode 20
+Sig=torque_mode 28
+Sig=torque_limit 36
