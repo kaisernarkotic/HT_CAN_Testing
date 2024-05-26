@@ -571,6 +571,14 @@ Sig=dash_dial_mode unsigned 8 // Dashboard dial position
 Sig=mode_intended unsigned 8 // TC mode selected by driver
 Sig=mode_actual unsigned 8
 Sig=torque_limit unsigned 16 /f:0.001 // AMK inverter torque limit in use
+Sig=num_sats_pvt_1 unsigned 8
+Sig=num_sats_rtk_1 unsigned 8
+Sig=highest_cn0_1 unsigned 8
+Sig=num_sats_pvt_2 unsigned 8
+Sig=num_sats_rtk_2 unsigned 8
+Sig=num_com_sats_pvt unsigned 8
+Sig=num_com_sats_rtk unsigned 8
+Sig=highest_cn0_2 unsigned 8
 
 {SENDRECEIVE}
 
@@ -1756,3 +1764,15 @@ Sig=mode_actual 12
 Sig=dash_dial_mode 20
 Sig=torque_mode 28
 Sig=torque_limit 36
+
+[VN_GNSS_COMP_SIG_HEALTH]
+ID=0EAh
+Len=8
+Sig=num_sats_pvt_1 0
+Sig=num_sats_rtk_1 8
+Sig=highest_cn0_1 16
+Sig=num_sats_pvt_2 24
+Sig=num_sats_rtk_2 32
+Sig=highest_cn0_2 40
+Sig=num_com_sats_pvt 48
+Sig=num_com_sats_rtk 56
