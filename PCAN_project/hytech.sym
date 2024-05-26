@@ -580,6 +580,7 @@ Sig=num_com_sats_pvt unsigned 8
 Sig=num_com_sats_rtk unsigned 8
 Sig=highest_cn0_2 unsigned 8
 Sig=controller_max_yaw_nl_accel_perc unsigned 4 /u:Nm /f:0.1
+Sig=vn_vel_uncertainty unsigned 16 /f:0.0005
 
 {SENDRECEIVE}
 
@@ -1355,11 +1356,12 @@ Sig=shutdown_status 0
 Sig=tcu_recording_state 16
 
 [VN_VEL]
-ID=0D0h
+ID=0D0h // Vehicle body velocity measured by VN-300
 Len=8
 Sig=vn_body_vel_x 0
 Sig=vn_body_vel_y 16
 Sig=vn_body_vel_z 32
+Sig=vn_vel_uncertainty 48
 
 [VN_LINEAR_ACCEL]
 ID=0D1h
