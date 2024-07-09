@@ -1264,7 +1264,7 @@ ID=41Eh
 Len=8
 Sig=charge_percentage 0
 Sig=min_cell_voltage_at_initialization 16
-Sig=charge_coulombs 0
+Sig=charge_coulombs 32
 
 [PENTHOUSE_ACCUM_MSG]
 ID=0DFh
