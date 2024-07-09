@@ -315,7 +315,7 @@ Sig=pack_filtered_read unsigned 16 /u:volts /f:0.16869351172632
 Sig=ts_out_filtered_read unsigned 16 /u:volts /f:0.169047463702246
 Sig=charge_coulombs unsigned 32 -m /u:Coulombs /f:0.0001
 Sig=charge_percentage unsigned 16 -m /u:percent /f:0.01
-Sig=min_cell_voltage_at_initialization unsigned 16 /u:volts /f:0.0001
+Sig=min_cell_voltage_est unsigned 16 /u:volts /f:0.0001
 Sig=hall_curr_signal unsigned 16
 Sig=hall_curr_ref unsigned 16
 Sig=fl_motor_rpm signed 16
@@ -1263,7 +1263,7 @@ Sig=ts_out_filtered_read 32
 ID=41Eh
 Len=8
 Sig=charge_percentage 0
-Sig=min_cell_voltage_at_initialization 16
+Sig=min_cell_voltage_est 16
 Sig=charge_coulombs 32
 
 [PENTHOUSE_ACCUM_MSG]
