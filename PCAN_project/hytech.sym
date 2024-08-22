@@ -1401,7 +1401,7 @@ Len=8
 Sig=vn_gps_lat 0
 Sig=vn_gps_lon 32
 
-[VN_GPS_TIME]
+[VN_GPS_TIME_MSG]
 ID=0E0h
 Len=8
 Sig=vn_gps_time 0
@@ -1440,7 +1440,7 @@ Len=8
 Sig=vn_ecef_pos_x 0
 Sig=vn_ecef_pos_y 32
 
-[VN_ECEF_POS_Z]
+[VN_ECEF_POS_Z_MSG]
 ID=0E9h
 Len=8
 Sig=vn_ecef_pos_z 0
@@ -1514,12 +1514,12 @@ Sig=vehm_sl_fr 16
 Sig=vehm_sl_rl 32
 Sig=vehm_sl_rr 48
 
-[VEHM_WHEEL_STEER_AVG_DEG]
+[VEHM_WHEEL_STEER_AVG_DEG_MSG]
 ID=7CAh
 Len=8
 Sig=vehm_wheel_steer_avg_deg 0
 
-[VEHM_KIN_DESIRED_YAW_RATE_RAD_S]
+[VEHM_KIN_DES_YAW_RATE_RAD_S_MSG]
 ID=7CBh
 Len=8
 Sig=vehm_kin_desired_yaw_rate_rad_s 0
