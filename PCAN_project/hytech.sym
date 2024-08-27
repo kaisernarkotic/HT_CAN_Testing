@@ -591,6 +591,10 @@ Sig=num_com_sats_rtk unsigned 8 // num of common satelites that are used in the 
 Sig=highest_cn0_2 unsigned 8 /u:dBHz /f:0.5 // Highest CN0 reported on receiver B
 Sig=controller_max_yaw_nl_accel_perc unsigned 4 /f:0.1
 Sig=vn_vel_uncertainty unsigned 16 /u:m/s /f:0.0005 // how much error there might be
+Sig=drivetrain_traj_torque_lim_fl signed 16 /f:0.001
+Sig=drivetrain_traj_torque_lim_fr signed 16 /f:0.001
+Sig=drivetrain_traj_torque_lim_rl signed 16 /f:0.001
+Sig=drivetrain_traj_torque_lim_rr signed 16 /f:0.001
 
 {SENDRECEIVE}
 
@@ -1791,3 +1795,11 @@ Sig=num_sats_rtk_2 32
 Sig=highest_cn0_2 40
 Sig=num_com_sats_pvt 48
 Sig=num_com_sats_rtk 56
+
+[DRIVETRAIN_COMMAND]
+ID=12Fh
+Len=8
+Sig=drivetrain_traj_torque_lim_fl 0
+Sig=drivetrain_traj_torque_lim_fr 16
+Sig=drivetrain_traj_torque_lim_rl 32
+Sig=drivetrain_traj_torque_lim_rr 48

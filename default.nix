@@ -16,6 +16,10 @@ pkgs.stdenv.mkDerivation rec {
     }))
   ]; # Python as a build dependency
 
+  propagatedBuildInputs = buildInputs;
+
+  nativeBuildInputs = buildInputs;
+
   # Define the build phase to execute the scripts
   buildPhase = ''
     cantools convert hytech.sym hytech.dbc
