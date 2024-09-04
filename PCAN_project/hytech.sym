@@ -1803,3 +1803,11 @@ Sig=drivetrain_traj_torque_lim_fl 0
 Sig=drivetrain_traj_torque_lim_fr 16
 Sig=drivetrain_traj_torque_lim_rl 32
 Sig=drivetrain_traj_torque_lim_rr 48
+
+[DRIVETRAIN_FILTER_OUT_TORQUE_TEL]
+ID=204h
+Len=8
+Sig=fl_motor_torque 0
+Sig=fr_motor_torque 16
+Sig=rl_motor_torque 32
+Sig=rr_motor_torque 48
