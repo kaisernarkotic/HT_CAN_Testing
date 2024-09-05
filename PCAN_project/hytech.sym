@@ -595,6 +595,14 @@ Sig=drivetrain_traj_torque_lim_fl signed 16 /f:0.001
 Sig=drivetrain_traj_torque_lim_fr signed 16 /f:0.001
 Sig=drivetrain_traj_torque_lim_rl signed 16 /f:0.001
 Sig=drivetrain_traj_torque_lim_rr signed 16 /f:0.001
+Sig=drivebrain_torque_fl signed 16 /f:0.01
+Sig=drivebrain_torque_fr signed 16 /f:0.01
+Sig=drivebrain_torque_rl signed 16 /f:0.01
+Sig=drivebrain_torque_rr signed 16 /f:0.01
+Sig=drivebrain_set_rpm_fl unsigned 16
+Sig=drivebrain_set_rpm_fr unsigned 16
+Sig=drivebrain_set_rpm_rl unsigned 16
+Sig=drivebrain_set_rpm_rr unsigned 16
 
 {SENDRECEIVE}
 
@@ -1811,3 +1819,19 @@ Sig=fl_motor_torque 0
 Sig=fr_motor_torque 16
 Sig=rl_motor_torque 32
 Sig=rr_motor_torque 48
+
+[DRIVEBRAIN_TORQUE_LIM_INPUT]
+ID=0F1h
+Len=8
+Sig=drivebrain_torque_fl 0
+Sig=drivebrain_torque_fr 16
+Sig=drivebrain_torque_rl 32
+Sig=drivebrain_torque_rr 48
+
+[DRIVEBRAIN_SPEED_SET_INPUT]
+ID=0F2h
+Len=8
+Sig=drivebrain_set_rpm_fl 0
+Sig=drivebrain_set_rpm_fr 16
+Sig=drivebrain_set_rpm_rl 32
+Sig=drivebrain_set_rpm_rr 48
