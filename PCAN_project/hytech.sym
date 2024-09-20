@@ -605,10 +605,10 @@ Sig=drivebrain_set_rpm_fl unsigned 16
 Sig=drivebrain_set_rpm_fr unsigned 16
 Sig=drivebrain_set_rpm_rl unsigned 16
 Sig=drivebrain_set_rpm_rr unsigned 16
-Sig=izze_brake_IR_temp_1 unsigned 16 -m /f:0.1 /o:-100
-Sig=izze_brake_IR_temp_2 unsigned 16 -m /f:0.1 /o:-100
-Sig=izze_brake_IR_temp_3 unsigned 16 -m /f:0.1 /o:-100
-Sig=izze_brake_IR_temp_4 unsigned 16 -m /f:0.1 /o:-100
+Sig=izze_brake_IR_temp_1 unsigned 16
+Sig=izze_brake_IR_temp_2 unsigned 16
+Sig=izze_brake_IR_temp_3 unsigned 16
+Sig=izze_brake_IR_temp_4 unsigned 16
 
 {SENDRECEIVE}
 
