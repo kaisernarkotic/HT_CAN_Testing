@@ -72,6 +72,7 @@ Sig=max_torque unsigned 8
 Sig=torque_mode unsigned 8 // torque mode
 Sig=distance_traveled_m unsigned 16 /f:0.01
 Sig=accel_percent_float unsigned 8 /u:percent /f:0.39215686275 /ln:"acceleration pedal percent travel" // The percentage of accel pedal travel represented by an unsigned float
+Sig=brake_sensor_analog_read unsigned 16 /u:NA /ln:"The analog reading from the brake pressure sensor. NO UNITS."
 Sig=group_id unsigned 4
 Sig=cell_1_balancing_status unsigned 1
 Sig=cell_2_balancing_status unsigned 1
@@ -998,6 +999,11 @@ Len=8
 Sig=accel_percent_float 0
 Sig=brake_percent_float 8
 Sig=mechanical_brake_percent_float 16
+
+[BRAKE_PRESSURE_SENSOR]
+ID=0CBh
+Len=2
+Sig=brake_sensor_analog_read 0
 
 [MCU_REAR_POTS]
 ID=0C7h
