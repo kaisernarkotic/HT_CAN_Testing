@@ -1,4 +1,4 @@
-{ pkgs, python311Packages, fetchPypi }:
+{ pkgs, python311Packages, fetchPypi, python3 }:
 
 pkgs.stdenv.mkDerivation rec {
   name = "ht_can_pkg";
@@ -18,11 +18,11 @@ pkgs.stdenv.mkDerivation rec {
 
   propagatedBuildInputs = buildInputs;
 
-  nativeBuildInputs = buildInputs;
+  nativeBuildInputs = [ python3 ] ++ buildInputs;
 
   # Define the build phase to execute the scripts
   buildPhase = ''
-    cantools convert hytech.sym hytech.dbc
+    python3 -m cantools convert hytech.sym hytech.dbc
   '';
 
   # Specify the output of the build process
