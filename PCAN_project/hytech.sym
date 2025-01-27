@@ -609,6 +609,14 @@ Sig=izze_brake_IR_temp_1 unsigned 16 -m
 Sig=izze_brake_IR_temp_2 unsigned 16 -m
 Sig=izze_brake_IR_temp_3 unsigned 16 -m
 Sig=izze_brake_IR_temp_4 unsigned 16 -m
+Sig=actual_power_w unsigned 32
+Sig=actual_torque_nm signed 16
+Sig=actual_speed_rpm unsigned 16
+Sig=active_power_w signed 32
+Sig=reactive_power_var signed 32
+Sig=speed_control_kp unsigned 16
+Sig=speed_control_ki unsigned 16
+Sig=speed_control_kd unsigned 16
 
 {SENDRECEIVE}
 
@@ -1860,3 +1868,169 @@ Sig=izze_brake_IR_temp_1 0
 Sig=izze_brake_IR_temp_2 16
 Sig=izze_brake_IR_temp_3 32
 Sig=izze_brake_IR_temp_4 48
+
+{SENDRECEIVE}
+
+[MCI1_STATUS]
+ID=070h
+Len=8
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=dc_bus_voltage 16
+Sig=diagnostic_number 32
+
+[MCI1_TEMPS]
+ID=071h
+Len=8
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=igbt_temp 32
+
+[MCI1_DYNAMICS]
+ID=072h
+Len=8
+Sig=actual_power_w 0
+Sig=actual_torque_nm 32
+Sig=actual_speed_rpm 48
+
+[MCI1_POWER]
+ID=073h
+Len=8
+Sig=active_power_w 0
+Sig=reactive_power_var 32
+
+[MCI1_FEEDBACK]
+ID=074h
+Len=8
+Sig=speed_control_kp 0
+Sig=speed_control_ki 16
+Sig=speed_control_kd 32
+
+[MCI2_STATUS]
+ID=075h
+Len=8
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=dc_bus_voltage 16
+Sig=diagnostic_number 32
+
+[MCI2_TEMPS]
+ID=076h
+Len=8
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=igbt_temp 32
+
+[MCI2_DYNAMICS]
+ID=077h
+Len=8
+Sig=actual_power_w 0
+Sig=actual_torque_nm 32
+Sig=actual_speed_rpm 48
+
+[MCI2_POWER]
+ID=078h
+Len=8
+Sig=active_power_w 0
+Sig=reactive_power_var 32
+
+[MCI2_FEEDBACK]
+ID=079h
+Len=8
+Sig=speed_control_kp 0
+Sig=speed_control_ki 16
+Sig=speed_control_kd 32
+
+[MCI3_STATUS]
+ID=080h
+Len=8
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=dc_bus_voltage 16
+Sig=diagnostic_number 32
+
+[MCI3_TEMPS]
+ID=081h
+Len=8
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=igbt_temp 32
+
+[MCI3_DYNAMICS]
+ID=082h
+Len=8
+Sig=actual_power_w 0
+Sig=actual_torque_nm 32
+Sig=actual_speed_rpm 48
+
+[MCI3_POWER]
+ID=083h
+Len=8
+Sig=active_power_w 0
+Sig=reactive_power_var 32
+
+[MCI3_FEEDBACK]
+ID=084h
+Len=8
+Sig=speed_control_kp 0
+Sig=speed_control_ki 16
+Sig=speed_control_kd 32
+
+[MCI4_STATUS]
+ID=085h
+Len=8
+Sig=system_ready 8
+Sig=error 9
+Sig=warning 10
+Sig=quit_dc_on 11
+Sig=dc_on 12
+Sig=quit_inverter_on 13
+Sig=inverter_on 14
+Sig=derating_on 15
+Sig=dc_bus_voltage 16
+Sig=diagnostic_number 32
+
+[MCI4_TEMPS]
+ID=086h
+Len=8
+Sig=motor_temp 0
+Sig=inverter_temp 16
+Sig=igbt_temp 32
+
+[MCI4_DYNAMICS]
+ID=087h
+Len=8
+Sig=actual_power_w 0
+Sig=actual_torque_nm 32
+Sig=actual_speed_rpm 48
+
+[MCI4_POWER]
+ID=088h
+Len=8
+Sig=active_power_w 0
+Sig=reactive_power_var 32
+
+[MCI4_FEEDBACK]
+ID=089h
+Len=8
+Sig=speed_control_kp 0
+Sig=speed_control_ki 16
+Sig=speed_control_kd 32
