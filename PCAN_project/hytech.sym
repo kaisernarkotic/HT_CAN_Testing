@@ -617,6 +617,11 @@ Sig=reactive_power_var signed 32
 Sig=speed_control_kp unsigned 16
 Sig=speed_control_ki unsigned 16
 Sig=speed_control_kd unsigned 16
+Sig=accel_pedal_active bit
+Sig=brake_accel_implausibility bit // brake and accel are pressed
+Sig=implaus_exceeded_max_duration bit // a pedal implausibility has been present for longer than allowed
+Sig=accel_pedal unsigned 16 /f:1.5259E-005 // the scaled accelerator pedal value
+Sig=brake_pedal unsigned 16 /f:1.5259E-005 // the scaled brake pedal value between 0 and 1
 
 {SENDRECEIVE}
 
@@ -1000,13 +1005,6 @@ ID=0C5h
 Len=4
 Sig=load_cell_fl 0
 Sig=load_cell_fr 16
-
-[MCU_PEDAL_READINGS]
-ID=0C4h
-Len=8
-Sig=accel_percent_float 0
-Sig=brake_percent_float 8
-Sig=mechanical_brake_percent_float 16
 
 [BRAKE_PRESSURE_SENSOR]
 ID=0CBh
@@ -2034,3 +2032,16 @@ Len=8
 Sig=speed_control_kp 0
 Sig=speed_control_ki 16
 Sig=speed_control_kd 32
+
+[VCR_PEDALS]
+ID=0C0h
+Len=5
+Sig=accel_implausible 0
+Sig=brake_implausible 1
+Sig=brake_pedal_active 2
+Sig=accel_pedal_active 3
+Sig=mechanical_brake_active 4
+Sig=brake_accel_implausibility 5
+Sig=implaus_exceeded_max_duration 6
+Sig=accel_pedal 8
+Sig=brake_pedal 24
