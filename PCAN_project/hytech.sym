@@ -10,15 +10,15 @@ Enum=vn_gps_fixE(0="NO_FIX", 1="TIME_ONLY", 2="FIX_2D", 3="FIX_3D")
 Enum=tcu_recordingE(0="NOT_RECORDING", 1="REQUESTING_RECORD", 2="RECORDING", 3="SAVING_RECORDING")
 Enum=tc_mux_status(0="NO_ERROR", 1="ERROR_SPEED_DIFF_TOO_HIGH", 2="ERROR_TORQUE_DIFF_TOO_HIGH",
   3="ERROR_CONTROLLER_INDEX_OUT_OF_BOUNDS", 4="ERROR_CONTROLLER_NULL_POINTER")
-Enum=steering_analog_statusE(0="", // GOOD!
-  1="") // Clamped!
-Enum=steering_system_statusE(0="", // nominal
-  1="", // marginal
-  2="", // degraded
-  3="") // error
-Enum=steering_encoder_statusE(0="", // nominal
-  1="", // marginal
-  2="") // error
+Enum=steering_analog_statusE(0="GOOD", // GOOD!
+  1="CLAMPED") // Clamped!
+Enum=steering_system_statusE(0="SYSTEM_NOMINAL", // nominal
+  1="SYSTEM_MARGINAL", // marginal
+  2="SYSTEM_DEGRADED", // degraded
+  3="SYSTEM_ERROR") // error
+Enum=steering_encoder_statusE(0="ENCODER_NOMINAL", // nominal
+  1="ENCODER_MARGINAL", // marginal
+  2="ENCODER_ERROR") // error
 
 {SIGNALS}
 Sig=system_ready unsigned 1
@@ -223,7 +223,7 @@ Sig=load_cell_fl unsigned 16 /u:lbs /ln:"Front Left Load Cell"
 Sig=load_cell_fr unsigned 16 /u:lbs /ln:"Front Right Load Cell"
 Sig=load_cell_rl unsigned 16 /u:lbs /ln:"Rear Left Load Cell"
 Sig=load_cell_rr unsigned 16 /u:lbs /ln:"Rear Right Load Cell"
-Sig=em_voltage signed 32 -m /u:Volts /f:1.52590219E-005 /e:steering_system_statusE /ln:"energy_meter_voltage" // The voltage, in Volts, measured by the Energy Meter.
+Sig=em_voltage signed 32 -m /u:Volts /f:1.52590219E-005 /ln:"energy_meter_voltage" // The voltage, in Volts, measured by the Energy Meter.
 Sig=em_current signed 32 -m /u:Coulombs /f:1.52590219E-005 /ln:"energy_meter_current_amps" // The current draw, in amps, measured by the Energy Meter.
 Sig=RR_TTPMS_TC unsigned 16 -m
 Sig=RR_TTPMS_RSSI signed 16 -m /u:dBm
