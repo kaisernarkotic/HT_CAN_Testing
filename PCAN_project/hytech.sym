@@ -2033,7 +2033,7 @@ Sig=speed_control_kp 0
 Sig=speed_control_ki 16
 Sig=speed_control_kd 32
 
-[VCR_PEDALS]
+[PEDALS_SYSTEM_DATA]
 ID=0C0h
 Len=5
 Sig=accel_implausible 0
