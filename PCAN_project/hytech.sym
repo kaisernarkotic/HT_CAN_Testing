@@ -622,6 +622,10 @@ Sig=brake_accel_implausibility bit // brake and accel are pressed
 Sig=implaus_exceeded_max_duration bit // a pedal implausibility has been present for longer than allowed
 Sig=accel_pedal unsigned 16 /f:1.5259E-005 // the scaled accelerator pedal value
 Sig=brake_pedal unsigned 16 /f:1.5259E-005 // the scaled brake pedal value between 0 and 1
+Sig=fl_load_cell unsigned 16 /ln:"Front Left Load Cell"
+Sig=fl_shock_pot unsigned 16 /ln:"Front Left Shock Pot"
+Sig=fr_shock_pot unsigned 16 /ln:"Front Right Shock Pot"
+Sig=fr_load_cell unsigned 16 /ln:"Front Right Load Cell"
 
 {SENDRECEIVE}
 
@@ -2039,3 +2043,11 @@ Sig=brake_accel_implausibility 5
 Sig=implaus_exceeded_max_duration 6
 Sig=accel_pedal 8
 Sig=brake_pedal 24
+
+[FRONT_SUSPENSION]
+ID=0EDh
+Len=8
+Sig=fl_load_cell 0
+Sig=fl_shock_pot 16
+Sig=fr_load_cell 32
+Sig=fr_shock_pot 48
