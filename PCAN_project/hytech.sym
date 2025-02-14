@@ -573,8 +573,8 @@ Sig=controller_tcs_sl_nlperc_star_rr unsigned 8 /f:0.01
 Sig=controller_tcs_sl_nlperc_end_rr unsigned 8 /f:0.01
 Sig=controller_tcs_slip_target_front unsigned 12 /f:0.001
 Sig=controller_tcs_slip_target_rear unsigned 12 /f:0.001
-Sig=steering_encoder_angle signed 16 /u:deg /f:0.01 // Angle measured by upper steering encoder
-Sig=steering_analog_angle signed 16 /f:0.01 // Angle measured by bottom steering analog sensor
+Sig=steering_digital_raw float // raw measurement by digital steering encoder
+Sig=steering_analog_raw unsigned 16 // raw measurement as measured by bottom steering analog sensor
 Sig=speed_above_thresh unsigned 1 // Vehicle speed is above 5 m/s, TCMux does not allow driver to switch mode
 Sig=torque_delta_above_thresh unsigned 1 // Torque delta between old and new controllers is < 0.5Nm on every wheel
 Sig=tc_not_ready unsigned 1 // Selected TC not in ready state
@@ -1750,15 +1750,11 @@ ID=101h // this message will have states internal to the MCU code
 Len=8
 Sig=torque_controller_mux_status 0
 
-[STEERING_SYSTEM_REPORT]
+[STEERING_DATA]
 ID=41Fh // Steering reading; system and sensor status
-Len=8
-Sig=steering_system_angle 0
-Sig=steering_encoder_angle 16
-Sig=steering_analog_angle 32
-Sig=steering_system_status 48
-Sig=steering_encoder_status 50
-Sig=steering_analog_status 52
+Len=6
+Sig=steering_analog_raw 0
+Sig=steering_digital_raw 16
 
 [CONTROLLER_TCS_RPM_SCHE_CONFIG]
 ID=7BEh
