@@ -71,7 +71,7 @@ jobs:
       - name: Upload html artifact
         uses: actions/upload-artifact@v4
         with:
-          name: protofile
+          name: htmlfile
           path: ./docs/Release-${{github.run_number}}.html
 
   generate-and-release:
