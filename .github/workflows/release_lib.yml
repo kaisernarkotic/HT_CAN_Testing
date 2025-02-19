@@ -36,17 +36,6 @@ jobs:
     container:
       image: ghcr.io/rcmast3r/ccoderdbc:main
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
-      
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.9'  # Specify the Python version
-      
-      - name: Install cantools
-        run: pip install cantools  # Install cantools library
-
       - name: Download artifact
         uses: actions/download-artifact@v4.1.8
         with:
@@ -97,10 +86,10 @@ jobs:
         run: |
           python dbc_to_proto/dbc_to_proto.py ./ hytech.proto
       
-      - name: Set tag_name
-        run: |
-            echo "tag_name=Release-${{github.run_number}}" >> $GITHUB_ENV
-
+      #- name: Set tag_name
+      #  run: |
+      #      echo "tag_name=Release-${{github.run_number}}" >> $GITHUB_ENV
+        
       - name: Set up Protobuf tools and generate HTML file
         run: |
           mkdir -p docs
@@ -112,7 +101,7 @@ jobs:
           
           curl -o proto/nanopb/google/protobuf/descriptor.proto https://raw.githubusercontent.com/nanopb/nanopb/nanopb-0.4.9.1/generator/proto/google/protobuf/descriptor.proto
           curl -o proto/nanopb/nanopb.proto https://raw.githubusercontent.com/nanopb/nanopb/nanopb-0.4.9.1/generator/proto/nanopb.proto
-          protoc -I=./. -I=proto/nanopb --doc_out=./docs --doc_opt=html,${{ env.tag_name }}.html hytech.proto
+          protoc -I=./. -I=proto/nanopb --doc_out=./docs --doc_opt=html,Release-${{github.run_number}}.html hytech.proto
       
       - name: Upload to hytech.proto
         uses: actions/upload-release-asset@v1.0.2
@@ -120,6 +109,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./docs/${{ env.tag_name }}.html
-          asset_name: ${{ env.tag_name }}.html
+          asset_path: ./docs/Release-${{ github.run_number }}.html 
+          asset_name: Release-${{ github.run_number }}.html
           asset_content_type: text/plain
