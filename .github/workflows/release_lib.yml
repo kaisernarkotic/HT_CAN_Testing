@@ -24,7 +24,7 @@ jobs:
         run: |
           cantools convert ${{ github.workspace }}/PCAN_project/hytech.sym hytech.dbc
 
-      - name: Upload artifact
+      - name: Upload dbc artifact
         uses: actions/upload-artifact@v4
         with:
           name: dbcfile
@@ -68,11 +68,11 @@ jobs:
           curl -o proto/nanopb/nanopb.proto https://raw.githubusercontent.com/nanopb/nanopb/nanopb-0.4.9.1/generator/proto/nanopb.proto
           protoc -I=./. -I=proto/nanopb --doc_out=./docs --doc_opt=html,Release-${{github.run_number}}.html hytech.proto
 
-      - name: Upload artifact
+      - name: Upload html artifact
         uses: actions/upload-artifact@v4
         with:
           name: protofile
-          path: Release-${{github.run_number}}.html
+          path: ./docs/Release-${{github.run_number}}.html
 
   generate-and-release:
     needs: [generate-dbc, generate-proto]
@@ -80,7 +80,7 @@ jobs:
     container:
       image: ghcr.io/rcmast3r/ccoderdbc:main
     steps:
-      - name: Download artifact
+      - name: Download dbc artifact
         uses: actions/download-artifact@v4.1.8
         with:
           name: dbcfile
@@ -130,12 +130,18 @@ jobs:
       #  run: |
       #      echo "tag_name=Release-${{github.run_number}}" >> $GITHUB_ENV
       
+      - name: Download html artifact
+        uses: actions/download-artifact@v4.1.8
+        with:
+          name: htmlfile
+          path: /docs
+
       - name: Upload html
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./docs/Release-${{ github.run_number }}.html 
+          asset_path: /docs/Release-${{ github.run_number }}.html 
           asset_name: Release-${{ github.run_number }}.html
           asset_content_type: text/plain
