@@ -130,12 +130,12 @@ jobs:
       #  run: |
       #      echo "tag_name=Release-${{github.run_number}}" >> $GITHUB_ENV
       
-      - name: Upload to hytech.proto
+      - name: Upload html
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: /protofile/Release-${{ github.run_number }}.html 
+          asset_path: ./docs/Release-${{ github.run_number }}.html 
           asset_name: Release-${{ github.run_number }}.html
           asset_content_type: text/plain
