@@ -53,7 +53,7 @@ jobs:
       
       - name: Convert DBC to PROTO
         run: |
-          python dbc_to_proto/dbc_to_proto.py dbcfile/ hytech.proto
+          python dbc_to_proto/dbc_to_proto.py dbc/ hytech.proto
       
       - name: Set up Protobuf tools and generate HTML file
         run: |
