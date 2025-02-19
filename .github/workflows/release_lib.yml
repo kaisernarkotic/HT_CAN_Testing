@@ -45,7 +45,7 @@ jobs:
           python-version: '3.9'  # Specify the Python version
       
       - name: Install cantools
-        run: python -m pip install cantools  # Install cantools library
+        run: pip install cantools  # Install cantools library
 
       - name: Download artifact
         uses: actions/download-artifact@v4.1.8
