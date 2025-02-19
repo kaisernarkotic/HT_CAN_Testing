@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v5
         with:
           python-version: '3.9'  # Specify the Python version
 
@@ -37,7 +37,7 @@ jobs:
       image: ghcr.io/rcmast3r/ccoderdbc:main
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v4.1.8
         with:
           name: dbcfile
           path: /dbc
@@ -52,17 +52,17 @@ jobs:
 
       - name: Create Release
         id: create_release
-        uses: actions/create-release@v1
+        uses: actions/create-release@v1.1.4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
+          release_name: Release-${{ github.run_number }}
           draft: false
           prerelease: false
 
       - name: Upload release asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -72,7 +72,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Upload hytech.dbc
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -80,4 +80,12 @@ jobs:
           asset_path: /dbc/hytech.dbc
           asset_name: hytech.dbc
           asset_content_type: text/plain
-
+      
+      - name: Upload tag name
+        run: echo "Release-${{github.run_number}}" > tag_name.txt
+      
+      - name: Upload tag_name as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tag-name-artifact
+          path: tag_name.txt
