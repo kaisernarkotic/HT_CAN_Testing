@@ -45,11 +45,6 @@ jobs:
         run: |
             TAG_NAME=$(cat tag_name.txt)
             echo "tag_name=$TAG_NAME" >> $GITHUB_ENV
-
-      - name: Set upload_url from file
-        run: |
-            UPLOAD_URL=$(cat upload_url.txt)
-            echo "upload_url=$UPLOAD_URL" >> $GITHUB_ENV
     
       - name: Set up Protobuf tools and generate HTML file
         run: |
